@@ -1,0 +1,14 @@
+module DAMSApp
+{
+	interface DAMS
+	{
+		string addAppointment(in string appointmentID,in string appoinmentType,in string capacity);
+		string removeAppointment(in string appointmentID, in string appoinmentType);
+		string listAppointmentAvailability(in string appoinmentType);
+		string bookAppointment(in string patientID,in string appoinmentID,in string appointmentType);
+		string getAppointmentSchedule(in string patientID);
+		string cancelAppointment(in string patientID,in string appoinmentID);
+		string swapAppointment(in string patientID,in string oldAppointmentID, in string oldAppoinmentType,in string newAppointmentID, in string newAppoinmentType);
+		oneway void shutdown();
+	};
+};
