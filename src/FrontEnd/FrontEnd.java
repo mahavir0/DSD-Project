@@ -6,6 +6,7 @@ package FrontEnd;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.MulticastSocket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import org.omg.PortableServer.POAHelper;
 import DAMSApp.DAMS;
 import DAMSApp.DAMSHelper;
 import DAMSApp.DAMSPOA;
+import ReplicaManager1.SequencerMessage;
 
 /**
  * @author Mahavir
@@ -29,7 +31,6 @@ class FrontEndImpl extends DAMSPOA {
 	
 	//String params = patientID + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + newAppointmentID + "=" + newAppoinmentType;
 	//return params;
-	
 	private ORB orb;
 	private ArrayList<ReplicaResponse> responseList = new ArrayList<ReplicaResponse>();
 	public void setORB(ORB orb_val) {
@@ -39,9 +40,12 @@ class FrontEndImpl extends DAMSPOA {
 	@Override
 	public String addAppointment(String appointmentID, String appoinmentType, String capacity) {
 		// TODO Auto-generated method stub
-		String params = null + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + null + "=" + null; 
+		String params = "#" + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + "#" + "=" + "#"; 
 		this.sendtoSequencer("addAppointment", params);
-		return params;
+		
+		this.waitingForResponseFromRM();
+		
+		return this.getRMResponses("addAppointment", params);
 		//return null;
 	}
 
@@ -49,27 +53,36 @@ class FrontEndImpl extends DAMSPOA {
 	public String removeAppointment(String appointmentID, String appoinmentType) {
 		// TODO Auto-generated method stub
 		//return "remove appointment";
-		String params = null + "=" + appointmentID + "=" + appoinmentType + "=" + null + "=" + null + "=" + null;
+		String params = "#" + "=" + appointmentID + "=" + appoinmentType + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("removeAppointment", params);
-		return params;
+		
+		this.waitingForResponseFromRM();
+		
+		return this.getRMResponses("removeAppointment", params);
 	}
 
 	@Override
 	public String listAppointmentAvailability(String appoinmentType) {
 		// TODO Auto-generated method stub
 		//return "list appointment";
-		String params = null + "=" + null + "=" + appoinmentType + "=" + null + "=" + null + "=" + null;
+		String params = "#" + "=" + "#" + "=" + appoinmentType + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("listAppointmentAvailability", params);
-		return params;
+
+		this.waitingForResponseFromRM();
+		
+		return this.getRMResponses("listAppointmentAvailability", params);
 	}
 
 	@Override
 	public String bookAppointment(String patientID, String appointmentID, String appointmentType) {
 		// TODO Auto-generated method stub
 		//return "book appointment";
-		String params = patientID + "=" + appointmentID + "=" + appointmentType + "=" + null + "=" + null + "=" + null;
+		String params = patientID + "=" + appointmentID + "=" + appointmentType + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("bookAppointment", params);
-		return params;
+
+		this.waitingForResponseFromRM();
+		
+		return this.getRMResponses("bookAppointment", params);
 	}
 
 	@Override
@@ -77,18 +90,24 @@ class FrontEndImpl extends DAMSPOA {
 		// TODO Auto-generated method stub
 		//return "get appointment";
 		//return null;
-		String params = patientID + "=" + null + "=" + null + "=" + null + "=" + null + "=" + null;
+		String params = patientID + "=" + "#" + "=" + "#" + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("getAppointmentSchedule", params);
-		return params;
+
+		this.waitingForResponseFromRM();
+		
+		return this.getRMResponses("getAppointmentSchedule", params);
 	}
 
 	@Override
 	public String cancelAppointment(String patientID, String appointmentID) {
 		// TODO Auto-generated method stub
 		//return "cancel appointment";
-		String params = patientID + "=" + appointmentID + "=" + null + "=" + null + "=" + null + "=" + null;
+		String params = patientID + "=" + appointmentID + "=" + "#" + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("cancelAppointment", params);
-		return params;
+
+		this.waitingForResponseFromRM();
+		
+		return this.getRMResponses("cancelAppointment", params);
 	}
 
 	@Override
@@ -96,9 +115,12 @@ class FrontEndImpl extends DAMSPOA {
 			String newAppointmentID, String newAppoinmentType) {
 		// TODO Auto-generated method stub
 		//return "swap appointment";
-		String params = patientID + "=" + oldAppointmentID + "=" + oldAppoinmentType + "=" + null + "=" + newAppointmentID + "=" + newAppoinmentType;
+		String params = patientID + "=" + oldAppointmentID + "=" + oldAppoinmentType + "=" + "#" + "=" + newAppointmentID + "=" + newAppoinmentType;
 		this.sendtoSequencer("swapAppointment", params);
-		return params;
+
+		this.waitingForResponseFromRM();
+		
+		return this.getRMResponses("swapAppointment", params);
 		//return null;
 	}
 
@@ -136,15 +158,22 @@ class FrontEndImpl extends DAMSPOA {
 	public void waitingForResponseFromRM(){ // ======================= 5 seconds timeout for to get all the responses ====================== //
 		try {
             System.out.println("Waiting for the responses of RMs...");
-            Thread.sleep(5000);
+            Thread.sleep(30000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println("slept");
 		}
 	}
 	
-	public String getRMResponses() { // ============================== to get the messages from RMs========================================= //
-		return null;
+	public String getRMResponses(String function,String params) { // ============================== to get the messages from RMs========================================= //
+		String result = null;
+		ArrayList<ReplicaResponse> temp = this.getResponses();
+		for(int i=0;i<temp.size();i++) {
+			if(temp.get(i).getRequest()==function)
+				result = temp.get(i).getRequest() + "->" + temp.get(i).getParams();
+		}
+		return result;
 	}
 	
 	public void notifyRMforFault() { // ============================== Notify the Replica Manager of the faulty replica ==================== //
@@ -156,6 +185,8 @@ class FrontEndImpl extends DAMSPOA {
 
 public class FrontEnd {
 
+	private static final int FE_multicast_Port = 4321;
+	private static final String FE_multicast_IPadress = "230.1.1.10";
 	/**
 	 * 
 	 */
@@ -212,8 +243,35 @@ public class FrontEnd {
 	}
 	
 	public static void receiveClientRequest(FrontEndImpl frontendobj) {
-		while(true) {
-			
+		MulticastSocket ms = null;
+		try {
+			ms = new MulticastSocket(FE_multicast_Port);
+			ms.joinGroup(InetAddress.getByName(FE_multicast_IPadress));
+			byte[] buf = new byte[1000];
+			System.out.println("in FE receive");
+			while(true) {
+				DatagramPacket RMresponse = new DatagramPacket(buf, buf.length);
+				ms.receive(RMresponse);
+				String response = new String(RMresponse.getData(), 0, RMresponse.getLength());
+				System.out.println("Response in FE : "+response);
+				String[] result = response.split(";");
+				ReplicaResponse rr = new ReplicaResponse();
+				rr.setReplicaNo(result[0]);
+				rr.setSeqId(Integer.parseInt(result[1]));
+				rr.setRequest(result[2]);
+				rr.setParams(result[3]);
+				rr.setResponse(result[4]);
+				rr.setStatus(result[5]);
+				frontendobj.addResponse(rr);
+				//String[] responseArray = response.split(";");
+				//SequencerMessage sm = new SequencerMessage(Integer.parseInt(responseArray[0]),responseArray[1] + ";" +responseArray[2] + ";");
+			}
+		} catch (Exception e) {
+			System.out.println("Exception : " + e.getMessage());
+		} finally {
+			System.out.println("in finaaly");
+			if (ms != null)
+				ms.close();
 		}
 	}
 

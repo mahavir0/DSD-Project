@@ -10,7 +10,7 @@ package FrontEnd;
 public class ReplicaResponse {
 	
 	private int seqId;
-	private int ReplicaNo;
+	private String ReplicaNo;
 	private String request;
 	private String response;
 	private String status;
@@ -29,10 +29,10 @@ public class ReplicaResponse {
 	public void setSeqId(int seqId) {
 		this.seqId = seqId;
 	}
-	public int getReplicaNo() {
+	public String getReplicaNo() {
 		return ReplicaNo;
 	}
-	public void setReplicaNo(int replicaNo) {
+	public void setReplicaNo(String replicaNo) {
 		ReplicaNo = replicaNo;
 	}
 	public String getRequest() {
