@@ -32,7 +32,9 @@ class FrontEndImpl extends DAMSPOA {
 	//String params = patientID + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + newAppointmentID + "=" + newAppoinmentType;
 	//return params;
 	private ORB orb;
-	private ArrayList<ReplicaResponse> responseList = new ArrayList<ReplicaResponse>();
+	public ArrayList<ReplicaResponse> responseList = new ArrayList<ReplicaResponse>();
+	private final int sequencerPort = 5555;
+	private final String sequencerIPAdress = "192.168.0.131";
 	public void setORB(ORB orb_val) {
 		orb = orb_val;
 	}
@@ -143,9 +145,9 @@ class FrontEndImpl extends DAMSPOA {
 		DatagramSocket ds = null;
 		try {
 			ds = new DatagramSocket();
-			InetAddress ip = InetAddress.getLocalHost();
+			InetAddress ip = InetAddress.getByName(sequencerIPAdress);
 			byte[] sendrequestmessage = sendrequest.getBytes();
-			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, 5555);
+			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, sequencerPort);
 			ds.send(DpSend);
 		}catch(Exception e) {
 			System.out.println("Exception "+ e);
@@ -158,7 +160,7 @@ class FrontEndImpl extends DAMSPOA {
 	public void waitingForResponseFromRM(){ // ======================= 5 seconds timeout for to get all the responses ====================== //
 		try {
             System.out.println("Waiting for the responses of RMs...");
-            Thread.sleep(30000);
+            Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
@@ -167,11 +169,16 @@ class FrontEndImpl extends DAMSPOA {
 	}
 	
 	public String getRMResponses(String function,String params) { // ============================== to get the messages from RMs========================================= //
-		String result = null;
+		String result = "";
 		ArrayList<ReplicaResponse> temp = this.getResponses();
+		System.out.println("Size : "+temp.size());
 		for(int i=0;i<temp.size();i++) {
-			if(temp.get(i).getRequest()==function)
+			System.out.println(i);
+			if(temp.get(i).getRequest().equals(function)) {
 				result = temp.get(i).getRequest() + "->" + temp.get(i).getParams();
+				temp.remove(i);
+				this.responseList = temp;
+			}
 		}
 		return result;
 	}

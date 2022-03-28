@@ -88,18 +88,20 @@ public class Client {
 				appointmentID = sc.next();
 				System.out.println("Enter the Appointment Type : ");
 				appointmentType = sc.next();
-				String result = damsobj.bookAppointment(patientID, appointmentID, appointmentType);
+				String result = "";
+				result = damsobj.bookAppointment(patientID, appointmentID, appointmentType);
 				System.out.println(result);
 				clientLogger(patientID,"Book Appointment",patientID+" "+appointmentID+" "+appointmentType,result);
 			}else if(ch.equals("2")) {
-				List<String> result = new ArrayList<String>();
-				result = Arrays.asList(damsobj.getAppointmentSchedule(patientID));
+				String result = "";
+				result = damsobj.getAppointmentSchedule(patientID);
 				System.out.println(result);
 				clientLogger(patientID,"Get Appointment Schedule",patientID,String.join(",", result));
 			}else if(ch.equals("3")) {
 				System.out.println("Enter the Appointment ID : ");
 				appointmentID = sc.next();
-				String result = damsobj.cancelAppointment(patientID, appointmentID);
+				String result = "";
+				result = damsobj.cancelAppointment(patientID, appointmentID);
 				System.out.println(result);
 				clientLogger(patientID,"Cancel Appointment",patientID+" "+appointmentID,result);
 			}else if(ch.equals("4")){
@@ -112,7 +114,8 @@ public class Client {
 				System.out.println("Enter the New Appointment Type : ");
 				newAppointmentType = sc.next();
 				//newAppointmentType = appointmentType;
-				String result = damsobj.swapAppointment(patientID, appointmentID, appointmentType, newAppointmentID, newAppointmentType);
+				String result = "";
+				result = damsobj.swapAppointment(patientID, appointmentID, appointmentType, newAppointmentID, newAppointmentType);
 				System.out.println(result);
 				clientLogger(patientID,"Swap Appointment",patientID+" "+appointmentID+" "+appointmentType+" "+newAppointmentID+" "+newAppointmentType,result);
 			}else if(ch.equals("0")) {
@@ -131,7 +134,7 @@ public class Client {
 			System.out.println("Press 1 to Add Appointments \nPress 2 to Remove Appointments \nPress 3 to get Appointments Availibily list \nPress 4 to Book an Appointment \nPress 5 to get Appointment Schedule \nPress 6 to cancel Appointment \nPress 7 to swap Appointment\nPress 0 to exit\nEnter your choice : ");
 			String ch = sc.next();
 			String appointmentID, appointmentType, patientID, newAppointmentID, newAppointmentType;
-			List<String> capacity = new ArrayList<String>();
+			//List<String> capacity = new ArrayList<String>();
 			if(ch.equals("1")) {
 				System.out.println("Enter the Appointment ID : ");
 				appointmentID = sc.next();
@@ -139,10 +142,11 @@ public class Client {
 				appointmentType = sc.next();
 				System.out.println("Enter the Capacity : ");
 				String cap = sc.next();
-				capacity.add(cap);
+				//capacity.add(cap);
 				//String[] capstringlist = new String[1];
 				//capstringlist[0]=cap;
-				String result = damsobj.addAppointment(appointmentID, appointmentType, cap);
+				String result = "";
+				result = damsobj.addAppointment(appointmentID, appointmentType, cap);
 				System.out.println(result);
 				clientLogger(id,"Add Appointments",appointmentID+" "+appointmentType+" "+cap,result);
 			}else if(ch.equals("2")) {
@@ -150,14 +154,15 @@ public class Client {
 				appointmentID = sc.next();
 				System.out.println("Enter the Appointment Type : ");
 				appointmentType = sc.next();
-				String result = damsobj.removeAppointment(appointmentID, appointmentType);
+				String result = "";
+				result = damsobj.removeAppointment(appointmentID, appointmentType);
 				System.out.println(result);
 				clientLogger(id,"Remove Appointments",appointmentID+" "+appointmentType,result);
 			}else if(ch.equals("3")) {
 				System.out.println("Enter the Appointment Type : ");
 				appointmentType = sc.next();
-				List<String> result = new ArrayList<String>();
-				result = Arrays.asList(damsobj.listAppointmentAvailability(appointmentType));
+				String result = "";
+				result = damsobj.listAppointmentAvailability(appointmentType);
 				System.out.println(appointmentType+"-"+result);
 				clientLogger(id,"List Appointment Availibility",appointmentType,String.join(",", result));
 			}else if(ch.equals("4")) {
@@ -167,14 +172,15 @@ public class Client {
 				appointmentID = sc.next();
 				System.out.println("Enter the Appointment Type : ");
 				appointmentType = sc.next();
-				String result = damsobj.bookAppointment(patientID, appointmentID, appointmentType);
+				String result = "";
+				result = damsobj.bookAppointment(patientID, appointmentID, appointmentType);
 				System.out.println(result);
 				clientLogger(id,"Book Appointment",patientID+" "+appointmentID+" "+appointmentType,result);
 			}else if(ch.equals("5")) {
 				System.out.println("Enter the Patient ID : ");
 				patientID = sc.next();
-				List<String> result = new ArrayList<String>();
-				result = Arrays.asList(damsobj.getAppointmentSchedule(patientID));
+				String result = "";
+				result = damsobj.getAppointmentSchedule(patientID);
 				System.out.println(result);
 				clientLogger(id,"Get Appointment Schedule",patientID,String.join(",", result));
 			}else if(ch.equals("6")) {
@@ -182,7 +188,8 @@ public class Client {
 				patientID = sc.next();
 				System.out.println("Enter the Appointment ID : ");
 				appointmentID = sc.next();
-				String result = damsobj.cancelAppointment(patientID, appointmentID);
+				String result = "";
+				result = damsobj.cancelAppointment(patientID, appointmentID);
 				System.out.println(result);
 				clientLogger(id,"Cancel Appointment",patientID+" "+appointmentID,result);
 			}else if(ch.equals("7")) {
@@ -197,7 +204,8 @@ public class Client {
 				System.out.println("Enter the New Appointment Type : ");
 				newAppointmentType = sc.next();
 				//newAppointmentType = appointmentType;
-				String result = damsobj.swapAppointment(patientID, appointmentID, appointmentType, newAppointmentID, newAppointmentType);
+				String result = "";
+				result = damsobj.swapAppointment(patientID, appointmentID, appointmentType, newAppointmentID, newAppointmentType);
 				System.out.println(result);
 				clientLogger(id,"Swap Appointment",patientID+" "+appointmentID+" "+appointmentType+" "+newAppointmentID+" "+newAppointmentType,result);
 			}else if(ch.equals("0")) {

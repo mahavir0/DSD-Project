@@ -18,10 +18,10 @@ import ReplicaManager1.SequencerMessageComparator;
  */
 public class RM1 {
 	private static int nextSequenceId = 1;
-	private static PriorityQueue<SequencerMessage> pq = new PriorityQueue(25);
+	private static PriorityQueue<SequencerMessage> pq = new PriorityQueue<SequencerMessage>(25);
 	private static ArrayList<SequencerMessage> message_list = new ArrayList<SequencerMessage>();
 	private static final int multicast_Port = 1234;
-	private static final String multicast_IPadress = "230.0.0.0";
+	private static final String multicast_IPadress = "230.1.1.1";
 	private static final int FE_multicast_Port = 4321;
 	private static final String FE_multicast_IPadress = "230.1.1.10";
 	/**
@@ -44,12 +44,13 @@ public class RM1 {
 		t.start();
 	}
 	
-	private static void receiveFromSequencer() {
+	public static void receiveFromSequencer() {
 		System.out.println("Here");
 		MulticastSocket ms = null;
 		try {
 			ms = new MulticastSocket(multicast_Port);
-			ms.joinGroup(InetAddress.getByName(multicast_IPadress));
+			InetAddress ip = InetAddress.getByName(multicast_IPadress);
+			ms.joinGroup(ip);
 			byte[] buf = new byte[1000];
 			System.out.println("in try");
 			while(true) {
@@ -93,7 +94,7 @@ public class RM1 {
 	public static void sendToReplica(SequencerMessage sm) {
 		// get result from specificed server
 		System.out.println("in sendtoreplica");
-		String result = sm.sequenceId + ";" + sm.requestMessage;
+		String result = sm.getsequenceId() + ";" + sm.getrequestMessage();
 		sendToFrontEnd(result);
 	}
 	

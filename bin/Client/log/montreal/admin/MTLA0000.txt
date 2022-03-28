@@ -3,7 +3,3 @@
 2022-03-27 03:35:00 PM | Add Appointments | r ce 2 | null=r=ce=2=null=null
 2022-03-27 03:35:53 PM | Add Appointments | jhgfd jhgfd jhgf | null=jhgfd=jhgfd=jhgf=null=null
 2022-03-27 03:37:32 PM | Add Appointments | rtgh fdgf dfbgn | null=rtgh=fdgf=dfbgn=null=null
-2022-03-27 08:38:23 PM | Get Appointment Schedule | csc | 
-2022-03-27 08:38:52 PM | Get Appointment Schedule | cd | 
-2022-03-27 08:39:05 PM | Get Appointment Schedule | azsxdcfv | 
-2022-03-27 08:40:29 PM | Get Appointment Schedule | dxfg | 

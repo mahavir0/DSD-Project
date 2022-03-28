@@ -11,8 +11,8 @@ import java.util.Comparator;
  */
 public class SequencerMessage {
 
-	public int sequenceId;
-	public String requestMessage;
+	private int sequenceId;
+	private String requestMessage;
 	/**
 	 * 
 	 */
@@ -37,9 +37,9 @@ class SequencerMessageComparator implements Comparator<SequencerMessage>{
 	@Override
 	public int compare(SequencerMessage arg0, SequencerMessage arg1) {
 		// TODO Auto-generated method stub
-		if(arg0.sequenceId < arg1.sequenceId)
+		if(arg0.getsequenceId() < arg1.getsequenceId())
 			return 1;
-		else if(arg0.sequenceId > arg1.sequenceId)
+		else if(arg0.getsequenceId() > arg1.getsequenceId())
 			return -1;
 		return 0;
 	} 

@@ -1,0 +1,10 @@
+2022-03-27 08:44:39 PM | Get Appointment Schedule | MTLP8520 | 
+2022-03-27 08:44:55 PM | Get Appointment Schedule | MTLP8520 | 
+2022-03-27 08:45:08 PM | Get Appointment Schedule | MTLP8520 | 
+2022-03-27 08:45:23 PM | Get Appointment Schedule | MTLP8520 | 
+2022-03-27 08:45:38 PM | Cancel Appointment | MTLP8520 rdtfyguhi | 
+2022-03-27 08:47:38 PM | Get Appointment Schedule | MTLP8520 | 
+2022-03-27 08:47:45 PM | Get Appointment Schedule | MTLP8520 | 
+2022-03-27 08:47:51 PM | Get Appointment Schedule | MTLP8520 | getAppointmentSchedule->MTLP8520=#=#=#=#=#
+2022-03-27 08:49:17 PM | Get Appointment Schedule | MTLP8520 | getAppointmentSchedule->MTLP8520=#=#=#=#=#
+2022-03-27 08:49:32 PM | Swap Appointment | MTLP8520 hgfd asdfg fdsa asdf | swapAppointment->MTLP8520=hgfd=asdfg=#=fdsa=asdf

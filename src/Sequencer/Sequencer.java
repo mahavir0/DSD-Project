@@ -15,7 +15,9 @@ public class Sequencer {
 
 	private static int sequencerId = 1;
 	private static final int multicast_Port = 1234;
-	private static final String multicast_IPadress = "230.0.0.0";
+	private static final String multicast_IPadress = "230.1.1.1";
+	private static final int sequencer_Port = 5555;
+	private static final String sequencer_IPAdress = "192.168.0.131";
 	/**
 	 * 
 	 */
@@ -31,7 +33,7 @@ public class Sequencer {
 		DatagramSocket ds = null;
 		try 
 		{
-			ds = new DatagramSocket(5555);
+			ds = new DatagramSocket(sequencer_Port,InetAddress.getByName(sequencer_IPAdress));
 			byte[] responseFromFE = new byte[1000];
 			System.out.println("Sequencer UDP Server 5555 Started............");
 			while (true)
@@ -60,7 +62,9 @@ public class Sequencer {
 			ds = new DatagramSocket();
 			byte[] requestMessageToRM = resuestToRM.getBytes();
 			InetAddress ip = InetAddress.getByName(multicast_IPadress);
-			DatagramPacket request = new DatagramPacket(requestMessageToRM, requestMessageToRM.length, ip, multicast_Port);
+			DatagramPacket request = new DatagramPacket(requestMessageToRM, requestMessageToRM.length);
+			request.setAddress(ip);
+			request.setPort(multicast_Port);
 			ds.send(request);
 			System.out.println("Sent to RM");
 			sequencerId++;
