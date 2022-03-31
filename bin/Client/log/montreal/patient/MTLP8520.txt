@@ -11,8 +11,3 @@
 2022-03-28 05:19:23 PM | Get Appointment Schedule | MTLP8520 | 
 2022-03-28 05:19:40 PM | Get Appointment Schedule | MTLP8520 | 
 2022-03-28 05:19:54 PM | Get Appointment Schedule | MTLP8520 | getAppointmentSchedule->MTLP8520=#=#=#=#=#
-2022-03-28 07:26:33 PM | Get Appointment Schedule | MTLP8520 | 
-2022-03-28 07:30:43 PM | Get Appointment Schedule | MTLP8520 | getAppointmentSchedule->MTLP8520=#=#=#=#=#
-2022-03-28 08:31:13 PM | Get Appointment Schedule | MTLP8520 | getAppointmentSchedule->MTLP8520=#=#=#=#=#
-2022-03-30 07:42:49 PM | Book Appointment | MTLP8520 QUEM300322 PHYSICIAN | Appointment booked Successfully -> Success
-2022-03-30 07:43:57 PM | Swap Appointment | MTLP8520 QUEM300322 PHYSICIAN SHEM300322 SURGEON | This operation cannot be perfomed by the patient MTLP8520 because he/she neither booked the appointment nor canceled it -> Failed

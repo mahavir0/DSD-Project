@@ -5,19 +5,13 @@ package Client;
 
 import DAMSApp.*;
 import org.omg.CosNaming.*;
-import org.omg.CosNaming.NamingContextPackage.*;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.rmi.registry.LocateRegistry;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 
 import org.omg.CORBA.*;
@@ -42,14 +36,14 @@ public class Client {
 			objRef = orb.resolve_initial_references("NameService");
 			ncRef = NamingContextExtHelper.narrow(objRef);
 			System.out.println("Welcome to DAMS System");
+			Scanner sc = new Scanner(System.in);
 			while(true) {
-				Scanner sc = new Scanner(System.in);
 				System.out.println("Press 1 to access the system : ");
 				System.out.println("Press 0 exit : ");
 				String choice = sc.next();
 				if(choice.equals("1")) {
 					System.out.println("Enter your id : ");
-					String id = sc.next();
+					String id = sc.next().toUpperCase();
 					id=id.toUpperCase();
 					if(checkID(id)) {
 						if(id.charAt(3)=='A') {
@@ -85,9 +79,9 @@ public class Client {
 			String appointmentID,appointmentType,newAppointmentID,newAppointmentType;
 			if(ch.equals("1")) {
 				System.out.println("Enter the Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment Type : ");
-				appointmentType = sc.next();
+				appointmentType = sc.next().toUpperCase();
 				String result = "";
 				result = damsobj.bookAppointment(patientID, appointmentID, appointmentType);
 				System.out.println(result);
@@ -99,20 +93,20 @@ public class Client {
 				clientLogger(patientID,"Get Appointment Schedule",patientID,String.join(",", result));
 			}else if(ch.equals("3")) {
 				System.out.println("Enter the Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				String result = "";
 				result = damsobj.cancelAppointment(patientID, appointmentID);
 				System.out.println(result);
 				clientLogger(patientID,"Cancel Appointment",patientID+" "+appointmentID,result);
 			}else if(ch.equals("4")){
 				System.out.println("Enter the Old Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the Old Appointment Type : ");
-				appointmentType = sc.next();
+				appointmentType = sc.next().toUpperCase();
 				System.out.println("Enter the New Appointment ID : ");
-				newAppointmentID = sc.next();
+				newAppointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the New Appointment Type : ");
-				newAppointmentType = sc.next();
+				newAppointmentType = sc.next().toUpperCase();
 				//newAppointmentType = appointmentType;
 				String result = "";
 				result = damsobj.swapAppointment(patientID, appointmentID, appointmentType, newAppointmentID, newAppointmentType);
@@ -137,11 +131,11 @@ public class Client {
 			//List<String> capacity = new ArrayList<String>();
 			if(ch.equals("1")) {
 				System.out.println("Enter the Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment Type : ");
-				appointmentType = sc.next();
+				appointmentType = sc.next().toUpperCase();
 				System.out.println("Enter the Capacity : ");
-				String cap = sc.next();
+				String cap = sc.next().toUpperCase();
 				//capacity.add(cap);
 				//String[] capstringlist = new String[1];
 				//capstringlist[0]=cap;
@@ -151,58 +145,58 @@ public class Client {
 				clientLogger(id,"Add Appointments",appointmentID+" "+appointmentType+" "+cap,result);
 			}else if(ch.equals("2")) {
 				System.out.println("Enter the Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment Type : ");
-				appointmentType = sc.next();
+				appointmentType = sc.next().toUpperCase();
 				String result = "";
 				result = damsobj.removeAppointment(appointmentID, appointmentType);
 				System.out.println(result);
 				clientLogger(id,"Remove Appointments",appointmentID+" "+appointmentType,result);
 			}else if(ch.equals("3")) {
 				System.out.println("Enter the Appointment Type : ");
-				appointmentType = sc.next();
+				appointmentType = sc.next().toUpperCase();
 				String result = "";
 				result = damsobj.listAppointmentAvailability(appointmentType);
 				System.out.println(appointmentType+"-"+result);
 				clientLogger(id,"List Appointment Availibility",appointmentType,String.join(",", result));
 			}else if(ch.equals("4")) {
 				System.out.println("Enter the Patient ID : ");
-				patientID = sc.next();
+				patientID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment Type : ");
-				appointmentType = sc.next();
+				appointmentType = sc.next().toUpperCase();
 				String result = "";
 				result = damsobj.bookAppointment(patientID, appointmentID, appointmentType);
 				System.out.println(result);
 				clientLogger(id,"Book Appointment",patientID+" "+appointmentID+" "+appointmentType,result);
 			}else if(ch.equals("5")) {
 				System.out.println("Enter the Patient ID : ");
-				patientID = sc.next();
+				patientID = sc.next().toUpperCase();
 				String result = "";
 				result = damsobj.getAppointmentSchedule(patientID);
 				System.out.println(result);
 				clientLogger(id,"Get Appointment Schedule",patientID,String.join(",", result));
 			}else if(ch.equals("6")) {
 				System.out.println("Enter the Patient ID : ");
-				patientID = sc.next();
+				patientID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				String result = "";
 				result = damsobj.cancelAppointment(patientID, appointmentID);
 				System.out.println(result);
 				clientLogger(id,"Cancel Appointment",patientID+" "+appointmentID,result);
 			}else if(ch.equals("7")) {
 				System.out.println("Enter the Patient ID : ");
-				patientID = sc.next();
+				patientID = sc.next().toUpperCase();
 				System.out.println("Enter the Old Appointment ID : ");
-				appointmentID = sc.next();
+				appointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the Old Appointment Type : ");
-				appointmentType = sc.next();
+				appointmentType = sc.next().toUpperCase();
 				System.out.println("Enter the New Appointment ID : ");
-				newAppointmentID = sc.next();
+				newAppointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the New Appointment Type : ");
-				newAppointmentType = sc.next();
+				newAppointmentType = sc.next().toUpperCase();
 				//newAppointmentType = appointmentType;
 				String result = "";
 				result = damsobj.swapAppointment(patientID, appointmentID, appointmentType, newAppointmentID, newAppointmentType);
@@ -253,7 +247,7 @@ public class Client {
 	}
 	
 	public static void assignServer(String id) {
-		String hospital = id.substring(0, 3);
+		//String hospital = id.substring(0, 3);
 		try {
 			String name = "frontend";
 			damsobj = DAMSHelper.narrow(ncRef.resolve_str(name));
@@ -274,15 +268,16 @@ public class Client {
 	
 	public static boolean checkAdmin(String id) {
 		if(id.equals("MTLA0000") || id.equals("QUEA0000") || id.equals("SHEA0000")) {
-			System.out.println("Enter your password : ");
-			Scanner sc = new Scanner(System.in);
-			String pass = sc.next();
+			//System.out.println("Enter your password : ");
+			//Scanner sc = new Scanner(System.in);
+			//String pass = sc.next();
+			String pass = "password";
 			if(pass.equals("password")) {
 				System.out.println("Welcome Admin "+id);
 				return true;
 			}else {
 				System.out.println("Wrong Password\nAgain Enter your password : ");
-				pass = sc.next();
+				//pass = sc.next();
 				if(pass.equals("password")) {
 					System.out.println("Welcome Admin "+id);
 					return true;

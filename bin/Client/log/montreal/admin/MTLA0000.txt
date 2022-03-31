@@ -3,3 +3,31 @@
 2022-03-27 03:35:00 PM | Add Appointments | r ce 2 | null=r=ce=2=null=null
 2022-03-27 03:35:53 PM | Add Appointments | jhgfd jhgfd jhgf | null=jhgfd=jhgfd=jhgf=null=null
 2022-03-27 03:37:32 PM | Add Appointments | rtgh fdgf dfbgn | null=rtgh=fdgf=dfbgn=null=null
+2022-03-27 08:38:23 PM | Get Appointment Schedule | csc | 
+2022-03-27 08:38:52 PM | Get Appointment Schedule | cd | 
+2022-03-27 08:39:05 PM | Get Appointment Schedule | azsxdcfv | 
+2022-03-27 08:40:29 PM | Get Appointment Schedule | dxfg | 
+2022-03-28 04:10:00 PM | List Appointment Availibility | erfbg | 
+2022-03-28 04:10:17 PM | List Appointment Availibility | rgt6y7u8i | 
+2022-03-28 04:10:31 PM | List Appointment Availibility | tyghbjnkjo | listAppointmentAvailability->#=#=tyghbjnkjo=#=#=#
+2022-03-28 04:11:52 PM | Book Appointment | maf csh vd | bookAppointment->maf=csh=vd=#=#=#
+2022-03-28 04:20:45 PM | Swap Appointment | 9630 7410 m 8520 s | 
+2022-03-28 04:21:13 PM | Add Appointments | xdcfvgbhnj dxcfvgbhnj cfvgbh | 
+2022-03-28 04:37:12 PM | Add Appointments | wdefrg defrg dwg | 
+2022-03-28 04:38:04 PM | Add Appointments | efwrg ewg frgd | 
+2022-03-28 04:38:12 PM | Add Appointments | ferg frg rg | addAppointment->#=ferg=frg=rg=#=#
+2022-03-28 04:39:51 PM | Add Appointments | rftgh tgyk vghuj | addAppointment->#=rftgh=tgyk=vghuj=#=#
+2022-03-28 04:56:55 PM | Add Appointments | wdefrg fd df | 
+2022-03-28 04:57:11 PM | Add Appointments | defsrgb waesd wadef | 
+2022-03-28 04:57:38 PM | Add Appointments | fer wer ty | addAppointment->#=fer=wer=ty=#=#
+2022-03-28 05:01:14 PM | List Appointment Availibility | wefgraewfwefaf | 
+2022-03-28 05:01:41 PM | List Appointment Availibility | yfvuhbhk | 
+2022-03-28 05:03:49 PM | List Appointment Availibility | cvbnm | 
+2022-03-28 05:06:38 PM | List Appointment Availibility | 8520 | 
+2022-03-28 05:06:59 PM | List Appointment Availibility | 7410 | listAppointmentAvailability->#=#=7410=#=#=#
+2022-03-28 05:07:19 PM | List Appointment Availibility | 9630 | listAppointmentAvailability->#=#=9630=#=#=#
+2022-03-28 05:07:58 PM | List Appointment Availibility | 7896541230 | listAppointmentAvailability->#=#=7896541230=#=#=#
+2022-03-28 05:35:05 PM | Add Appointments | asd asdf qwe | 
+2022-03-28 05:35:30 PM | Add Appointments | qwe qwe qwe | 
+2022-03-28 05:35:44 PM | Add Appointments | qwe qw wq | 
+2022-03-28 05:36:01 PM | Add Appointments | asd sadxc asdxc | addAppointment->#=asd=sadxc=asdxc=#=#

@@ -1,0 +1,10 @@
+2022-03-30 04:39:01 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 04:40:00 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 04:41:31 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 04:43:14 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 06:46:54 PM Admin | Add appointment | QUEM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:24:34 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-03-30 07:34:06 PM Admin | Add appointment | QUEM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:41:26 PM Admin | Add appointment | SHEM300322-SURGEON-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:43:54 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEM300322 SURGEON | Success | Appointment booked Successfully
+2022-03-30 07:45:27 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Sherbrooke Hospital : -SURGEON-SHEM300322

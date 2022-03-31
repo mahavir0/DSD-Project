@@ -6,6 +6,7 @@ package Sequencer;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.MulticastSocket;
 
 /**
  * @author Harshal
@@ -17,19 +18,17 @@ public class Sequencer {
 	private static final int multicast_Port = 1234;
 	private static final String multicast_IPadress = "230.1.1.1";
 	private static final int sequencer_Port = 5555;
-	private static final String sequencer_IPAdress = "192.168.0.131";
+	private static final String sequencer_IPAdress = "127.0.0.131";
 	/**
 	 * 
 	 */
-	public Sequencer() {
-		// TODO Auto-generated constructor stub
-	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated constructor stub
+		checkWithRM();
 		DatagramSocket ds = null;
 		try 
 		{
@@ -39,7 +38,9 @@ public class Sequencer {
 			while (true)
 			{
 				DatagramPacket response = new DatagramPacket(responseFromFE, responseFromFE.length);
+				System.out.println("Waiting for a response from FrontEnd");
 				ds.receive(response);
+				System.out.println("Received a response from FrontEnd");
 				String requestString = new String( response.getData(), 0 , response.getLength());
 				System.out.println(requestString);
 				sendToRM(requestString);
@@ -49,6 +50,24 @@ public class Sequencer {
 			System.out.println("IO: " + e.getMessage());
 		} finally {
 			if (ds != null)
+				ds.close();
+		}
+	}
+	
+	public static void checkWithRM() {
+		DatagramSocket ds = null;
+		try {
+			ds = new DatagramSocket();
+			byte[] requestMessageToRM = "Connection Message".getBytes();
+			InetAddress ip = InetAddress.getByName(multicast_IPadress);
+			DatagramPacket request = new DatagramPacket(requestMessageToRM, requestMessageToRM.length);
+			request.setAddress(ip);
+			request.setPort(multicast_Port);
+			ds.send(request);
+		}catch(Exception e) {
+			System.out.println(e);
+		}finally {
+			if(ds!=null)
 				ds.close();
 		}
 	}
@@ -66,7 +85,7 @@ public class Sequencer {
 			request.setAddress(ip);
 			request.setPort(multicast_Port);
 			ds.send(request);
-			System.out.println("Sent to RM");
+			System.out.println("Sent a message to ReplicaManager");
 			sequencerId++;
 		}catch(Exception e) {
 			System.out.println("Exception :"+ e);

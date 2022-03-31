@@ -1,25 +1,23 @@
 /**
  * 
  */
-package ReplicaManager1;
+package ReplicaManager3;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
+
+import ReplicaManager1.SequencerMessage;
 
 /**
  * @author Mahavir
  *
  */
-public class RM1 {
+public class RM3 {
 	private static int nextSequenceId = 1;
 	private static Queue<SequencerMessage> pq = new LinkedList<SequencerMessage>();
 	//private static List<SequencerMessage> pq = new ArrayList<SequencerMessage>();
@@ -28,47 +26,46 @@ public class RM1 {
 	private static final String multicast_IPadress = "230.1.1.1";
 	private static final int FE_multicast_Port = 4321;
 	private static final String FE_multicast_IPadress = "230.1.1.10";
-	//private static final String replica_IPaddress = "127.0.1.1";
-	private static final int mtl_replica_port = 1111;
-	private static final int que_replica_port = 2222;
-	private static final int she_replica_port = 3333;
-	
-	public RM1() {
+	/**
+	 * 
+	 */
+	public RM3() {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		checkWithFE();
-		System.out.println("Replica Manager 1 Started");
+		System.out.println("Replica Manager 3 Started");
 		while(true) {
-			try {
-				receiveFromSequencer();
-			} catch (UnknownHostException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			receiveFromSequencer();
 		}
 	}
-	
-	public static void receiveFromSequencer() throws UnknownHostException{
+
+	public static void receiveFromSequencer() {
+		//System.out.println("Here");
 		MulticastSocket ms = null;
-		InetAddress ip = InetAddress.getByName(multicast_IPadress);
-		try{
+		try {
 			ms = new MulticastSocket(multicast_Port);
+			InetAddress ip = InetAddress.getByName(multicast_IPadress);
 			ms.joinGroup(ip);
 			byte[] buf = new byte[1000];
+			//System.out.println("in try");
 			while(true) {
 				DatagramPacket request = new DatagramPacket(buf, buf.length);
 				System.out.println("Waiting for response from sequencer");
 				ms.receive(request);
 				System.out.println("Recieved a response from sequencer");
 				String response = new String(request.getData(), 0, request.getLength());
-				System.out.println("Response in RM1 : "+response);
+				System.out.println("Response in RM3 : "+response);
 				String[] responseArray = response.split(";");
 				SequencerMessage sm = new SequencerMessage(Integer.parseInt(responseArray[0]),responseArray[1] + ";" +responseArray[2] + ";");
 				System.out.println("Sequence number got "+responseArray[0]);
-				message_list.add(sm);
+				pq.add(sm);
+				//Thread.sleep(1000);
 				getMessage();
 			}
 		} catch (Exception e) {
@@ -81,73 +78,27 @@ public class RM1 {
 	}
 	
 	public static void getMessage() {
+		//System.out.println("in getmessage");
 		System.out.println("Sequence number expected " + nextSequenceId);
-		Iterator<SequencerMessage> itr = message_list.iterator();
-		while(itr.hasNext()) {
-			SequencerMessage sm = itr.next();
-			if(sm.getsequenceId()==nextSequenceId) {
-				pq.add(sm);
-				sendToReplica(message_list.get(message_list.indexOf(sm)));
-				nextSequenceId++;
-			}
-		}
-	}
-	
-	public static int decideReplicaPort(String request) {
-		String[] temp = request.split(";");
-		List<String> params = new ArrayList<String>(Arrays.asList(temp[1].split("="))); 
-		if(temp[0].equals("listAppointmentAvailability"))
-			return mtl_replica_port;
-		if(params.get(0).equals("#")) {
-			if(params.get(1).substring(0,3).equals("MTL"))
-				return mtl_replica_port;
-			if(params.get(1).substring(0,3).equals("SHE"))
-				return she_replica_port;
-			if(params.get(1).substring(0,3).equals("QUE"))
-				return que_replica_port;
-		}else {
-			if(params.get(0).substring(0,3).equals("MTL"))
-				return mtl_replica_port;
-			if(params.get(0).substring(0,3).equals("SHE"))
-				return she_replica_port;
-			if(params.get(0).substring(0,3).equals("QUE"))
-				return que_replica_port;
-		}
-		return mtl_replica_port;
+//		Iterator<SequencerMessage> itr = pq.iterator();
+//		while(itr.hasNext()) {
+//			SequencerMessage sm = itr.next();
+//			nextSequenceId++;
+//			sendToReplica(sm);
+//			if(sm.getsequenceId()==nextSequenceId) {
+//				nextSequenceId++;
+//				sendToReplica(sm);
+//			}
+//		}
+		sendToReplica(pq.poll());
+		nextSequenceId++;
 	}
 	
 	public static void sendToReplica(SequencerMessage sm) {
-		// get result from specified server
-		System.out.println(sm.getrequestMessage());
-		int port = decideReplicaPort(sm.getrequestMessage());
-		String result1 = null;
-		DatagramSocket  ds=null;
-		try {
-			ds = new DatagramSocket(); 
-			InetAddress ip = InetAddress.getLocalHost();
-			byte buf[] = null;
-			buf = sm.getrequestMessage().getBytes();
-			DatagramPacket DpSend = new DatagramPacket(buf, buf.length, ip, port);
-			ds.send(DpSend);
-			System.out.println("Message Sent and waiting for response");
-			
-			Thread.sleep(1000);
-			
-			byte[] received = new byte[1000];
-			DatagramPacket DpReceive = new DatagramPacket(received, received.length);
-			ds.receive(DpReceive);
-			result1 = new String(DpReceive.getData());
-			System.out.println("Message received : "+result1);
-			String[] temp = result1.split("@");
-			result1 = temp[0];
-		}catch(Exception e) {
-			System.out.println(e);
-		}finally {
-			if(ds!=null)
-				ds.close();
-		}
+		// get result from specificed server
+		//System.out.println("in sendtoreplica");
 		String result = sm.getsequenceId() + ";" + sm.getrequestMessage();
-		sendToFrontEnd(result+result1+";");
+		sendToFrontEnd(result);
 	}
 	
 	public static void checkWithFE() {
@@ -167,7 +118,8 @@ public class RM1 {
 	}
 	
 	public static void sendToFrontEnd(String result) {
-		String final_result = "RM1;" + result + "Nuetral;";
+		String final_result = "RM3;" + result + "Added;" + "Success;";
+		//System.out.println("in send to fe");
 		System.out.println(final_result);
 		DatagramSocket ds = null;
 		try {
@@ -184,5 +136,4 @@ public class RM1 {
 				ds.close();
 		}
 	}
-
 }

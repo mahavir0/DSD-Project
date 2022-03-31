@@ -1,0 +1,3 @@
+2022-03-30 06:46:57 PM | Add Appointments | QUEM300322 DENTAL 1 | 
+2022-03-30 07:34:09 PM | Add Appointments | QUEM300322 DENTAL 1 | Appointmnet added Successfully -> Success
+2022-03-30 07:42:02 PM | Add Appointments | QUEM300322 PHYSICIAN 1 | Appointmnet added Successfully -> Success

@@ -1,0 +1,12 @@
+2022-03-30 04:39:01 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 04:40:00 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 04:41:31 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 04:43:14 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | 
+2022-03-30 06:42:42 PM Admin | Add appointment | SHEM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:14:24 PM Admin | Remove appointment | SHEM852013-DENTAL | Failed | Error : This Appointment Type does not Exist
+2022-03-30 07:24:33 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-03-30 07:34:50 PM Admin | Add appointment | SHEM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:41:59 PM Admin | Add appointment | QUEM300322-PHYSICIAN-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:42:46 PM Patient MTLP8520 | Book an appointment | MTLP8520 QUEM300322 PHYSICIAN | Success | Appointment booked Successfully
+2022-03-30 07:43:54 PM Patient MTLP8520 | Cancel an appointment | MTLP8520 QUEM300322 PHYSICIAN | Success | the Appointment has been cancelled for the patient MTLP8520
+2022-03-30 07:45:27 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 

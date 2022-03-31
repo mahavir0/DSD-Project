@@ -34,7 +34,7 @@ class FrontEndImpl extends DAMSPOA {
 	private ORB orb;
 	public ArrayList<ReplicaResponse> responseList = new ArrayList<ReplicaResponse>();
 	private final int sequencerPort = 5555;
-	private final String sequencerIPAdress = "192.168.0.131";
+	private final String sequencerIPAdress = "127.0.0.131";
 	public void setORB(ORB orb_val) {
 		orb = orb_val;
 	}
@@ -149,6 +149,7 @@ class FrontEndImpl extends DAMSPOA {
 			byte[] sendrequestmessage = sendrequest.getBytes();
 			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, sequencerPort);
 			ds.send(DpSend);
+			System.out.println("Sent a response to Sequencer");
 		}catch(Exception e) {
 			System.out.println("Exception "+ e);
 		}finally {
@@ -160,7 +161,7 @@ class FrontEndImpl extends DAMSPOA {
 	public void waitingForResponseFromRM(){ // ======================= 5 seconds timeout for to get all the responses ====================== //
 		try {
             System.out.println("Waiting for the responses of RMs...");
-            Thread.sleep(5000);
+            Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
@@ -172,14 +173,26 @@ class FrontEndImpl extends DAMSPOA {
 		String result = "";
 		ArrayList<ReplicaResponse> temp = this.getResponses();
 		System.out.println("Size : "+temp.size());
-		for(int i=0;i<temp.size();i++) {
-			System.out.println(i);
-			if(temp.get(i).getRequest().equals(function)) {
-				result = temp.get(i).getRequest() + "->" + temp.get(i).getParams();
-				temp.remove(i);
-				this.responseList = temp;
+		if(temp.size()==3) {
+			for(int i=0;i<temp.size();i++) {
+				System.out.println(i);
+				if(temp.get(i).getReplicaNo().equals("RM1")) {
+					result = temp.get(i).getResponse() + " -> " + temp.get(i).getStatus();
+					temp.clear();
+					this.responseList = temp;
+				}
+			}
+		}else if(temp.size()==2) {
+			for(int i=0;i<temp.size();i++) {
+				System.out.println(i);
+				if(temp.get(i).getRequest().equals(function)) {
+					result = temp.get(i).getRequest() + "->" + temp.get(i).getParams();
+					temp.remove(i);
+					this.responseList = temp;
+				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -239,7 +252,7 @@ public class FrontEnd {
 		    Thread t = new Thread(UDPServer);
 		    t.start();
 		    
-		    while(true) {
+		    for(;;) {
 		    	orb.run();
 		    }
 		}catch(Exception e) {
@@ -255,12 +268,14 @@ public class FrontEnd {
 			ms = new MulticastSocket(FE_multicast_Port);
 			ms.joinGroup(InetAddress.getByName(FE_multicast_IPadress));
 			byte[] buf = new byte[1000];
-			System.out.println("in FE receive");
+			//System.out.println("in FE receive");
 			while(true) {
 				DatagramPacket RMresponse = new DatagramPacket(buf, buf.length);
+				System.out.println("Waiting for a response from ReplicaManager");
 				ms.receive(RMresponse);
+				System.out.println("Received a response from ReplicaManager");
 				String response = new String(RMresponse.getData(), 0, RMresponse.getLength());
-				System.out.println("Response in FE : "+response);
+				System.out.println("Response in FrontEnd : "+response);
 				String[] result = response.split(";");
 				ReplicaResponse rr = new ReplicaResponse();
 				rr.setReplicaNo(result[0]);
@@ -274,9 +289,9 @@ public class FrontEnd {
 				//SequencerMessage sm = new SequencerMessage(Integer.parseInt(responseArray[0]),responseArray[1] + ";" +responseArray[2] + ";");
 			}
 		} catch (Exception e) {
-			System.out.println("Exception : " + e.getMessage());
+			System.out.println("Exception : " + e);
 		} finally {
-			System.out.println("in finaaly");
+			System.out.println("MulticastSocket is currently unavailable!");
 			if (ms != null)
 				ms.close();
 		}

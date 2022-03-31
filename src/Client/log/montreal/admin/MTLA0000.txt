@@ -7,3 +7,64 @@
 2022-03-27 08:38:52 PM | Get Appointment Schedule | cd | 
 2022-03-27 08:39:05 PM | Get Appointment Schedule | azsxdcfv | 
 2022-03-27 08:40:29 PM | Get Appointment Schedule | dxfg | 
+2022-03-28 04:10:00 PM | List Appointment Availibility | erfbg | 
+2022-03-28 04:10:17 PM | List Appointment Availibility | rgt6y7u8i | 
+2022-03-28 04:10:31 PM | List Appointment Availibility | tyghbjnkjo | listAppointmentAvailability->#=#=tyghbjnkjo=#=#=#
+2022-03-28 04:11:52 PM | Book Appointment | maf csh vd | bookAppointment->maf=csh=vd=#=#=#
+2022-03-28 04:20:45 PM | Swap Appointment | 9630 7410 m 8520 s | 
+2022-03-28 04:21:13 PM | Add Appointments | xdcfvgbhnj dxcfvgbhnj cfvgbh | 
+2022-03-28 04:37:12 PM | Add Appointments | wdefrg defrg dwg | 
+2022-03-28 04:38:04 PM | Add Appointments | efwrg ewg frgd | 
+2022-03-28 04:38:12 PM | Add Appointments | ferg frg rg | addAppointment->#=ferg=frg=rg=#=#
+2022-03-28 04:39:51 PM | Add Appointments | rftgh tgyk vghuj | addAppointment->#=rftgh=tgyk=vghuj=#=#
+2022-03-28 04:56:55 PM | Add Appointments | wdefrg fd df | 
+2022-03-28 04:57:11 PM | Add Appointments | defsrgb waesd wadef | 
+2022-03-28 04:57:38 PM | Add Appointments | fer wer ty | addAppointment->#=fer=wer=ty=#=#
+2022-03-28 05:01:14 PM | List Appointment Availibility | wefgraewfwefaf | 
+2022-03-28 05:01:41 PM | List Appointment Availibility | yfvuhbhk | 
+2022-03-28 05:03:49 PM | List Appointment Availibility | cvbnm | 
+2022-03-28 05:06:38 PM | List Appointment Availibility | 8520 | 
+2022-03-28 05:06:59 PM | List Appointment Availibility | 7410 | listAppointmentAvailability->#=#=7410=#=#=#
+2022-03-28 05:07:19 PM | List Appointment Availibility | 9630 | listAppointmentAvailability->#=#=9630=#=#=#
+2022-03-28 05:07:58 PM | List Appointment Availibility | 7896541230 | listAppointmentAvailability->#=#=7896541230=#=#=#
+2022-03-28 05:35:05 PM | Add Appointments | asd asdf qwe | 
+2022-03-28 05:35:30 PM | Add Appointments | qwe qwe qwe | 
+2022-03-28 05:35:44 PM | Add Appointments | qwe qw wq | 
+2022-03-28 05:36:01 PM | Add Appointments | asd sadxc asdxc | addAppointment->#=asd=sadxc=asdxc=#=#
+2022-03-28 07:52:53 PM | Swap Appointment | mtlp8520 mtlp231022 physician shem251023 dental | swapAppointment->mtlp8520=mtlp231022=physician=#=shem251023=dental
+2022-03-30 02:03:41 PM | Add Appointments | mtla852012 physician 6 | addAppointment->#=mtla852012=physician=6=#=#
+2022-03-30 03:36:12 PM | Add Appointments | mtla300222 dental 5 | Appointmnet added Successfully -> Success
+2022-03-30 03:36:44 PM | Book Appointment | mtlp8520 mtla300222 dental |  -> Success
+2022-03-30 03:38:42 PM | Add Appointments | mtlm300322 dental 5 | Appointmnet added Successfully -> Success
+2022-03-30 03:39:18 PM | Remove Appointments | mtlm300322 dental | The mtlm300322 has been removed from dental appointment. -> Success
+2022-03-30 03:47:08 PM | Add Appointments | MTLM300322 Dental 5 | Appointmnet added Successfully -> Success
+2022-03-30 03:47:36 PM | List Appointment Availibility | Dental | listAppointmentAvailability->#=#=Dental=#=#=#
+2022-03-30 04:36:42 PM | Book Appointment | MTLP8520 MTLM300322 Dental | There are no appointmnets for Dental -> Success
+2022-03-30 04:37:01 PM | List Appointment Availibility | Dental | , -> Success
+2022-03-30 04:37:42 PM | Add Appointments | MTLM300322 Surgeon 3 | Appointmnet added Successfully -> Success
+2022-03-30 04:38:23 PM | Add Appointments | MTLE310322 Dental 10 | Appointmnet added Successfully -> Success
+2022-03-30 04:38:50 PM | Book Appointment | MTLP0005 MTLE310322 Dental | Appointment booked Successfully -> Success
+2022-03-30 04:39:04 PM | Get Appointment Schedule | MTLP0005 | Montreal Hospital : ,Dental,MTLE310322,, -> Success
+2022-03-30 04:39:44 PM | Swap Appointment | MTLP0005 MTLE310322 Dental MTLM300322 Surgeon | the Appointment has been swapped for the patient MTLP0005 from old appointment id MTLE310322 to MTLM300322 -> Success
+2022-03-30 04:40:03 PM | Get Appointment Schedule | MTLP0005 | Montreal Hospital : ,Surgeon,MTLM300322,, -> Success
+2022-03-30 04:40:25 PM | List Appointment Availibility | Dental | MTLE310322 10,, -> Success
+2022-03-30 04:40:42 PM | List Appointment Availibility | Surgeon | MTLM300322 2,, -> Success
+2022-03-30 04:41:20 PM | Remove Appointments | MTLM300322 Surgeon | The MTLM300322 has been removed from and patient are rescheduled on MTLM010422 for Surgeon -> Success
+2022-03-30 04:41:34 PM | Get Appointment Schedule | MTLP0005 | Montreal Hospital : ,Surgeon,MTLM010422,, -> Success
+2022-03-30 04:41:54 PM | List Appointment Availibility | Surgeon | MTLM010422 2,, -> Success
+2022-03-30 04:42:17 PM | Cancel Appointment | MTLP0005 MTLM010422 | the Appointment has been cancelled for the patient MTLP0005 -> Success
+2022-03-30 04:42:26 PM | List Appointment Availibility | Surgeon | MTLM010422 3,, -> Success
+2022-03-30 04:42:46 PM | Remove Appointments | MTLM010422 Surgeon | The MTLM010422 has been removed from Surgeon appointment. -> Success
+2022-03-30 04:42:55 PM | List Appointment Availibility | Surgeon | , -> Success
+2022-03-30 04:43:17 PM | Get Appointment Schedule | MTLP0005 | , -> Success
+2022-03-30 04:43:34 PM | List Appointment Availibility | Dental | MTLE310322 10,, -> Success
+2022-03-30 06:47:28 PM | Add Appointments | MTLM300322 DENTAL 1 | 
+2022-03-30 06:52:14 PM | Book Appointment | MTLP8520 MTLM300322 DENTAL | 
+2022-03-30 07:18:39 PM | Add Appointments | MTLM300322 DENTAL 1 | addAppointment->#=MTLM300322=DENTAL=1=#=#
+2022-03-30 07:24:36 PM | Get Appointment Schedule | MTLP8520 | getAppointmentSchedule->MTLP8520=#=#=#=#=#
+2022-03-30 07:31:46 PM | Add Appointments | MTLM300322 DENTAL 1 | addAppointment->#=MTLM300322=DENTAL=1=#=#
+2022-03-30 07:33:35 PM | Add Appointments | MTLM300322 DENTAL 1 | Appointmnet added Successfully -> Success
+2022-03-30 07:41:01 PM | Add Appointments | MTLM300322 DENTAL 1 | Appointmnet added Successfully -> Success
+2022-03-30 07:45:30 PM | Get Appointment Schedule | MTLP8520 | ,Sherbrooke Hospital : ,SURGEON,SHEM300322 -> Nuetral
+2022-03-30 07:46:44 PM | List Appointment Availibility | DENTAL | MTLM300322 1,, -> Nuetral
+2022-03-30 07:46:59 PM | List Appointment Availibility | SURGEON | ,SHEM300322 0 -> Nuetral
