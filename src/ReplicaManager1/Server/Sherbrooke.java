@@ -62,7 +62,7 @@ public class Sherbrooke {
 				 DpReceive = new DatagramPacket(receive, receive.length);
 				 ds.receive(DpReceive);
 				 String received_func_str = new String(DpReceive.getData(),0,DpReceive.getLength());
-				 System.out.println("Request Received : "+received_func_str);
+				 //System.out.println("Request Received : "+received_func_str);
 				 //System.out.println(received_func_str);//<----------------------------------------------------------------------------------------------testing
 				 String[] temp = received_func_str.split(";");
 				 String func = temp[0];
@@ -85,17 +85,19 @@ public class Sherbrooke {
 					 String[] ls = sheobj.getAppointmentSchedule(parameters.get(0));
 					 result = String.join(",", ls).trim();
 				 }else if(func.equals("cancelAppointment")) {
-					 result = sheobj.cancelAppointment(parameters.get(0), parameters.get(1));
+					 result = sheobj.cancelAppointment(parameters.get(0), parameters.get(1), parameters.get(2));
 				 }else if(func.equals("swapAppointment")) {
 					 result = sheobj.swapAppointment(parameters.get(0), parameters.get(1), parameters.get(2), parameters.get(4), parameters.get(5));
+				 }else if(func.equals("fault")) {
+					 result = sheobj.handleFault();
 				 }
 				 //System.out.println(result); //<----------------------------------------------------------------------------------------------testing
 				 result+="@";
-				 System.out.println("Result response : "+result);
+				 //System.out.println("Result response : "+result);
 				 byte[] send_result = result.getBytes();
 				 DatagramPacket send_reply = new DatagramPacket(send_result,send_result.length,DpReceive.getAddress(),DpReceive.getPort());
 				 ds.send(send_reply); 
-				 System.out.println("Response sent to Replica Manager");
+				 //System.out.println("Response sent to Replica Manager");
 			 }
 		 }catch(Exception e) {
 			 System.out.println(e);
@@ -167,6 +169,11 @@ class SHEImpl {
 	private static int mtl_port = 7890;
 	private static int que_port = 4560;
 	private static int she_port = 1230;
+	
+	public String handleFault() {
+		app_data.clear();
+		return "Fault has been cleared & performing the data consistency";
+	}
 	
 	public String addAppointment(String appointmentID, String appoinmentType, String[] capacity) {
 		// TODO Auto-generated method stub

@@ -8,7 +8,6 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.omg.CORBA.ORB;
 import org.omg.CosNaming.NameComponent;
@@ -20,7 +19,6 @@ import org.omg.PortableServer.POAHelper;
 import DAMSApp.DAMS;
 import DAMSApp.DAMSHelper;
 import DAMSApp.DAMSPOA;
-import ReplicaManager1.SequencerMessage;
 
 /**
  * @author Mahavir
@@ -28,21 +26,27 @@ import ReplicaManager1.SequencerMessage;
  */
 class FrontEndImpl extends DAMSPOA {
 
-	
+	public static int fault_invoker = 0;
 	//String params = patientID + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + newAppointmentID + "=" + newAppoinmentType;
 	//return params;
 	private ORB orb;
 	public ArrayList<ReplicaResponse> responseList = new ArrayList<ReplicaResponse>();
 	private final int sequencerPort = 5555;
 	private final String sequencerIPAdress = "127.0.0.131";
+	private int mon_fault = 0;
+	private int que_fault = 0;
+	private int she_fault = 0;
+	private final int RM1_f_port = 1060;
+	private final int RM2_f_port = 1065;
+	private final int RM3_f_port = 1070;
 	public void setORB(ORB orb_val) {
 		orb = orb_val;
 	}
 	
 	@Override
-	public String addAppointment(String appointmentID, String appoinmentType, String capacity) {
+	public String addAppointment(String adminID, String appointmentID, String appoinmentType, String capacity) {
 		// TODO Auto-generated method stub
-		String params = "#" + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + "#" + "=" + "#"; 
+		String params = adminID + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + "#" + "=" + "#"; 
 		this.sendtoSequencer("addAppointment", params);
 		
 		this.waitingForResponseFromRM();
@@ -52,10 +56,10 @@ class FrontEndImpl extends DAMSPOA {
 	}
 
 	@Override
-	public String removeAppointment(String appointmentID, String appoinmentType) {
+	public String removeAppointment(String adminID, String appointmentID, String appoinmentType) {
 		// TODO Auto-generated method stub
 		//return "remove appointment";
-		String params = "#" + "=" + appointmentID + "=" + appoinmentType + "=" + "#" + "=" + "#" + "=" + "#";
+		String params = adminID + "=" + appointmentID + "=" + appoinmentType + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("removeAppointment", params);
 		
 		this.waitingForResponseFromRM();
@@ -64,10 +68,10 @@ class FrontEndImpl extends DAMSPOA {
 	}
 
 	@Override
-	public String listAppointmentAvailability(String appoinmentType) {
+	public String listAppointmentAvailability(String adminID, String appoinmentType) {
 		// TODO Auto-generated method stub
 		//return "list appointment";
-		String params = "#" + "=" + "#" + "=" + appoinmentType + "=" + "#" + "=" + "#" + "=" + "#";
+		String params = adminID + "=" + "#" + "=" + appoinmentType + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("listAppointmentAvailability", params);
 
 		this.waitingForResponseFromRM();
@@ -101,10 +105,10 @@ class FrontEndImpl extends DAMSPOA {
 	}
 
 	@Override
-	public String cancelAppointment(String patientID, String appointmentID) {
+	public String cancelAppointment(String patientID, String appointmentID, String appointmentType) {
 		// TODO Auto-generated method stub
 		//return "cancel appointment";
-		String params = patientID + "=" + appointmentID + "=" + "#" + "=" + "#" + "=" + "#" + "=" + "#";
+		String params = patientID + "=" + appointmentID + "=" + appointmentType + "=" + "#" + "=" + "#" + "=" + "#";
 		this.sendtoSequencer("cancelAppointment", params);
 
 		this.waitingForResponseFromRM();
@@ -173,6 +177,12 @@ class FrontEndImpl extends DAMSPOA {
 		String result = "";
 		ArrayList<ReplicaResponse> temp = this.getResponses();
 		System.out.println("Size : "+temp.size());
+		fault_invoker++;
+		System.out.println("Fault Invoker Count : " +fault_invoker);
+		if(fault_invoker==5) {
+			notifyRMforFault(RM1_f_port);
+			System.out.println(RM1_f_port + " RM1 notified for the fault ");
+		}
 		if(temp.size()==3) {
 			for(int i=0;i<temp.size();i++) {
 				System.out.println(i);
@@ -186,8 +196,17 @@ class FrontEndImpl extends DAMSPOA {
 			for(int i=0;i<temp.size();i++) {
 				System.out.println(i);
 				if(temp.get(i).getRequest().equals(function)) {
-					result = temp.get(i).getRequest() + "->" + temp.get(i).getParams();
-					temp.remove(i);
+					result = temp.get(i).getResponse() + "->" + temp.get(i).getStatus();
+					temp.clear();
+					this.responseList = temp;
+				}
+			}
+		}else {
+			for(int i=0;i<temp.size();i++) {
+				System.out.println(i);
+				if(temp.get(i).getRequest().equals(function)) {
+					result = temp.get(i).getResponse() + "->" + temp.get(i).getStatus();
+					temp.clear();
 					this.responseList = temp;
 				}
 			}
@@ -196,7 +215,22 @@ class FrontEndImpl extends DAMSPOA {
 		return result;
 	}
 	
-	public void notifyRMforFault() { // ============================== Notify the Replica Manager of the faulty replica ==================== //
+	public void notifyRMforFault(int port) { // ============================== Notify the Replica Manager of the faulty replica ==================== //
+		String f_message = "fault message;"+port+";";
+		DatagramSocket ds = null;
+		try {
+			ds = new DatagramSocket();
+			InetAddress ip = InetAddress.getLocalHost();
+			byte[] sendrequestmessage = f_message.getBytes();
+			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, port);
+			ds.send(DpSend);
+			System.out.println("Sent a response to Sequencer");
+		}catch(Exception e) {
+			System.out.println(e);
+		}finally {
+			if(ds!=null)
+				ds.close();
+		}
 		
 	}
 	
@@ -275,7 +309,10 @@ public class FrontEnd {
 				ms.receive(RMresponse);
 				System.out.println("Received a response from ReplicaManager");
 				String response = new String(RMresponse.getData(), 0, RMresponse.getLength());
+				if(response.equals("Connection Message"))
+					continue;
 				System.out.println("Response in FrontEnd : "+response);
+				
 				String[] result = response.split(";");
 				ReplicaResponse rr = new ReplicaResponse();
 				rr.setReplicaNo(result[0]);

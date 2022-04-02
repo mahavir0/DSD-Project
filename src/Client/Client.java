@@ -31,12 +31,13 @@ public class Client {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Scanner sc = null;
 		try {
 			orb = ORB.init(args, null);
 			objRef = orb.resolve_initial_references("NameService");
 			ncRef = NamingContextExtHelper.narrow(objRef);
 			System.out.println("Welcome to DAMS System");
-			Scanner sc = new Scanner(System.in);
+			sc = new Scanner(System.in);
 			while(true) {
 				System.out.println("Press 1 to access the system : ");
 				System.out.println("Press 0 exit : ");
@@ -94,8 +95,10 @@ public class Client {
 			}else if(ch.equals("3")) {
 				System.out.println("Enter the Appointment ID : ");
 				appointmentID = sc.next().toUpperCase();
+				System.out.println("Enter the Appointment Type : ");
+				appointmentType = sc.next().toUpperCase();
 				String result = "";
-				result = damsobj.cancelAppointment(patientID, appointmentID);
+				result = damsobj.cancelAppointment(patientID, appointmentID,appointmentType);
 				System.out.println(result);
 				clientLogger(patientID,"Cancel Appointment",patientID+" "+appointmentID,result);
 			}else if(ch.equals("4")){
@@ -118,7 +121,7 @@ public class Client {
 				System.out.println("Please Enter the right choice");
 			}
 		}
-		
+		sc.close();
 	}
 	
 	public static void adminTask(String id) throws IOException {
@@ -140,23 +143,23 @@ public class Client {
 				//String[] capstringlist = new String[1];
 				//capstringlist[0]=cap;
 				String result = "";
-				result = damsobj.addAppointment(appointmentID, appointmentType, cap);
+				result = damsobj.addAppointment(id,appointmentID, appointmentType, cap);
 				System.out.println(result);
-				clientLogger(id,"Add Appointments",appointmentID+" "+appointmentType+" "+cap,result);
+				clientLogger(id,"Add Appointments",id+" "+appointmentID+" "+appointmentType+" "+cap,result);
 			}else if(ch.equals("2")) {
 				System.out.println("Enter the Appointment ID : ");
 				appointmentID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment Type : ");
 				appointmentType = sc.next().toUpperCase();
 				String result = "";
-				result = damsobj.removeAppointment(appointmentID, appointmentType);
+				result = damsobj.removeAppointment(id,appointmentID, appointmentType);
 				System.out.println(result);
 				clientLogger(id,"Remove Appointments",appointmentID+" "+appointmentType,result);
 			}else if(ch.equals("3")) {
 				System.out.println("Enter the Appointment Type : ");
 				appointmentType = sc.next().toUpperCase();
 				String result = "";
-				result = damsobj.listAppointmentAvailability(appointmentType);
+				result = damsobj.listAppointmentAvailability(id,appointmentType);
 				System.out.println(appointmentType+"-"+result);
 				clientLogger(id,"List Appointment Availibility",appointmentType,String.join(",", result));
 			}else if(ch.equals("4")) {
@@ -182,8 +185,10 @@ public class Client {
 				patientID = sc.next().toUpperCase();
 				System.out.println("Enter the Appointment ID : ");
 				appointmentID = sc.next().toUpperCase();
+				System.out.println("Enter the Appointment Type : ");
+				appointmentType = sc.next().toUpperCase();
 				String result = "";
-				result = damsobj.cancelAppointment(patientID, appointmentID);
+				result = damsobj.cancelAppointment(patientID, appointmentID,appointmentType);
 				System.out.println(result);
 				clientLogger(id,"Cancel Appointment",patientID+" "+appointmentID,result);
 			}else if(ch.equals("7")) {
@@ -208,6 +213,7 @@ public class Client {
 				System.out.println("Please Enter the right choice");
 			}
 		}
+		sc.close();
 	}
 	
 	public static void clientLogger(String user,String requestType, String params,String result) throws IOException {

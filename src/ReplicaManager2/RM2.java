@@ -60,7 +60,10 @@ public class RM2 {
 				ms.receive(request);
 				System.out.println("Recieved a response from sequencer");
 				String response = new String(request.getData(), 0, request.getLength());
+				if(response.equals("Connection Message"))
+					continue;
 				System.out.println("Response in RM2 : "+response);
+				
 				String[] responseArray = response.split(";");
 				SequencerMessage sm = new SequencerMessage(Integer.parseInt(responseArray[0]),responseArray[1] + ";" +responseArray[2] + ";");
 				System.out.println("Sequence number got "+responseArray[0]);

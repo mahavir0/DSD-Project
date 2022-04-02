@@ -16,3 +16,12 @@
 2022-03-28 08:31:13 PM | Get Appointment Schedule | MTLP8520 | getAppointmentSchedule->MTLP8520=#=#=#=#=#
 2022-03-30 07:42:49 PM | Book Appointment | MTLP8520 QUEM300322 PHYSICIAN | Appointment booked Successfully -> Success
 2022-03-30 07:43:57 PM | Swap Appointment | MTLP8520 QUEM300322 PHYSICIAN SHEM300322 SURGEON | This operation cannot be perfomed by the patient MTLP8520 because he/she neither booked the appointment nor canceled it -> Failed
+2022-03-31 11:27:33 AM | Book Appointment | MTLP8520 MTLM310322 DENTAL | Appointment booked Successfully -> Success
+2022-03-31 11:27:58 AM | Book Appointment | MTLP8520 MTLM310322 DENTAL | You cannot further book the appointments for the DENTAL -> Failed
+2022-03-31 02:10:45 PM | Book Appointment | MTLP8520 MTLM310322 DENTAL | Appointment booked Successfully -> Success
+2022-03-31 02:11:14 PM | Swap Appointment | MTLP8520 MTLM310322 DENTAL MTLM030422 DENTAL | Added->Success
+2022-03-31 02:12:09 PM | Get Appointment Schedule | MTLP8520 | Montreal Hospital : ,DENTAL,MTLM030422,,->Nuetral
+2022-03-31 02:12:26 PM | Get Appointment Schedule | MTLP8520 | Added->Success
+2022-03-31 02:28:28 PM | Get Appointment Schedule | MTLP8520 | Added->Success
+2022-03-31 02:28:34 PM | Get Appointment Schedule | MTLP8520 | Montreal Hospital : ,SURGEON,MTLM310322,, -> Nuetral
+2022-03-31 02:29:42 PM | Get Appointment Schedule | MTLP8520 | Montreal Hospital : ,SURGEON,MTLM310322,, -> Nuetral

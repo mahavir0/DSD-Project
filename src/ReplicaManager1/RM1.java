@@ -32,6 +32,8 @@ public class RM1 {
 	private static final int mtl_replica_port = 1111;
 	private static final int que_replica_port = 2222;
 	private static final int she_replica_port = 3333;
+	private static final int RM1_f_port = 1060;
+	//private static final String RM1_f_IPAddress = "127.5.5.5";
 	
 	public RM1() {
 		// TODO Auto-generated constructor stub
@@ -41,15 +43,102 @@ public class RM1 {
 		// TODO Auto-generated method stub
 		checkWithFE();
 		System.out.println("Replica Manager 1 Started");
-		while(true) {
+		Runnable SequencerReceiver = () -> {
 			try {
 				receiveFromSequencer();
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		};
+		Runnable FaultMessageReceiver = () -> {
+			receiveFaultMessage();
+		};
+		Thread t1 = new Thread(SequencerReceiver);
+		Thread t2 = new Thread(FaultMessageReceiver);
+		t1.start();
+		t2.start();
+//		while(true) {
+//			try {
+//				receiveFromSequencer();
+//				receiveFaultMessage();
+//			} catch (UnknownHostException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+	}
+	
+	public static void receiveFaultMessage() {
+		DatagramSocket  ds=null;
+		try {
+			ds = new DatagramSocket(RM1_f_port,InetAddress.getLocalHost());
+			byte[] faultmessage = new byte[1000];
+			System.out.println("Fault Handler started .........");
+			while(true) {
+				DatagramPacket FaultResponse = new DatagramPacket(faultmessage, faultmessage.length);
+				ds.receive(FaultResponse);
+				String FaultMessageString = new String(FaultResponse.getData(), 0 , FaultResponse.getLength());
+				System.out.println("Handling the Fault in RM1 : " + FaultMessageString);
+				RemoveFault(FaultMessageString);
+			}
+		}catch(Exception e) {
+			System.out.println("Exception in receiveFaultMessage() : "+e);
+		}finally {
+			ds.close();
 		}
 	}
+	
+	public static void RemoveFault(String message) {
+		DatagramSocket dsf = null;
+		try {
+			dsf = new DatagramSocket();
+			byte[] faultmessage = message.getBytes();
+			DatagramPacket DpSend = new DatagramPacket(faultmessage,faultmessage.length,InetAddress.getLocalHost(),mtl_replica_port);
+			DatagramPacket DpSend1 = new DatagramPacket(faultmessage,faultmessage.length,InetAddress.getLocalHost(),she_replica_port);
+			DatagramPacket DpSend2 = new DatagramPacket(faultmessage,faultmessage.length,InetAddress.getLocalHost(),que_replica_port);
+			dsf.send(DpSend);
+			dsf.send(DpSend1);
+			dsf.send(DpSend2);
+			System.out.println("Wiping Data and Reperfoming the Operation !!!");
+		}catch(Exception e) {
+			System.out.println(e);
+		}finally {
+			dsf.close();
+		}
+		
+		Iterator<SequencerMessage> itr = pq.iterator();
+		while(itr.hasNext()) {
+			SequencerMessage sm = itr.next();
+			DatagramSocket  ds=null;
+			try {
+				ds = new DatagramSocket();
+				int port = decideReplicaPort(sm.getrequestMessage());
+				InetAddress ip = InetAddress.getLocalHost();
+				byte buf[] = null;
+				buf = sm.getrequestMessage().getBytes();
+				DatagramPacket DpSend = new DatagramPacket(buf, buf.length, ip, port);
+				ds.send(DpSend);
+				System.out.println("Message Sent to Replica : " + sm.getrequestMessage());
+				
+				Thread.sleep(50);
+				
+				byte[] received = new byte[1000];
+				DatagramPacket DpReceive = new DatagramPacket(received, received.length);
+				ds.receive(DpReceive);
+				String result1 = new String(DpReceive.getData());
+				System.out.println("Message received : "+result1);
+				String[] temp = result1.split("@");
+				result1 = temp[0];
+				System.out.println("Message Received from Replica : " + sm.getrequestMessage());
+			}catch(Exception e) {
+				System.out.println(e);
+			}
+		}
+		System.out.println("Fault has been recovered !!!........");
+	}
+	
+	
 	
 	public static void receiveFromSequencer() throws UnknownHostException{
 		MulticastSocket ms = null;
@@ -64,7 +153,10 @@ public class RM1 {
 				ms.receive(request);
 				System.out.println("Recieved a response from sequencer");
 				String response = new String(request.getData(), 0, request.getLength());
+				if(response.equals("Connection Message"))
+					continue;
 				System.out.println("Response in RM1 : "+response);
+				
 				String[] responseArray = response.split(";");
 				SequencerMessage sm = new SequencerMessage(Integer.parseInt(responseArray[0]),responseArray[1] + ";" +responseArray[2] + ";");
 				System.out.println("Sequence number got "+responseArray[0]);
@@ -96,8 +188,13 @@ public class RM1 {
 	public static int decideReplicaPort(String request) {
 		String[] temp = request.split(";");
 		List<String> params = new ArrayList<String>(Arrays.asList(temp[1].split("="))); 
-		if(temp[0].equals("listAppointmentAvailability"))
+		System.out.println(params);
+		if(params.get(0).substring(0,3).equals("MTL"))
 			return mtl_replica_port;
+		if(params.get(0).substring(0,3).equals("SHE"))
+			return she_replica_port;
+		if(params.get(0).substring(0,3).equals("QUE"))
+			return que_replica_port;
 		if(params.get(0).equals("#")) {
 			if(params.get(1).substring(0,3).equals("MTL"))
 				return mtl_replica_port;

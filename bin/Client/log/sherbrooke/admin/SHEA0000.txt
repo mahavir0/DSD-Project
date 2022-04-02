@@ -1,0 +1,5 @@
+2022-03-30 06:42:45 PM | Add Appointments | SHEM300322 DENTAL 1 | 
+2022-03-30 07:13:49 PM | List Appointment Availibility | DENTAL | listAppointmentAvailability->#=#=DENTAL=#=#=#
+2022-03-30 07:14:27 PM | Remove Appointments | SHEM852013 DENTAL | 
+2022-03-30 07:34:53 PM | Add Appointments | SHEM300322 DENTAL 1 | Appointmnet added Successfully -> Success
+2022-03-30 07:41:29 PM | Add Appointments | SHEM300322 SURGEON 1 | Appointmnet added Successfully -> Success

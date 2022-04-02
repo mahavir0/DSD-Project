@@ -1,0 +1,88 @@
+2022-03-30 03:47:05 PM Admin | Add appointment | MTLM300322-Dental-[5] | Success | Appointmnet added Successfully
+2022-03-30 04:36:39 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM300322 Dental | Failed | There are no appointmnets for Dental
+2022-03-30 04:36:58 PM Admin | List appointment availability | Dental | Success | , 
+2022-03-30 04:37:39 PM Admin | Add appointment | MTLM300322-Surgeon-[3] | Success | Appointmnet added Successfully
+2022-03-30 04:38:20 PM Admin | Add appointment | MTLE310322-Dental-[10] | Success | Appointmnet added Successfully
+2022-03-30 04:38:47 PM Patient MTLP0005 | Book an appointment | MTLP0005 MTLE310322 Dental | Success | Appointment booked Successfully
+2022-03-30 04:39:01 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | Montreal Hospital : -Dental-MTLE310322--
+2022-03-30 04:39:41 PM Patient MTLP0005 | Cancel an appointment | MTLP0005 MTLE310322 Dental | Success | the Appointment has been cancelled for the patient MTLP0005
+2022-03-30 04:39:41 PM Patient MTLP0005 | Book an appointment | MTLP0005 MTLM300322 Surgeon | Success | Appointment booked Successfully
+2022-03-30 04:39:41 PM Patient MTLP0005 | Swap an appointment | MTLP0005 MTLE310322 Dental MTLM300322 Surgeon | Success | the Appointment has been swapped for the patient MTLP0005 from old appointment id MTLE310322 to MTLM300322
+2022-03-30 04:40:00 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | Montreal Hospital : -Surgeon-MTLM300322--
+2022-03-30 04:40:22 PM Admin | List appointment availability | Dental | Success | MTLE310322 10, , 
+2022-03-30 04:40:39 PM Admin | List appointment availability | Surgeon | Success | MTLM300322 2, , 
+2022-03-30 04:41:17 PM Admin | Add appointment | MTLM010422-Surgeon-[2, MTLP0005] | Success | Appointmnet added Successfully.
+2022-03-30 04:41:17 PM Admin | Remove appointment | MTLM300322-Surgeon | Success | The MTLM300322 has been removed from and patient are rescheduled on MTLM010422 for Surgeon
+2022-03-30 04:41:31 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | Montreal Hospital : -Surgeon-MTLM010422--
+2022-03-30 04:41:51 PM Admin | List appointment availability | Surgeon | Success | MTLM010422 2, , 
+2022-03-30 04:42:14 PM Patient MTLP0005 | Cancel an appointment | MTLP0005 MTLM010422 | Success | the Appointment has been cancelled for the patient MTLP0005
+2022-03-30 04:42:22 PM Admin | List appointment availability | Surgeon | Success | MTLM010422 3, , 
+2022-03-30 04:42:43 PM Admin | Remove appointment | MTLM010422-Surgeon | Success | The MTLM010422 has been removed from Surgeon appointment.
+2022-03-30 04:42:52 PM Admin | List appointment availability | Surgeon | Success | , 
+2022-03-30 04:43:14 PM Patient MTLP0005 | Get appointments schedule | MTLP0005 | Success | -
+2022-03-30 04:43:31 PM Admin | List appointment availability | Dental | Success | MTLE310322 10, , 
+2022-03-30 06:47:25 PM Admin | Add appointment | MTLM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 06:52:11 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM300322 DENTAL | Success | Appointment booked Successfully
+2022-03-30 07:13:46 PM Admin | List appointment availability | DENTAL | Success | , 
+2022-03-30 07:18:36 PM Admin | Add appointment | MTLM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:24:34 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -
+2022-03-30 07:31:43 PM Admin | Add appointment | MTLM300322-DENTAL-[] | Failed | It already contains the appointment.
+2022-03-30 07:33:32 PM Admin | Add appointment | MTLM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:40:58 PM Admin | Add appointment | MTLM300322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-30 07:42:46 PM Patient MTLP8520 | Book an appointment | MTLP8520 QUEM300322 PHYSICIAN | Failed | Appointment booked Successfully;Success
+2022-03-30 07:43:54 PM Patient MTLP8520 | Cancel an appointment | MTLP8520 QUEM300322 PHYSICIAN | Failed | the Appointment has been cancelled for the patient MTLP8520;Success
+2022-03-30 07:43:54 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEM300322 SURGEON | Failed | Appointment booked Successfully;Success
+2022-03-30 07:43:54 PM Patient MTLP8520 | Swap an appointment | MTLP8520 QUEM300322 PHYSICIAN SHEM300322 SURGEON | Failed | This operation cannot be perfomed by the patient MTLP8520 because he/she neither booked the appointment nor canceled it
+2022-03-30 07:45:27 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -Sherbrooke Hospital : -SURGEON-SHEM300322
+2022-03-30 07:46:41 PM Admin | List appointment availability | DENTAL | Success | MTLM300322 1, , 
+2022-03-30 07:46:56 PM Admin | List appointment availability | SURGEON | Success | , SHEM300322 0
+2022-03-31 10:56:15 AM Admin | Add appointment | MTLM310322-DENTAL-[2] | Success | Appointmnet added Successfully
+2022-03-31 11:27:30 AM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM310322 DENTAL | Success | Appointment booked Successfully
+2022-03-31 11:27:55 AM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM310322 DENTAL | Failed | You cannot further book the appointments for the DENTAL
+2022-03-31 01:50:43 PM Admin | Add appointment | MTLM310322-DENTAL-[2] | Success | Appointmnet added Successfully
+2022-03-31 01:52:08 PM Admin | Add appointment | MTLM010422-PHYSICIAN-[2] | Success | Appointmnet added Successfully
+2022-03-31 01:52:59 PM Admin | Add appointment | MTLM020422-SURGEON-[5] | Success | Appointmnet added Successfully
+2022-03-31 01:53:09 PM Admin | List appointment availability | DENTAL | Success | MTLM310322 2, , 
+2022-03-31 01:53:37 PM Admin | List appointment availability | PHYSICIAN | Success | MTLM010422 2, , 
+2022-03-31 01:54:09 PM Admin | List appointment availability | DENTAL | Success | MTLM310322 2, , 
+2022-03-31 01:59:24 PM Admin | Add appointment | MTLM310322-DENTAL-[5] | Success | Appointmnet added Successfully
+2022-03-31 02:00:21 PM Admin | Add appointment | MTLM310322-PHYSICIAN-[5] | Success | Appointmnet added Successfully
+2022-03-31 02:05:31 PM Admin | Add appointment | MTLM310322-DENTAL-[1] | Success | Appointmnet added Successfully
+2022-03-31 02:06:04 PM Admin | Add appointment | MTLM010422-PHYSICIAN-[2] | Success | Appointmnet added Successfully
+2022-03-31 02:06:21 PM Admin | Add appointment | MTLM020422-SURGEON-[3] | Success | Appointmnet added Successfully
+2022-03-31 02:06:57 PM Admin | Add appointment | MTLM030422-DENTAL-[2] | Success | Appointmnet added Successfully.
+2022-03-31 02:07:25 PM Admin | Add appointment | MTLM040422-DENTAL-[3] | Success | Appointmnet added Successfully.
+2022-03-31 02:07:52 PM Admin | List appointment availability | DENTAL | Success | MTLM040422 3, MTLM310322 1, MTLM030422 2, , 
+2022-03-31 02:10:42 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM310322 DENTAL | Success | Appointment booked Successfully
+2022-03-31 02:11:11 PM Patient MTLP8520 | Cancel an appointment | MTLP8520 MTLM310322 DENTAL | Success | the Appointment has been cancelled for the patient MTLP8520
+2022-03-31 02:11:11 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM030422 DENTAL | Success | Appointment booked Successfully
+2022-03-31 02:11:11 PM Patient MTLP8520 | Swap an appointment | MTLP8520 MTLM310322 DENTAL MTLM030422 DENTAL | Failed | This operation cannot be perfomed by the patient MTLP8520 because he/she neither booked the appointment nor canceled it
+2022-03-31 02:12:06 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM030422--
+2022-03-31 02:12:23 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM030422--
+2022-03-31 02:26:10 PM Admin | Add appointment | MTLM310322-SURGEON-[1] | Success | Appointmnet added Successfully
+2022-03-31 02:27:00 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM310322 SURGEON | Success | Appointment booked Successfully
+2022-03-31 02:28:25 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -SURGEON-MTLM310322--
+2022-03-31 02:28:31 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -SURGEON-MTLM310322--
+2022-03-31 02:29:39 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -SURGEON-MTLM310322--
+2022-03-31 03:03:00 PM Admin | Add appointment | MTLM310322-DENTAL-[4] | Success | Appointmnet added Successfully
+2022-03-31 03:03:25 PM Admin | Add appointment | MTLM010422-SURGEON-[5] | Success | Appointmnet added Successfully
+2022-03-31 03:03:48 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM040122 DENTAL | Failed | Appointmnet is not available on this day
+2022-03-31 03:04:06 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -
+2022-03-31 03:04:49 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM310322 DENTAL | Success | Appointment booked Successfully
+2022-03-31 03:04:52 PM Admin | Add appointment | MTLM310322-DENTAL-[] | Failed | It already contains the appointment.
+2022-03-31 03:04:52 PM Admin | Add appointment | MTLM010422-SURGEON-[] | Failed | It already contains the appointment.
+2022-03-31 03:04:52 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM040122 DENTAL | Failed | Appointmnet is not available on this day
+2022-03-31 03:04:52 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM310322--
+2022-03-31 03:04:52 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM310322 DENTAL | Failed | You cannot further book the appointments for the DENTAL
+2022-03-31 03:52:42 PM Admin | Add appointment | MTLM310322-DENTAL-[5] | Success | Appointmnet added Successfully
+2022-03-31 03:53:00 PM Admin | List appointment availability | DENTAL | Success | MTLM310322 5, , 
+2022-03-31 03:53:17 PM Admin | Add appointment | MTLM010422-DENTAL-[2] | Success | Appointmnet added Successfully.
+2022-03-31 03:53:26 PM Admin | List appointment availability | DENTAL | Success | MTLM010422 2, MTLM310322 5, , 
+2022-03-31 03:54:01 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM010422 DENTAL | Success | Appointment booked Successfully
+2022-03-31 03:54:04 PM Admin | Add appointment | MTLM310322-DENTAL-[5] | Success | Appointmnet added Successfully
+2022-03-31 03:54:04 PM Admin | List appointment availability | DENTAL | Success | MTLM310322 5, , 
+2022-03-31 03:54:04 PM Admin | Add appointment | MTLM010422-DENTAL-[2] | Success | Appointmnet added Successfully.
+2022-03-31 03:54:04 PM Admin | List appointment availability | DENTAL | Success | MTLM010422 2, MTLM310322 5, , 
+2022-03-31 03:54:04 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM010422 DENTAL | Success | Appointment booked Successfully
+2022-04-02 01:08:26 PM Admin | Add appointment | MTLM230222-DENTAL-[4] | Success | Appointmnet added Successfully
+2022-04-02 01:13:13 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM230222 DENTAL | Success | Appointment booked Successfully

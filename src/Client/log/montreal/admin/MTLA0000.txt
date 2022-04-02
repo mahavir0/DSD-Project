@@ -68,3 +68,34 @@
 2022-03-30 07:45:30 PM | Get Appointment Schedule | MTLP8520 | ,Sherbrooke Hospital : ,SURGEON,SHEM300322 -> Nuetral
 2022-03-30 07:46:44 PM | List Appointment Availibility | DENTAL | MTLM300322 1,, -> Nuetral
 2022-03-30 07:46:59 PM | List Appointment Availibility | SURGEON | ,SHEM300322 0 -> Nuetral
+2022-03-31 10:56:18 AM | Add Appointments | MTLM310322 DENTAL 2 | Appointmnet added Successfully -> Success
+2022-03-31 01:50:46 PM | Add Appointments | MTLM310322 DENTAL 2 | Appointmnet added Successfully->Success
+2022-03-31 01:52:11 PM | Add Appointments | MTLM010422 PHYSICIAN 2 | Appointmnet added Successfully->Success
+2022-03-31 01:53:02 PM | Add Appointments | MTLM020422 SURGEON 5 | Appointmnet added Successfully->Success
+2022-03-31 01:53:12 PM | List Appointment Availibility | DENTAL | MTLM310322 2,,->Nuetral
+2022-03-31 01:53:40 PM | List Appointment Availibility | PHYSICIAN | Added->Success
+2022-03-31 01:54:12 PM | List Appointment Availibility | DENTAL | MTLM310322 2,,->Nuetral
+2022-03-31 01:59:27 PM | Add Appointments | MTLM310322 DENTAL 5 | Added->Success
+2022-03-31 02:00:24 PM | Add Appointments | MTLM310322 PHYSICIAN 5 | Added->Success
+2022-03-31 02:05:34 PM | Add Appointments | MTLM310322 DENTAL 1 | Appointmnet added Successfully -> Success
+2022-03-31 02:06:07 PM | Add Appointments | MTLM010422 PHYSICIAN 2 | Appointmnet added Successfully -> Success
+2022-03-31 02:06:24 PM | Add Appointments | MTLM020422 SURGEON 3 | Appointmnet added Successfully -> Success
+2022-03-31 02:07:00 PM | Add Appointments | MTLM030422 DENTAL 2 | Appointmnet added Successfully. -> Success
+2022-03-31 02:07:28 PM | Add Appointments | MTLM040422 DENTAL 3 | Appointmnet added Successfully. -> Success
+2022-03-31 02:07:55 PM | List Appointment Availibility | DENTAL | MTLM040422 3,MTLM310322 1,MTLM030422 2,, -> Nuetral
+2022-03-31 02:26:13 PM | Add Appointments | MTLM310322 SURGEON 1 | Appointmnet added Successfully -> Success
+2022-03-31 02:27:03 PM | Book Appointment | MTLP8520 MTLM310322 SURGEON | Added->Success
+2022-03-31 03:03:03 PM | Add Appointments | MTLM310322 DENTAL 4 | Appointmnet added Successfully -> Success
+2022-03-31 03:03:28 PM | Add Appointments | MTLM010422 SURGEON 5 | Appointmnet added Successfully -> Success
+2022-03-31 03:03:51 PM | Book Appointment | MTLP8520 MTLM040122 DENTAL | Appointmnet is not available on this day -> Failed
+2022-03-31 03:04:08 PM | Get Appointment Schedule | MTLP8520 | , -> Nuetral
+2022-03-31 03:04:52 PM | Book Appointment | MTLP8520 MTLM310322 DENTAL | Appointment booked Successfully -> Success
+2022-03-31 03:52:45 PM | Add Appointments | MTLM310322 DENTAL 5 | Appointmnet added Successfully -> Success
+2022-03-31 03:53:03 PM | List Appointment Availibility | DENTAL | MTLM310322 5,, -> Nuetral
+2022-03-31 03:53:20 PM | Add Appointments | MTLM010422 DENTAL 2 | Appointmnet added Successfully. -> Success
+2022-03-31 03:53:29 PM | List Appointment Availibility | DENTAL | MTLM010422 2,MTLM310322 5,, -> Nuetral
+2022-03-31 03:54:04 PM | Book Appointment | MTLP8520 MTLM010422 DENTAL | Appointment booked Successfully -> Success
+2022-04-02 01:08:29 PM | Add Appointments | MTLM230222 DENTAL 4 | Added->Success
+2022-04-02 01:13:16 PM | Book Appointment | MTLP8520 MTLM230222 DENTAL | Appointment booked Successfully -> Success
+2022-04-02 01:35:51 PM | Add Appointments | MTLA0000 MTLM230222 DENTAL 4 | Appointmnet added Successfully -> Success
+2022-04-02 01:43:35 PM | Add Appointments | MTLA0000 MTLM230222 DENTAL 4 | Appointmnet added Successfully -> Success
