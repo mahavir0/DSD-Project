@@ -1,0 +1,38 @@
+Date:2022-04-03 01:03:49 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 01:03:49 PM|Action:Appointment BookedQUEE121212;Success| Response:true
+Date:2022-04-03 01:06:04 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 01:06:04 PM|Action:appointmentbook| Response:false
+Date:2022-04-03 01:06:57 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 01:06:57 PM|Action:Appointment not BookedQUEE121212| Response:false
+Date:2022-04-03 01:07:34 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:08:42 PM|Action:Appointment BookedMTLA140222;Success| Response:true
+Date:2022-04-03 02:08:42 PM|Action:Appointment BookedMTLA140222;Success| Response:true
+Date:2022-04-03 02:09:03 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:09:03 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:09:39 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:09:39 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:09:39 PM|Action:Appointment BookedSHEE121212| Response:true
+Date:2022-04-03 02:09:39 PM|Action:Appointment BookedSHEE121212| Response:true
+Date:2022-04-03 02:09:59 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:09:59 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:09:59 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:10:39 PM|Action:Appointment CancelledMTLA140222| Response:true
+Date:2022-04-03 02:16:17 PM|Action:Appointment not SwappedMTLA140222DENTALtoSHEN121212DENTAL| Response:false
+Date:2022-04-03 02:16:17 PM|Action:Sending request to mtl server for swapappointmentMTLA140222DENTALtoSHEN121212DENTAL| Response:true
+Date:2022-04-03 02:19:39 PM|Action:Appointment not SwappedQUEE121212PHYSICIANPHYSICIANtoQUEE121212PHYSICIAN| Response:false
+Date:2022-04-03 02:20:21 PM|Action:Appointment not SwappedQUEE121212PHYSICIANtoSHEN121212PHYSICIAN| Response:false
+Date:2022-04-03 03:20:42 PM|Action:Appointment BookedMTLA140222;Success| Response:true
+Date:2022-04-03 03:20:42 PM|Action:Appointment BookedMTLA140222;Success| Response:true
+Date:2022-04-03 03:20:57 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 03:20:57 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 03:21:36 PM|Action:Appointment CancelledMTLA140222| Response:true
+Date:2022-04-03 03:38:35 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 03:38:35 PM|Action:Appointment BookedSHEE121212| Response:true
+Date:2022-04-03 03:38:35 PM|Action:Appointment BookedSHEE121212| Response:true
+Date:2022-04-03 03:39:00 PM|Action:Appointment CancelledSHEE121212| Response:true
+Date:2022-04-03 03:39:00 PM|Action:Appointment BookedMTLN140222;Success| Response:true
+Date:2022-04-03 03:39:00 PM|Action:Appointment SwappedSHEE121212PHYSICIANtoMTLN140222PHYSICIAN;Success| Response:true
+Date:2022-04-03 03:39:00 PM|Action:Sending request to SHE server for swapappointmentSHEE121212PHYSICIANtoMTLN140222PHYSICIAN| Response:true
+Date:2022-04-03 03:39:47 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 03:39:47 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 03:39:47 PM|Action:getAppointmentSchedule| Response:true

@@ -121,7 +121,6 @@ public class Client {
 				System.out.println("Please Enter the right choice");
 			}
 		}
-		sc.close();
 	}
 	
 	public static void adminTask(String id) throws IOException {
@@ -213,7 +212,6 @@ public class Client {
 				System.out.println("Please Enter the right choice");
 			}
 		}
-		sc.close();
 	}
 	
 	public static void clientLogger(String user,String requestType, String params,String result) throws IOException {

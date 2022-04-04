@@ -1,0 +1,7 @@
+Date:2022-04-02 05:28:56 PM|Action:addAppointmentSHEA0000|SHEM020422|PHYSICIAN| Response:A
+Date:2022-04-02 05:29:15 PM|Action:List of Appointments| Response:success
+Date:2022-04-02 05:29:15 PM|Action:List of Appointments| Response:success
+Date:2022-04-02 05:29:15 PM|Action:List of Appointments| Response:success
+Date:2022-04-04 01:55:13 PM|Action:addAppointmentSHEA0000|SHEM250322|PHYSICIAN| Response:A
+Date:2022-04-04 01:55:58 PM|Action:addAppointmentSHEA0000|SHEE260322|DENTAL| Response:A
+Date:2022-04-04 03:40:05 PM|Action:addAppointmentSHEA0000|SHEM232221|PHYSICIAN| Response:A

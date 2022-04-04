@@ -55,7 +55,7 @@ public class Sherbrooke {
 		 DatagramSocket  ds=null;
 		 try {
 			 ds = new DatagramSocket(3333);
-			 byte[] receive = new byte[1000];
+			 byte[] receive = new byte[10000];
 			 System.out.println("UDP Server for Sherbrooke is running on port : 3333");
 			 while(true) {
 				 DatagramPacket DpReceive = null;
@@ -112,7 +112,7 @@ public class Sherbrooke {
 		 DatagramSocket  ds=null;
 		 try {
 			 ds = new DatagramSocket(1230);
-			 byte[] receive = new byte[5000];
+			 byte[] receive = new byte[10000];
 			 System.out.println("UDP Internal Server for Sherbrooke is running on port : 1230");
 			 while(true) {
 				 DatagramPacket DpReceive = null;
@@ -196,14 +196,14 @@ class SHEImpl {
 					//System.out.println("It does not contain "+ appointmentID);
 					cap = caplist; //<---------------------------------------------
 					temp.put(appointmentID, cap);
-					result =  "Appointmnet added Successfully.";
+					result =  "Appointment added Successfully.";
 					status = "Success";
 				}
 			}else { //if appointmentType does not exist then add everything for the appointment.
 				cap = caplist; //<-----------------------------------------------------
 				temp.put(appointmentID, cap);
 				app_data.put(appoinmentType,temp);
-				result = "Appointmnet added Successfully";
+				result = "Appointment added Successfully";
 				status = "Success";
 			}
 			//Server Log
@@ -762,7 +762,7 @@ class SHEImpl {
 		DateFormat df = new SimpleDateFormat(fmt_str);
 		String log_date= df.format(logDate);
 		pw.println(log_date+" "+user+" | "+requestType+" | "+ params +" | "+status+" | "+ result); //add the lof into logfile
-		System.out.println(log_date+" "+user+" | "+requestType+" | "+ params +" | "+status+" | "+ result);
+		System.out.println("[INFO][LOG] " +log_date+" "+user+" | "+requestType+" | "+ params +" | "+status+" | "+ result);
 		pw.close(); //close and save the resources.
 	}
 	
@@ -783,7 +783,7 @@ class SHEImpl {
 			/**
 			 * 
 			 */
-			byte[] received = new byte[5000];
+			byte[] received = new byte[10000];
 			DatagramPacket DpReceive = new DatagramPacket(received, received.length);
 			ds.receive(DpReceive);
 			result = new String(DpReceive.getData());

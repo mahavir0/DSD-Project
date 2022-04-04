@@ -11,7 +11,7 @@ public class AppointmentModel
     public static final String Appointment_Afternoon = "Afternoon";
     public static final String Appointment_Evening = "Evening";
     public static final String Physician = "Physician";
-    public static final String Surgon = "Surgon";
+    public static final String Surgon = "Surgeon";
     public static final String Dental = "Dental";
     public static final int Appointment_Full = -1;
     public static final int Already_Registered = 0;
@@ -112,10 +112,11 @@ public class AppointmentModel
         this.AppointmentCapacity = AppointmentCapacity;
     }
 
-    public int getAppointmentRemainCapacity() 
-    {
+   
+    public int getAppointmentRemainCapacity() {
         return AppointmentCapacity - RegisteredClients.size();
     }
+
     public String getAppointmentDate() 
     {
         return AppointmentDate;

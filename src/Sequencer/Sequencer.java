@@ -31,17 +31,17 @@ public class Sequencer {
 		DatagramSocket ds = null;
 		try 
 		{
-			ds = new DatagramSocket(sequencer_Port,InetAddress.getByName(sequencer_IPAdress));
-			byte[] responseFromFE = new byte[1000];
-			System.out.println("Sequencer UDP Server 5555 Started............");
+			ds = new DatagramSocket(sequencer_Port,InetAddress.getLocalHost());
+			byte[] responseFromFE = new byte[10000];
+			System.out.println("[INFO] Sequencer UDP Server 5555 Started............");
 			while (true)
 			{
 				DatagramPacket response = new DatagramPacket(responseFromFE, responseFromFE.length);
-				System.out.println("Waiting for a response from FrontEnd");
+				System.out.println("[INFO] Waiting for a response from FrontEnd");
 				ds.receive(response);
-				System.out.println("Received a response from FrontEnd");
+				//System.out.println("Received a response from FrontEnd");
 				String requestString = new String( response.getData(), 0 , response.getLength());
-				System.out.println(requestString);
+				System.out.println("[INFO] Received message from FrontEnd => " + requestString);
 				sendToRM(requestString);
 			}
 
@@ -73,7 +73,7 @@ public class Sequencer {
 	
 	public static void sendToRM(String resuestString) {
 		final String resuestToRM = sequencerId + ";" + resuestString;
-		System.out.println(resuestToRM);
+		System.out.println("[MESSAGE] Sequencer Message ==> " + resuestToRM);
 		
 		DatagramSocket ds = null;
 		try {
@@ -84,10 +84,10 @@ public class Sequencer {
 			request.setAddress(ip);
 			request.setPort(multicast_Port);
 			ds.send(request);
-			System.out.println("Sent a message to ReplicaManager");
+			System.out.println("[INFO] Sent a message to ReplicaManager");
 			sequencerId++;
 		}catch(Exception e) {
-			System.out.println("Exception :"+ e);
+			System.out.println("[ERROR] Exception :"+ e);
 		}finally {
 			if(ds!=null)
 				ds.close();

@@ -5,6 +5,8 @@ import java.rmi.RemoteException;
 
 public interface AppointmentManagementInterface extends Remote {
 
+	void testHashMap() throws RemoteException;
+	
     String AddAppointment(String AppointmentID, String AppointmentType, int Capacity) throws RemoteException;
 
     String RemoveAppointment(String AppointmentID, String AppointmentType) throws RemoteException;

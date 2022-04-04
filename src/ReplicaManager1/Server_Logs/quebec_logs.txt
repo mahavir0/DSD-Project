@@ -17,3 +17,19 @@
 2022-03-31 02:29:39 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
 2022-03-31 03:04:05 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
 2022-03-31 03:04:52 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-03 02:30:15 PM Patient MTLP8520 | Book an appointment | MTLP8520 QUEM852012 DENTAL | Failed | There are no appointmnets for DENTAL
+2022-04-03 03:53:37 PM Patient MTLP0001 | Get appointments schedule | MTLP0001 | Success | 
+2022-04-03 03:55:27 PM Admin | Add appointment | QUEM250322-DENTAL-[4] | Success | Appointmnet added Successfully
+2022-04-03 03:55:39 PM Patient MTLP0001 | Get appointments schedule | MTLP0001 | Success | 
+2022-04-03 04:08:42 PM Patient MTLP8520 | Book an appointment | MTLP8520 QUEM852012 DENTAL | Failed | There are no appointmnets for DENTAL
+2022-04-03 04:25:41 PM Patient MTLP0001 | Get appointments schedule | MTLP0001 | Success | 
+2022-04-03 04:25:44 PM Admin | Add appointment | QUEM230322-DENTAL-[5] | Success | Appointmnet added Successfully
+2022-04-03 04:25:45 PM Admin | Add appointment | QUEM240322-PHYSICIAN-[5] | Success | Appointmnet added Successfully
+2022-04-03 04:25:48 PM Patient MTLP0001 | Book an appointment | MTLP0001 QUEM230322 DENTAL | Success | Appointment booked Successfully
+2022-04-04 01:57:03 PM Admin | Add appointment | QUEM270322-DENTAL-[8] | Success | Appointmnet added Successfully
+2022-04-04 01:58:00 PM Admin | Add appointment | QUEA280322-SURGEON-[6] | Success | Appointmnet added Successfully
+2022-04-04 01:58:49 PM Admin | List appointment availability | DENTAL | Success | QUEM270322 8, MTLM230322 4, SHEE260322 2
+2022-04-04 02:07:24 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-04 03:43:49 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-04 04:55:44 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-04 05:25:20 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 

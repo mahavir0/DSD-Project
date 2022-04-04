@@ -1,0 +1,32 @@
+Date:2022-04-03 12:12:58 PM|Action:Appointment BookedSHEA121212| Response:true
+Date:2022-04-03 12:13:22 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 12:16:41 PM|Action:Appointment CancelledSHEA121212| Response:true
+Date:2022-04-03 12:16:41 PM|Action:Appointment BookedMTLE140222;Success| Response:true
+Date:2022-04-03 12:16:41 PM|Action:Appointment SwappedSHEA121212DENTALtoMTLE140222DENTAL| Response:true
+Date:2022-04-03 12:18:43 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 12:18:43 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:14:43 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:14:43 PM|Action:Appointment BookedQUEN121212;Success| Response:true
+Date:2022-04-03 02:14:43 PM|Action:Appointment BookedQUEN121212| Response:true
+Date:2022-04-03 02:15:19 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:15:19 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:15:19 PM|Action:Appointment BookedMTLA140222;Success| Response:true
+Date:2022-04-03 02:15:19 PM|Action:Appointment BookedMTLA140222| Response:true
+Date:2022-04-03 02:15:29 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:15:29 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:15:29 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:16:45 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:16:45 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:16:45 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:17:43 PM|Action:Appointment CancelledMTLA140222| Response:true
+Date:2022-04-03 02:17:43 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:17:43 PM|Action:Appointment BookedQUEE121212| Response:true
+Date:2022-04-03 02:17:43 PM|Action:Appointment SwappedMTLA140222DENTALtoQUEE121212DENTAL| Response:true
+Date:2022-04-03 02:17:43 PM|Action:Sending request to mtl server for swapappointmentMTLA140222DENTALtoQUEE121212DENTAL| Response:true
+Date:2022-04-03 02:18:16 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:18:16 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:18:16 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:18:49 PM|Action:Appointment BookedSHEE121212| Response:true
+Date:2022-04-03 02:18:58 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:18:58 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 02:18:58 PM|Action:getAppointmentSchedule| Response:true

@@ -15,3 +15,31 @@
 2022-03-31 02:29:39 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
 2022-03-31 03:04:05 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
 2022-03-31 03:04:52 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-02 05:28:55 PM Admin | Add appointment | SHEM020422-PHYSICIAN-[5] | Success | Appointmnet added Successfully
+2022-04-02 05:29:14 PM Admin | List appointment availability | PHYSICIAN | Success | SHEM020422 5, , 
+2022-04-02 05:36:59 PM Patient SHEP8520 | Book an appointment | SHEP8520 MTLM020422 DENTAL | Failed | Appointment booked Successfully;Success
+2022-04-02 05:51:30 PM Patient SHEP8520 | Book an appointment | SHEP8520 MTLM020422 DENTAL | Failed | Appointment booked Successfully;Success
+2022-04-02 05:56:50 PM Patient SHEP8520 | Book an appointment | SHEP8520 MTLM020422 DENTAL | Failed | You cannot further book the appointments for the DENTAL;Failed
+2022-04-02 06:01:47 PM Patient SHEP8520 | Book an appointment | SHEP8520 MTLM020422 DENTAL | Failed | You cannot further book the appointments for the DENTAL;Failed
+2022-04-03 03:52:07 PM Admin | Add appointment | SHEM210322-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-03 03:52:43 PM Patient MTLP0001 | Book an appointment | MTLP0001 SHEM210322 DENTAL | Success | Appointment booked Successfully
+2022-04-03 03:53:37 PM Patient MTLP0001 | Get appointments schedule | MTLP0001 | Success | Sherbrooke Hospital : -DENTAL-SHEM210322
+2022-04-03 03:54:19 PM Admin | Add appointment | SHEM220322-DENTAL-[4] | Success | Appointment added Successfully.
+2022-04-03 03:54:45 PM Admin | Add appointment | SHEM240322-PHYSICIAN-[4] | Success | Appointment added Successfully
+2022-04-03 03:55:39 PM Patient MTLP0001 | Get appointments schedule | MTLP0001 | Success | Sherbrooke Hospital : -DENTAL-SHEM210322
+2022-04-03 03:55:52 PM Patient MTLP0001 | Book an appointment | MTLP0001 SHEM220322 DENTAL | Success | Appointment booked Successfully
+2022-04-03 04:16:10 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEM852012 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-03 04:25:41 PM Patient MTLP0001 | Get appointments schedule | MTLP0001 | Success | 
+2022-04-03 04:25:42 PM Admin | Add appointment | SHEM210322-PHYSICIAN-[4] | Success | Appointment added Successfully
+2022-04-03 04:25:43 PM Admin | Add appointment | SHEM220322-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-03 04:25:46 PM Patient MTLP0001 | Book an appointment | MTLP0001 SHEM210322 PHYSICIAN | Success | Appointment booked Successfully
+2022-04-03 04:25:47 PM Patient MTLP0001 | Book an appointment | MTLP0001 SHEM220322 DENTAL | Success | Appointment booked Successfully
+2022-04-04 01:55:14 PM Admin | Add appointment | SHEM250322-PHYSICIAN-[10] | Success | Appointment added Successfully
+2022-04-04 01:55:58 PM Admin | Add appointment | SHEE260322-DENTAL-[2] | Success | Appointment added Successfully
+2022-04-04 02:07:24 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-04 03:40:05 PM Admin | Add appointment | SHEM232221-PHYSICIAN-[5] | Success | Appointment added Successfully
+2022-04-04 03:43:26 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEM232221 PHYSICIAN | Success | Appointment booked Successfully
+2022-04-04 03:43:49 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Sherbrooke Hospital : -PHYSICIAN-SHEM232221
+2022-04-04 03:45:16 PM Patient MTLP8520 | Cancel an appointment | MTLP8520 SHEM232221 PHYSICIAN | Success | the Appointment has been cancelled for the patient MTLP8520
+2022-04-04 04:55:44 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-04 05:25:20 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 

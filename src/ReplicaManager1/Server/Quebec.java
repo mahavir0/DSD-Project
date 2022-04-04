@@ -51,7 +51,7 @@ public class Quebec {
 		 DatagramSocket  ds=null;
 		 try {
 			 ds = new DatagramSocket(2222);
-			 byte[] receive = new byte[1000];
+			 byte[] receive = new byte[10000];
 			 System.out.println("UDP Server for Quebec is running on port : 2222");
 			 while(true) {
 				 DatagramPacket DpReceive = null;
@@ -108,7 +108,7 @@ public class Quebec {
 		 DatagramSocket  ds=null;
 		 try {
 			 ds = new DatagramSocket(4560);
-			 byte[] receive = new byte[5000];
+			 byte[] receive = new byte[10000];
 			 System.out.println("UDP Internal Server for Quebec is running on port : 4560");
 			 while(true) {
 				 DatagramPacket DpReceive = null;
@@ -765,7 +765,7 @@ class QUEImpl {
 		DateFormat df = new SimpleDateFormat(fmt_str);
 		String log_date= df.format(logDate);
 		pw.println(log_date+" "+user+" | "+requestType+" | "+ params +" | "+status+" | "+ result); //add the lof into logfile
-		System.out.println(log_date+" "+user+" | "+requestType+" | "+ params +" | "+status+" | "+ result);
+		System.out.println("[INFO][LOG] " +log_date+" "+user+" | "+requestType+" | "+ params +" | "+status+" | "+ result);
 		pw.close(); //close and save the resources.
 	}
 	
@@ -786,7 +786,7 @@ class QUEImpl {
 			/**
 			 * 
 			 */
-			byte[] received = new byte[5000];
+			byte[] received = new byte[10000];
 			DatagramPacket DpReceive = new DatagramPacket(received, received.length);
 			ds.receive(DpReceive);
 			result = new String(DpReceive.getData());

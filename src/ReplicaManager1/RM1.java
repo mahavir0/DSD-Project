@@ -28,11 +28,15 @@ public class RM1 {
 	private static final String multicast_IPadress = "230.1.1.1";
 	private static final int FE_multicast_Port = 4321;
 	private static final String FE_multicast_IPadress = "230.1.1.10";
+//	private static final String RMs_multicast_IPadress = "230.1.1.20";
+//	private static final int RMs_multicast_Port = 1793;
 	//private static final String replica_IPaddress = "127.0.1.1";
+	private static final String Fault_Multicast_IPAdrress = "230.1.1.30";
+	private static final int Fault_Multicast_Port = 3496;
 	private static final int mtl_replica_port = 1111;
 	private static final int que_replica_port = 2222;
 	private static final int she_replica_port = 3333;
-	private static final int RM1_f_port = 1060;
+	//private static final int RM1_f_port = 1060;
 	//private static final String RM1_f_IPAddress = "127.5.5.5";
 	
 	public RM1() {
@@ -42,7 +46,7 @@ public class RM1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		checkWithFE();
-		System.out.println("Replica Manager 1 Started");
+		System.out.println("[INFO] Replica Manager 1 Started");
 		Runnable SequencerReceiver = () -> {
 			try {
 				receiveFromSequencer();
@@ -54,38 +58,41 @@ public class RM1 {
 		Runnable FaultMessageReceiver = () -> {
 			receiveFaultMessage();
 		};
+//		Runnable ReceiveFromAnotherRMs = () -> {
+//			receiveFromAnotherRMs();
+//		};
 		Thread t1 = new Thread(SequencerReceiver);
 		Thread t2 = new Thread(FaultMessageReceiver);
+//		Thread t4 = new Thread(ReceiveFromAnotherRMs);
 		t1.start();
 		t2.start();
-//		while(true) {
-//			try {
-//				receiveFromSequencer();
-//				receiveFaultMessage();
-//			} catch (UnknownHostException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
+//		t4.start();
 	}
 	
 	public static void receiveFaultMessage() {
-		DatagramSocket  ds=null;
+		MulticastSocket ms = null;
 		try {
-			ds = new DatagramSocket(RM1_f_port,InetAddress.getLocalHost());
-			byte[] faultmessage = new byte[1000];
-			System.out.println("Fault Handler started .........");
+			InetAddress ip = InetAddress.getByName(Fault_Multicast_IPAdrress);
+			ms = new MulticastSocket(Fault_Multicast_Port);
+			ms.joinGroup(ip);
+			byte[] faultmessage = new byte[10000];
+			System.out.println("[INFO] Fault Handler started .........");
 			while(true) {
 				DatagramPacket FaultResponse = new DatagramPacket(faultmessage, faultmessage.length);
-				ds.receive(FaultResponse);
+				ms.receive(FaultResponse);
 				String FaultMessageString = new String(FaultResponse.getData(), 0 , FaultResponse.getLength());
-				System.out.println("Handling the Fault in RM1 : " + FaultMessageString);
-				RemoveFault(FaultMessageString);
+				String[] temp = FaultMessageString.split(";");
+				if(temp[1].equals("Connection Message"))
+					continue;
+				if(temp[1].equals("RM1")) {
+					System.out.println("Handling the Fault in RM1 : " + FaultMessageString);
+					RemoveFault(FaultMessageString);
+				}
 			}
 		}catch(Exception e) {
-			System.out.println("Exception in receiveFaultMessage() : "+e);
+			System.out.println("[ERROR] Exception in receiveFaultMessage() : "+e);
 		}finally {
-			ds.close();
+			ms.close();
 		}
 	}
 	
@@ -100,7 +107,7 @@ public class RM1 {
 			dsf.send(DpSend);
 			dsf.send(DpSend1);
 			dsf.send(DpSend2);
-			System.out.println("Wiping Data and Reperfoming the Operation !!!");
+			System.out.println("[INFO] Wiping Data and Reperfoming the Operation !!!");
 		}catch(Exception e) {
 			System.out.println(e);
 		}finally {
@@ -119,61 +126,110 @@ public class RM1 {
 				buf = sm.getrequestMessage().getBytes();
 				DatagramPacket DpSend = new DatagramPacket(buf, buf.length, ip, port);
 				ds.send(DpSend);
-				System.out.println("Message Sent to Replica : " + sm.getrequestMessage());
+				System.out.println("[INFO] Message Sent to Replica : " + sm.getrequestMessage());
 				
 				Thread.sleep(50);
 				
-				byte[] received = new byte[1000];
+				byte[] received = new byte[10000];
 				DatagramPacket DpReceive = new DatagramPacket(received, received.length);
 				ds.receive(DpReceive);
 				String result1 = new String(DpReceive.getData());
-				System.out.println("Message received : "+result1);
+				System.out.println("[INFO] Message received : "+result1);
 				String[] temp = result1.split("@");
 				result1 = temp[0];
-				System.out.println("Message Received from Replica : " + sm.getrequestMessage());
+				System.out.println("[INFO] Message Received from Replica : " + sm.getrequestMessage());
 			}catch(Exception e) {
 				System.out.println(e);
 			}
 		}
-		System.out.println("Fault has been recovered !!!........");
+		System.out.println("[INFO] Fault has been recovered !!!........");
 	}
 	
+/*
+	public static void receiveFromAnotherRMs() {
+		MulticastSocket ms = null;
+		try {
+			InetAddress ip = InetAddress.getByName(RMs_multicast_IPadress);
+			ms = new MulticastSocket(RMs_multicast_Port);
+			ms.joinGroup(ip);
+			byte[] buf = new byte[10000];
+			while(true) {
+				DatagramPacket request = new DatagramPacket(buf, buf.length);
+				ms.receive(request);
+				String response = new String(request.getData(), 0, request.getLength());
+				System.out.println("[INFO] Response of RMs : "+response);
+				String[] responseArray = response.split(";");
+				SequencerMessage sm = new SequencerMessage(Integer.parseInt(responseArray[0]),responseArray[1] + ";" +responseArray[2] + ";");
+				if(message_list.contains(sm))
+					continue;
+				else {
+					message_list.add(sm);
+					//getMessage();
+				}
+			}
+		}catch(Exception e) {
+			System.out.println("[ERROR] exception in receive form another RMS : "+e);
+		}finally {
+			System.out.println("[ERROR] Cannot receive from another RMs");
+			if(ms!=null)
+				ms.close();
+		}
+	}
 	
-	
+	public static void sendToAnotherRMs(String sequencerRequest) {
+		DatagramSocket ds = null;
+		try {
+			ds = new DatagramSocket();
+			byte[] requestMessageToRMs = sequencerRequest.getBytes();
+			InetAddress ip = InetAddress.getByName(RMs_multicast_IPadress);
+			DatagramPacket request = new DatagramPacket(requestMessageToRMs, requestMessageToRMs.length,ip,RMs_multicast_Port);;
+			ds.send(request);
+			System.out.println("[INFO] notified Another RM for received Request of Sequencer");
+		}catch(Exception e) {
+			System.out.println("[ERROR] Exception in RMs Connection : "+e);
+		}finally {
+			System.out.println("ReplicaManagers link is broken !");
+			if(ds!=null)
+				ds.close();
+		}
+	}
+*/
 	public static void receiveFromSequencer() throws UnknownHostException{
 		MulticastSocket ms = null;
 		InetAddress ip = InetAddress.getByName(multicast_IPadress);
 		try{
 			ms = new MulticastSocket(multicast_Port);
 			ms.joinGroup(ip);
-			byte[] buf = new byte[1000];
+			byte[] buf = new byte[10000];
 			while(true) {
 				DatagramPacket request = new DatagramPacket(buf, buf.length);
-				System.out.println("Waiting for response from sequencer");
+				System.out.println("[INFO] Waiting for response from sequencer");
 				ms.receive(request);
-				System.out.println("Recieved a response from sequencer");
+				System.out.println("[INFO] Recieved a response from sequencer");
 				String response = new String(request.getData(), 0, request.getLength());
 				if(response.equals("Connection Message"))
 					continue;
-				System.out.println("Response in RM1 : "+response);
+				System.out.println("[INFO] Response in RM1 : "+response);
+				
+//				sendToAnotherRMs(response);
 				
 				String[] responseArray = response.split(";");
 				SequencerMessage sm = new SequencerMessage(Integer.parseInt(responseArray[0]),responseArray[1] + ";" +responseArray[2] + ";");
-				System.out.println("Sequence number got "+responseArray[0]);
+				System.out.println("[INFO] Sequence number got "+responseArray[0]);
 				message_list.add(sm);
 				getMessage();
 			}
 		} catch (Exception e) {
-			System.out.println("Exception : " + e.getMessage());
+			System.out.println("[ERROR] Exception in Receive from sequencer : " + e.getMessage());
 		} finally {
-			System.out.println("in finaaly");
+			System.out.println("[ERROR] in finaaly");
 			if (ms != null)
 				ms.close();
 		}
 	}
 	
 	public static void getMessage() {
-		System.out.println("Sequence number expected " + nextSequenceId);
+		//System.out.println("[INFO] Sequence number expected " + nextSequenceId);
 		Iterator<SequencerMessage> itr = message_list.iterator();
 		while(itr.hasNext()) {
 			SequencerMessage sm = itr.next();
@@ -195,21 +251,6 @@ public class RM1 {
 			return she_replica_port;
 		if(params.get(0).substring(0,3).equals("QUE"))
 			return que_replica_port;
-		if(params.get(0).equals("#")) {
-			if(params.get(1).substring(0,3).equals("MTL"))
-				return mtl_replica_port;
-			if(params.get(1).substring(0,3).equals("SHE"))
-				return she_replica_port;
-			if(params.get(1).substring(0,3).equals("QUE"))
-				return que_replica_port;
-		}else {
-			if(params.get(0).substring(0,3).equals("MTL"))
-				return mtl_replica_port;
-			if(params.get(0).substring(0,3).equals("SHE"))
-				return she_replica_port;
-			if(params.get(0).substring(0,3).equals("QUE"))
-				return que_replica_port;
-		}
 		return mtl_replica_port;
 	}
 	
@@ -226,15 +267,15 @@ public class RM1 {
 			buf = sm.getrequestMessage().getBytes();
 			DatagramPacket DpSend = new DatagramPacket(buf, buf.length, ip, port);
 			ds.send(DpSend);
-			System.out.println("Message Sent and waiting for response");
+			System.out.println("[INFO] Message Sent and waiting for response");
 			
 			Thread.sleep(1000);
 			
-			byte[] received = new byte[1000];
+			byte[] received = new byte[10000];
 			DatagramPacket DpReceive = new DatagramPacket(received, received.length);
 			ds.receive(DpReceive);
 			result1 = new String(DpReceive.getData());
-			System.out.println("Message received : "+result1);
+			System.out.println("[INFO] Message received : "+result1);
 			String[] temp = result1.split("@");
 			result1 = temp[0];
 		}catch(Exception e) {
@@ -256,7 +297,7 @@ public class RM1 {
 			DatagramPacket response = new DatagramPacket(responseMessageToFE, responseMessageToFE.length, ip, FE_multicast_Port);
 			ds.send(response);
 		}catch(Exception e) {
-			System.out.println("Exception :"+ e);
+			System.out.println("[ERROR] Exception :"+ e);
 		}finally {
 			if(ds!=null)
 				ds.close();
@@ -265,7 +306,7 @@ public class RM1 {
 	
 	public static void sendToFrontEnd(String result) {
 		String final_result = "RM1;" + result + "Nuetral;";
-		System.out.println(final_result);
+		System.out.println("[INFO] Result of ReplicaManager after Executing Client Request => " + final_result);
 		DatagramSocket ds = null;
 		try {
 			ds = new DatagramSocket();
@@ -273,9 +314,9 @@ public class RM1 {
 			InetAddress ip = InetAddress.getByName(FE_multicast_IPadress);
 			DatagramPacket response = new DatagramPacket(responseMessageToFE, responseMessageToFE.length, ip, FE_multicast_Port);
 			ds.send(response);
-			System.out.println("Message sent to FrontEnd");
+			System.out.println("[INFO] Message sent to FrontEnd");
 		}catch(Exception e) {
-			System.out.println("Exception :"+ e);
+			System.out.println("[ERROR] Exception :"+ e);
 		}finally {
 			if(ds!=null)
 				ds.close();

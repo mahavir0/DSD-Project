@@ -1,0 +1,7 @@
+Date:2022-04-03 03:36:47 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-03 03:36:47 PM|Action:Appointment BookedQUEA121212;Success| Response:true
+Date:2022-04-03 03:36:47 PM|Action:Appointment BookedQUEA121212| Response:true
+Date:2022-04-03 03:37:14 PM|Action:Appointment CancelledQUEA121212;Success| Response:true
+Date:2022-04-03 03:37:14 PM|Action:Appointment BookedMTLE140222;Success| Response:true
+Date:2022-04-03 03:37:14 PM|Action:Appointment SwappedQUEA121212DENTALtoMTLE140222DENTAL;Success| Response:true
+Date:2022-04-03 03:37:14 PM|Action:Sending request to que server for swapappointmentQUEA121212DENTALtoMTLE140222DENTAL;Success| Response:true

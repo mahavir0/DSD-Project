@@ -26,19 +26,21 @@ import DAMSApp.DAMSPOA;
  */
 class FrontEndImpl extends DAMSPOA {
 
-	public static int fault_invoker = 0;
+	//public static int fault_invoker = 0;
 	//String params = patientID + "=" + appointmentID + "=" + appoinmentType + "=" + capacity + "=" + newAppointmentID + "=" + newAppoinmentType;
 	//return params;
 	private ORB orb;
 	public ArrayList<ReplicaResponse> responseList = new ArrayList<ReplicaResponse>();
 	private final int sequencerPort = 5555;
 	private final String sequencerIPAdress = "127.0.0.131";
-	private int mon_fault = 0;
-	private int que_fault = 0;
-	private int she_fault = 0;
-	private final int RM1_f_port = 1060;
-	private final int RM2_f_port = 1065;
-	private final int RM3_f_port = 1070;
+	private int RM1_fault = 0;
+	private int RM2_fault = 0;
+	private int RM3_fault = 0;
+	private final String Fault_Multicast_IPAdrress = "230.1.1.30";
+	private final int Fault_Multicast_Port = 3496;
+	//private final String RM1_f_port = 1060;
+	//private final String RM2_f_port = 1065;
+	//private final String RM3_f_port = 1070;
 	public void setORB(ORB orb_val) {
 		orb = orb_val;
 	}
@@ -149,13 +151,13 @@ class FrontEndImpl extends DAMSPOA {
 		DatagramSocket ds = null;
 		try {
 			ds = new DatagramSocket();
-			InetAddress ip = InetAddress.getByName(sequencerIPAdress);
+			InetAddress ip = InetAddress.getLocalHost();
 			byte[] sendrequestmessage = sendrequest.getBytes();
 			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, sequencerPort);
 			ds.send(DpSend);
 			System.out.println("Sent a response to Sequencer");
 		}catch(Exception e) {
-			System.out.println("Exception "+ e);
+			System.out.println("Exception in sendTOSequencer"+ e);
 		}finally {
 			if(ds!=null)
 				ds.close();
@@ -177,54 +179,176 @@ class FrontEndImpl extends DAMSPOA {
 		String result = "";
 		ArrayList<ReplicaResponse> temp = this.getResponses();
 		System.out.println("Size : "+temp.size());
-		fault_invoker++;
-		System.out.println("Fault Invoker Count : " +fault_invoker);
-		if(fault_invoker==5) {
-			notifyRMforFault(RM1_f_port);
-			System.out.println(RM1_f_port + " RM1 notified for the fault ");
+		for(int i=0;i<temp.size();i++) {
+			System.out.println(temp.get(i).getReplicaNo() + " => " + temp.get(i).getResponse() + " => " + temp.get(i).getStatus());
 		}
+//		fault_invoker++;
+//		System.out.println("Fault Invoker Count : " +fault_invoker);
+//		if(fault_invoker==5) {
+//			notifyRMforFault(RM1_f_port);
+//			System.out.println(RM1_f_port + " RM1 notified for the fault ");
+//		}
 		if(temp.size()==3) {
-			for(int i=0;i<temp.size();i++) {
-				System.out.println(i);
-				if(temp.get(i).getReplicaNo().equals("RM1")) {
-					result = temp.get(i).getResponse() + " -> " + temp.get(i).getStatus();
-					temp.clear();
-					this.responseList = temp;
+			if(temp.get(0).getStatus().equalsIgnoreCase(temp.get(1).getStatus()) && temp.get(0).getStatus().equalsIgnoreCase(temp.get(2).getStatus())) {
+				result = temp.get(0).getResponse() + "->" + temp.get(0).getStatus();
+			}else if(temp.get(0).getStatus().equalsIgnoreCase(temp.get(1).getStatus())) {
+				result = temp.get(0).getResponse() + "->" + temp.get(0).getStatus();
+				if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(1).getReplicaNo().equals("RM3"))  {
+					RM2_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(1).getReplicaNo().equals("RM2")) {
+					RM3_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM2") && temp.get(1).getReplicaNo().equals("RM3")) {
+					RM1_fault++;
 				}
+			}else if(temp.get(0).getStatus().equalsIgnoreCase(temp.get(2).getStatus())) {
+				result = temp.get(0).getResponse() + "->" + temp.get(0).getStatus();
+				if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM3"))  {
+					RM2_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM2")) {
+					RM3_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM2") && temp.get(2).getReplicaNo().equals("RM3")) {
+					RM1_fault++;
+				}
+			}else if(temp.get(1).getStatus().equalsIgnoreCase(temp.get(2).getStatus())) {
+				result = temp.get(1).getResponse() + "->" + temp.get(1).getStatus();
+				if(temp.get(1).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM3"))  {
+					RM2_fault++;
+				}else if(temp.get(1).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM2")) {
+					RM3_fault++;
+				}else if(temp.get(1).getReplicaNo().equals("RM2") && temp.get(2).getReplicaNo().equals("RM3")) {
+					RM1_fault++;
+				}
+			}
+			if(RM1_fault>=3) {
+				notifyRMforFault("RM1");
+				RM1_fault = 0;
+			}
+			if(RM2_fault>=3) {
+				notifyRMforFault("RM2");
+				RM2_fault = 0;
+			}
+			if(RM3_fault>=3) {
+				notifyRMforFault("RM3");
+				RM3_fault = 0;
 			}
 		}else if(temp.size()==2) {
-			for(int i=0;i<temp.size();i++) {
-				System.out.println(i);
-				if(temp.get(i).getRequest().equals(function)) {
-					result = temp.get(i).getResponse() + "->" + temp.get(i).getStatus();
-					temp.clear();
-					this.responseList = temp;
+			if(temp.get(0).getStatus().equalsIgnoreCase(temp.get(1).getStatus())) {
+				result = temp.get(0).getResponse() + "->" + temp.get(0).getStatus();
+				if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(1).getReplicaNo().equals("RM3"))  {
+					RM2_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(1).getReplicaNo().equals("RM2")) {
+					RM3_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM2") && temp.get(1).getReplicaNo().equals("RM3")) {
+					RM1_fault++;
+				}
+			}else if(temp.get(0).getStatus().equalsIgnoreCase(temp.get(2).getStatus())) {
+				result = temp.get(0).getResponse() + "->" + temp.get(0).getStatus();
+				if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM3"))  {
+					RM2_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM2")) {
+					RM3_fault++;
+				}else if(temp.get(0).getReplicaNo().equals("RM2") && temp.get(2).getReplicaNo().equals("RM3")) {
+					RM1_fault++;
+				}
+			}else if(temp.get(1).getStatus().equalsIgnoreCase(temp.get(2).getStatus())) {
+				result = temp.get(1).getResponse() + "->" + temp.get(1).getStatus();
+				if(temp.get(1).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM3"))  {
+					RM2_fault++;
+				}else if(temp.get(1).getReplicaNo().equals("RM1") && temp.get(2).getReplicaNo().equals("RM2")) {
+					RM3_fault++;
+				}else if(temp.get(1).getReplicaNo().equals("RM2") && temp.get(2).getReplicaNo().equals("RM3")) {
+					RM1_fault++;
 				}
 			}
-		}else {
+			if(RM1_fault>=3) {
+				notifyRMforFault("RM1");
+				RM1_fault = 0;
+			}
+			if(RM2_fault>=3) {
+				notifyRMforFault("RM2");
+				RM2_fault = 0;
+			}
+			if(RM3_fault>=3) {
+				notifyRMforFault("RM3");
+				RM3_fault = 0;
+			}
+//			for(int i=0;i<temp.size();i++) {
+//				System.out.println(i);
+//				if(temp.get(i).getRequest().equals(function)) {
+//					result = temp.get(i).getResponse() + "->" + temp.get(i).getStatus();
+//					//temp.clear();
+//					//this.responseList = temp;
+//				}
+//			}
+		}else if(temp.size()==1){
+			result = temp.get(0).getResponse() + "->" + temp.get(0).getStatus();
+			if(temp.get(0).getReplicaNo().equals("RM1")) {
+				RM2_fault++;
+				RM3_fault++;
+			}else if(temp.get(0).getReplicaNo().equals("RM2")) {
+				RM1_fault++;
+				RM3_fault++;
+			}else if(temp.get(0).getReplicaNo().equals("RM3")) {
+				RM1_fault++;
+				RM2_fault++;
+			}
+			if(RM1_fault>=3) {
+				notifyRMforFault("RM1");
+				RM1_fault = 0;
+			}
+			if(RM2_fault>=3) {
+				notifyRMforFault("RM2");
+				RM2_fault = 0;
+			}
+			if(RM3_fault>=3) {
+				notifyRMforFault("RM3");
+				RM3_fault = 0;
+			}
+		} else {
 			for(int i=0;i<temp.size();i++) {
 				System.out.println(i);
 				if(temp.get(i).getRequest().equals(function)) {
 					result = temp.get(i).getResponse() + "->" + temp.get(i).getStatus();
-					temp.clear();
-					this.responseList = temp;
+					//temp.clear();
+					//this.responseList = temp;
 				}
 			}
 		}
-		
+		System.out.println("==============Fault Counts==============\nRM1 Fault : "+RM1_fault+"\nRM2 Fault : "+RM2_fault+"\nRM3 Fault : "+RM3_fault+"\n=====================================");
+		temp.clear();
+		this.responseList = temp;
+		System.out.println("Final Result in FrontEnd for Client : "+result);
 		return result;
 	}
 	
-	public void notifyRMforFault(int port) { // ============================== Notify the Replica Manager of the faulty replica ==================== //
-		String f_message = "fault message;"+port+";";
+	public void connectRMsForFaultRecovery() {
+		String f_message = "fault message;Connection Message;";
 		DatagramSocket ds = null;
 		try {
 			ds = new DatagramSocket();
-			InetAddress ip = InetAddress.getLocalHost();
+			InetAddress ip = InetAddress.getByName(Fault_Multicast_IPAdrress);
 			byte[] sendrequestmessage = f_message.getBytes();
-			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, port);
+			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, Fault_Multicast_Port);
 			ds.send(DpSend);
-			System.out.println("Sent a response to Sequencer");
+			//System.out.println("Sent a Messages to ReplicaManager for handling faulty Replicas");
+		}catch(Exception e) {
+			System.out.println(e);
+		}finally {
+			if(ds!=null)
+				ds.close();
+		}
+	}
+	
+	public void notifyRMforFault(String RM) { // ============================== Notify the Replica Manager of the faulty replica ==================== //
+		String f_message = "fault message;"+RM+";";
+		DatagramSocket ds = null;
+		try {
+			ds = new DatagramSocket();
+			InetAddress ip = InetAddress.getByName(Fault_Multicast_IPAdrress);
+			byte[] sendrequestmessage = f_message.getBytes();
+			DatagramPacket DpSend = new DatagramPacket(sendrequestmessage, sendrequestmessage.length, ip, Fault_Multicast_Port);
+			ds.send(DpSend);
+			System.out.println("Sent a Messages to ReplicaManager for handling faulty Replicas");
 		}catch(Exception e) {
 			System.out.println(e);
 		}finally {
@@ -261,7 +385,7 @@ public class FrontEnd {
 		    // create servant and register it with the ORB
 		    FrontEndImpl frontendobj = new FrontEndImpl();
 		    frontendobj.setORB(orb);
-		    
+		    frontendobj.connectRMsForFaultRecovery();
 		    // get object reference from the servant
 		    org.omg.CORBA.Object ref = rootpoa.servant_to_reference(frontendobj);
 		    DAMS href = DAMSHelper.narrow(ref);
@@ -301,17 +425,17 @@ public class FrontEnd {
 		try {
 			ms = new MulticastSocket(FE_multicast_Port);
 			ms.joinGroup(InetAddress.getByName(FE_multicast_IPadress));
-			byte[] buf = new byte[1000];
+			byte[] buf = new byte[10000];
 			//System.out.println("in FE receive");
 			while(true) {
 				DatagramPacket RMresponse = new DatagramPacket(buf, buf.length);
-				System.out.println("Waiting for a response from ReplicaManager");
+				//System.out.println("Waiting for a response from ReplicaManager");
 				ms.receive(RMresponse);
-				System.out.println("Received a response from ReplicaManager");
+				//System.out.println("Received a response from ReplicaManager");
 				String response = new String(RMresponse.getData(), 0, RMresponse.getLength());
 				if(response.equals("Connection Message"))
 					continue;
-				System.out.println("Response in FrontEnd : "+response);
+				//System.out.println("Response in FrontEnd : "+response);
 				
 				String[] result = response.split(";");
 				ReplicaResponse rr = new ReplicaResponse();

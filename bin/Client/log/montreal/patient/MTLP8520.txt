@@ -25,3 +25,20 @@
 2022-03-31 02:28:28 PM | Get Appointment Schedule | MTLP8520 | Added->Success
 2022-03-31 02:28:34 PM | Get Appointment Schedule | MTLP8520 | Montreal Hospital : ,SURGEON,MTLM310322,, -> Nuetral
 2022-03-31 02:29:42 PM | Get Appointment Schedule | MTLP8520 | Montreal Hospital : ,SURGEON,MTLM310322,, -> Nuetral
+2022-04-02 06:08:20 PM | Book Appointment | MTLP8520 MTLM020422 DENTAL | 
+2022-04-04 03:40:40 PM | Book Appointment | MTLP8520 MTLM232022 DENTAL | Appointment booked Successfully->Success
+2022-04-04 03:43:29 PM | Book Appointment | MTLP8520 SHEM232221 PHYSICIAN | Appointment booked Successfully->Success
+2022-04-04 03:43:52 PM | Get Appointment Schedule | MTLP8520 | Physician:
+SHEM232221 || 
+-------------------------
+->Nuetral
+2022-04-04 03:45:19 PM | Swap Appointment | MTLP8520 SHEM232221 PHYSICIAN MTLM232022 DENTAL | This operation cannot be perfomed by the patient MTLP8520 because he/she neither booked the appointment nor canceled it->Failed
+2022-04-04 05:20:23 PM | Get Appointment Schedule | MTLP8520 | 
+2022-04-04 05:23:57 PM | Book Appointment | MTLP8520 MTLM232022 DENTAL | Success: Appointment MTLM232022 Booked Successfully->Success
+2022-04-04 05:24:27 PM | Book Appointment | MTLP8520 MTLP852010 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-04 05:24:47 PM | Book Appointment | MTLP8520 MTLE741052 SURGEON | There are no appointmnets for SURGEON->Failed
+2022-04-04 05:24:59 PM | Book Appointment | MTLP8520 MTLE963741 PHYSICIAN | There are no appointmnets for PHYSICIAN->Failed
+2022-04-04 05:25:23 PM | Get Appointment Schedule | MTLP8520 | Dental:
+MTLM232022 || 
+-------------------------
+->Nuetral

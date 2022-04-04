@@ -35,12 +35,12 @@ public class ServerInstance
             case "QUE":
                 ServerName = AppointmentManagement.Appointment_ServerQuebec;
                 ServerUdpPort = AppointmentManagement.Quebec_ServerPort;
-                serverRegistryPort = Server_Sherbrooke;
+                serverRegistryPort = Server_Quebec;
                 break;
             case "SHE":
                 ServerName = AppointmentManagement.Appointment_ServerSherbrooke;
-                ServerUdpPort = AppointmentManagement.Sherbrooke_ServerPort;
-                serverRegistryPort = Server_Quebec;
+                ServerUdpPort = AppointmentManagement.Sherbrooke_ServerPort; 
+                serverRegistryPort = Server_Sherbrooke;
                 break;
         }
         AppointmentManagement remoteObject = new AppointmentManagement(ServerID , ServerName);
