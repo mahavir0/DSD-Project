@@ -43,3 +43,24 @@
 2022-04-04 03:45:16 PM Patient MTLP8520 | Cancel an appointment | MTLP8520 SHEM232221 PHYSICIAN | Success | the Appointment has been cancelled for the patient MTLP8520
 2022-04-04 04:55:44 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
 2022-04-04 05:25:20 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-04 06:14:09 PM Admin | Add appointment | SHEM232022-PHYSICIAN-[5] | Success | Appointment added Successfully
+2022-04-04 06:15:02 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEM232022 PHYSICIAN | Success | Appointment booked Successfully
+2022-04-04 06:15:43 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Sherbrooke Hospital : -PHYSICIAN-SHEM232022
+2022-04-04 06:16:09 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Sherbrooke Hospital : -PHYSICIAN-SHEM232022
+2022-04-06 05:20:45 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-06 05:21:31 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-06 06:22:01 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-06 07:05:16 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 12:56:57 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 12:57:10 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 12:57:18 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 01:18:20 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 01:23:08 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 01:25:07 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEE852010 DENTAL | Failed | There are no appointmnets for DENTAL
+2022-04-09 02:29:38 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 02:38:00 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 02:39:37 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 03:47:24 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 03:49:57 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 03:50:20 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 
+2022-04-09 03:50:37 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | 

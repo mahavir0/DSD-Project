@@ -82,7 +82,7 @@ public class Montreal_Class {
 					catch (IOException e){
 						e.printStackTrace();
 					}
-					result = "Appointmnet added Successfully";
+					result = "Appointment added Successfully";
 					status = "Success";
 
 					return result+";"+status;
@@ -95,7 +95,7 @@ public class Montreal_Class {
 				catch (IOException e){
 					e.printStackTrace();
 				}
-				result = "Appointmnet not added Successfully";
+				result = "Appointment not added Successfully";
 				status = "Failed";
 				return result+";"+status;
 			}
@@ -114,7 +114,7 @@ public class Montreal_Class {
 				catch (IOException e){
 					e.printStackTrace();
 				}
-				result = "Appointmnet added Successfully";
+				result = "Appointment added Successfully";
 				status = "Success";
 
 				return result+";"+status;
@@ -183,7 +183,7 @@ public class Montreal_Class {
 			catch (IOException e){
 				e.printStackTrace();
 			}
-			result = "Appointmnet not added Successfully";
+			result = "Appointment not added Successfully";
 			status = "Failed";
 			return result+";"+status;
 		}
@@ -212,7 +212,7 @@ public class Montreal_Class {
 					e.printStackTrace();
 				}
 				System.out.println(action+""+"Success");
-				return action+""+"Success";
+				return action+";"+"Success";
 			}
 			else {
 				String action = "Appointment notremoved" + appointmentID;
@@ -224,7 +224,7 @@ public class Montreal_Class {
 					e.printStackTrace();
 				}
 				
-				return action+""+"Failed";
+				return action+";"+"Failed";
 			}
 		}
 		
@@ -237,7 +237,7 @@ public class Montreal_Class {
 			catch (IOException e){
 				e.printStackTrace();
 			}
-		return action1+"Failed";	
+		return action1+";"+"Failed";	
 		}
 	
 

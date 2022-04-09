@@ -125,26 +125,5 @@ public class ServerInstance
             }
         }
     }
-//    private void addTestData(AppointmentManagement remoteObject) 
-//    {
-//        switch (ServerID)
-//        {
-//            case "MTL":
-//                	remoteObject.addNewAppointment("MTLM030322", AppointmentModel.Physician, 2);
-//                	remoteObject.addNewAppointment("MTLM040322", AppointmentModel.Dental, 1);
-//                	remoteObject.addNewAppointment("MTLE050322", AppointmentModel.Dental, 1);
-//                	break;
-//               
-//            case "QUE":
-//            		remoteObject.addNewPatientToClients("QUEP0002");
-//            		remoteObject.addNewPatientToClients("QUEP0003");
-//            		remoteObject.AddAppointment("MTLM070322", AppointmentModel.Physician, 2);
-//            		break;
-//                
-//            case "SHE":
-//                  	remoteObject.addNewPatientToClients("SHEP0002");
-//                  	break;
-//        }
-//    }
  
 }

@@ -16,13 +16,15 @@ import ReplicaManager3.Helper.forward_request;
 import ReplicaManager3.Implementation.Montreal_Class;
 
 public class Montreal{
+	public static Montreal_Class monclass;
+	public static Montreal_Class backupClass;
 	
 	public static void main(String args[]) {
 		try {
 			
 			//creating servent and register it with orb
-			Montreal_Class monclass = new Montreal_Class();
-
+			//Montreal_Class monclass = new Montreal_Class();
+			monclass = new Montreal_Class();
 			Runnable task = () -> {
 				receive(monclass);
 			};
@@ -145,7 +147,7 @@ public class Montreal{
 					 result = mtlobj.addAppointment(parameters.get(0), parameters.get(1), parameters.get(2), cap);
 				 }else if(func.equals("removeAppointment")) {
 					 System.out.println("parameter 0 : " + parameters.get(0) + "parameter 1 " + parameters.get(1) + parameters.get(2) + parameters.get(3));
-					 result = mtlobj.removeAppointment(parameters.get(0),parameters.get(1),parameters.get(2),Integer.parseInt(parameters.get(3)));
+					 result = mtlobj.removeAppointment(parameters.get(0),parameters.get(1),parameters.get(2),0);
 				 }else if(func.equals("listAppointmentAvailability")) {
 					 result = mtlobj.listAppointmentAvailability(parameters.get(0),parameters.get(2));
 					 //result = String.join(",", ls).trim();
@@ -159,7 +161,10 @@ public class Montreal{
 				 }else if(func.equals("swapAppointment")) {
 					 result = mtlobj.swapAppointment(parameters.get(0), parameters.get(1), parameters.get(2), parameters.get(4), parameters.get(5));
 				 }else if(func.equals("fault message")) {
-					 result = mtlobj.handleFault();
+					 //result = mtlobj.handleFault();
+					 backupClass = new Montreal_Class();
+					 monclass = backupClass;
+					 
 				 }
 				 //System.out.println(result); //<----------------------------------------------------------------------------------------------testing
 				 result+="@";

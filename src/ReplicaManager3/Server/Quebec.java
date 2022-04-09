@@ -15,12 +15,16 @@ import org.omg.PortableServer.POAHelper;
 import ReplicaManager3.Implementation.*;
 
 public class Quebec{
+	public static Quebec_Class monclass;
+	public static Quebec_Class backupClass;
+	
 	public static void main(String args[]) {
 		try {
 			
 			//creating servent and register it with orb
-			Quebec_Class monclass = new Quebec_Class();
-
+			
+			//Quebec_Class monclass = new Quebec_Class();
+			monclass = new Quebec_Class();
 			Runnable task = () -> {
 				receive(monclass);
 			};
@@ -143,7 +147,7 @@ public class Quebec{
 					 result = mtlobj.addAppointment(parameters.get(0), parameters.get(1), parameters.get(2), cap);
 				 }else if(func.equals("removeAppointment")) {
 					 System.out.println("parameter 0 : " + parameters.get(0) + "parameter 1 " + parameters.get(1) + parameters.get(2) + parameters.get(3));
-					 result = mtlobj.removeAppointment(parameters.get(0),parameters.get(1),parameters.get(2),Integer.parseInt(parameters.get(3)));
+					 result = mtlobj.removeAppointment(parameters.get(0),parameters.get(1),parameters.get(2),0);
 				 }else if(func.equals("listAppointmentAvailability")) {
 					 result = mtlobj.listAppointmentAvailability(parameters.get(0),parameters.get(2));
 					 //result = String.join(",", ls).trim();
@@ -158,6 +162,8 @@ public class Quebec{
 					 result = mtlobj.swapAppointment(parameters.get(0), parameters.get(1), parameters.get(2), parameters.get(4), parameters.get(5));
 				 }else if(func.equals("fault message")) {
 					 result = mtlobj.handleFault();
+					 backupClass = new Quebec_Class();
+					 monclass = backupClass;
 				 }
 				 //System.out.println(result); //<----------------------------------------------------------------------------------------------testing
 				 result+="@";

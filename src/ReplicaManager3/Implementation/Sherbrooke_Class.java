@@ -55,7 +55,7 @@ public class Sherbrooke_Class {
 		
 		//System.out.println("list:"+  appointment);
 		// TODO Auto-generated constructor stub
-			
+		
 	}
 
 	public String handleFault() {
@@ -167,7 +167,7 @@ public class Sherbrooke_Class {
 				catch (IOException e){
 					e.printStackTrace();
 				}
-				return action+""+"Success";
+				return action+";"+"Success";
 			}
 			else {
 				String action = "Appointment notremoved" + appointmentID;
@@ -179,7 +179,7 @@ public class Sherbrooke_Class {
 					e.printStackTrace();
 				}
 				
-				return action+""+"Failed";
+				return action+";"+"Failed";
 			}
 		}
 		
@@ -192,7 +192,7 @@ public class Sherbrooke_Class {
 		catch (IOException e){
 			e.printStackTrace();
 		}
-		return action1+"Failed";
+		return action1+";Failed";
 		}
 	
 		

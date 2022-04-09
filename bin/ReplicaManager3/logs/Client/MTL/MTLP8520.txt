@@ -33,3 +33,50 @@ Date:2022-04-04 05:24:24 PM|Action:Appointment not BookedMTLP852010;Failed| Resp
 Date:2022-04-04 05:24:44 PM|Action:Appointment not BookedMTLE741052;Failed| Response:false
 Date:2022-04-04 05:24:56 PM|Action:Appointment not BookedMTLE963741;Failed| Response:false
 Date:2022-04-04 05:25:20 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-06 05:18:43 PM|Action:Appointment BookedMTLM852010;Success| Response:true
+Date:2022-04-06 05:20:45 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-06 05:21:31 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-06 05:24:35 PM|Action:Appointment not BookedMTLM741052;Failed| Response:false
+Date:2022-04-06 06:22:00 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-06 07:01:24 PM|Action:Appointment BookedMTLM231022;Success| Response:true
+Date:2022-04-06 07:03:45 PM|Action:Appointment BookedMTLM231022;Success| Response:true
+Date:2022-04-06 07:04:10 PM|Action:Appointment not BookedMTLE852010;Failed| Response:false
+Date:2022-04-06 07:04:35 PM|Action:Appointment not BookedMTLM741020;Failed| Response:false
+Date:2022-04-06 07:05:02 PM|Action:Appointment not BookedMTLM946120;Failed| Response:false
+Date:2022-04-06 07:05:17 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-09 12:27:31 PM|Action:Appointment BookedMTLM231022;Success| Response:true
+Date:2022-04-09 12:28:55 PM|Action:Appointment not BookedMTLE852010;Failed| Response:false
+Date:2022-04-09 12:29:31 PM|Action:Appointment not BookedMTLM741085;Failed| Response:false
+Date:2022-04-09 12:30:01 PM|Action:Appointment not BookedMTLM963741;Failed| Response:false
+Date:2022-04-09 12:30:49 PM|Action:Appointment not BookedMTLE789654;Failed| Response:false
+Date:2022-04-09 12:31:06 PM|Action:Appointment not BookedMTLE963741;Failed| Response:false
+Date:2022-04-09 12:53:50 PM|Action:Appointment BookedMTLM231022;Success| Response:true
+Date:2022-04-09 12:54:32 PM|Action:Appointment not BookedMTLE951620;Failed| Response:false
+Date:2022-04-09 12:55:03 PM|Action:Appointment not BookedMTLE741052;Failed| Response:false
+Date:2022-04-09 12:56:02 PM|Action:Appointment not BookedMTLA963741;Failed| Response:false
+Date:2022-04-09 12:57:21 PM|Action:Appointment not BookedMTLM231022| Response:false
+Date:2022-04-09 12:57:21 PM|Action:Appointment not BookedMTLE951620;Failed| Response:false
+Date:2022-04-09 12:57:21 PM|Action:Appointment not BookedMTLE741052;Failed| Response:false
+Date:2022-04-09 12:57:21 PM|Action:Appointment not BookedMTLA963741;Failed| Response:false
+Date:2022-04-09 01:18:18 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-09 01:23:06 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-09 01:23:57 PM|Action:Appointment not BookedMTLE897654;Failed| Response:false
+Date:2022-04-09 01:25:05 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-09 01:25:05 PM|Action:Appointment not BookedSHEE852010| Response:false
+Date:2022-04-09 01:25:05 PM|Action:Appointment notBookedSHEE852010| Response:false
+Date:2022-04-09 01:25:40 PM|Action:Appointment not BookedMTLM963741;Failed| Response:false
+Date:2022-04-09 02:04:01 PM|Action:Appointment not BookedMTLM852010;Failed| Response:false
+Date:2022-04-09 02:04:25 PM|Action:Appointment not BookedMTLA963741;Failed| Response:false
+Date:2022-04-09 02:05:47 PM|Action:Appointment not BookedMTLA963741;Failed| Response:false
+Date:2022-04-09 02:23:36 PM|Action:Appointment not BookedMTLM987654;Failed| Response:false
+Date:2022-04-09 02:24:05 PM|Action:Appointment not BookedMTLE741052;Failed| Response:false
+Date:2022-04-09 02:24:32 PM|Action:Appointment not BookedMTLE951620;Failed| Response:false
+Date:2022-04-09 02:25:54 PM|Action:Appointment not BookedMTLM231022;Failed| Response:false
+Date:2022-04-09 02:27:30 PM|Action:Appointment not BookedMTLM231022;Failed| Response:false
+Date:2022-04-09 02:28:47 PM|Action:Appointment BookedMTLA111111;Success| Response:true
+Date:2022-04-09 02:37:33 PM|Action:Appointment BookedMTLM231022;Success| Response:true
+Date:2022-04-09 02:37:58 PM|Action:getAppointmentSchedule| Response:true
+Date:2022-04-09 02:38:25 PM|Action:Appointment not BookedMTLA852010;Failed| Response:false
+Date:2022-04-09 02:38:45 PM|Action:Appointment not BookedMTLE963741;Failed| Response:false
+Date:2022-04-09 02:39:15 PM|Action:Appointment not BookedMTLE946120;Failed| Response:false
+Date:2022-04-09 02:39:35 PM|Action:getAppointmentSchedule| Response:true

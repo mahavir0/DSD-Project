@@ -8,3 +8,4 @@
 2022-04-04 01:55:16 PM | Add Appointments | SHEA0000 SHEM250322 PHYSICIAN 10 | Appointment added Successfully->Success
 2022-04-04 01:56:01 PM | Add Appointments | SHEA0000 SHEE260322 DENTAL 2 | Appointment added Successfully->Success
 2022-04-04 03:40:08 PM | Add Appointments | SHEA0000 SHEM232221 PHYSICIAN 5 | Appointment added successfully->Success
+2022-04-04 06:14:12 PM | Add Appointments | SHEA0000 SHEM232022 PHYSICIAN 5 | Appointment added successfully->Success

@@ -90,3 +90,90 @@ Date:2022-04-04 04:54:32 PM|Action:addAppointmentMTLA0000|MTLM232022|DENTAL| Res
 Date:2022-04-04 05:06:29 PM|Action:addAppointmentMTLA0000|MTLM230222|DENTAL| Response:A
 Date:2022-04-04 05:13:20 PM|Action:addAppointmentMTLA0000|MTLM232022|DENTAL| Response:A
 Date:2022-04-04 05:22:56 PM|Action:addAppointmentMTLA0000|MTLM232022|DENTAL| Response:A
+Date:2022-04-06 03:16:45 PM|Action:addAppointmentMTLA0000|MTLM232022|DENTAL| Response:A
+Date:2022-04-06 03:17:05 PM|Action:addAppointmentMTLA0000|MTLM852012|DENTAL| Response:A
+Date:2022-04-06 03:17:26 PM|Action:addAppointmentMTLA0000|MTL963741|PHYSICIAN| Response:A
+Date:2022-04-06 03:18:03 PM|Action:addAppointmentMTLA0000|MTLM963741|PHYSICIAN| Response:A
+Date:2022-04-06 03:18:22 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:18:22 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:18:22 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:25:23 PM|Action:addAppointmentMTLA0000|MTLM852410|DENTAL| Response:A
+Date:2022-04-06 03:25:38 PM|Action:addAppointmentMTLA0000|MTLM987654|DENTAL| Response:A
+Date:2022-04-06 03:25:59 PM|Action:addAppointmentMTLA0000|MTLM965100|DENTAL| Response:A
+Date:2022-04-06 03:27:13 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:27:13 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:27:13 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:30:41 PM|Action:addAppointmentMTLA0000|MTLM852010|PHYSICIAN| Response:A
+Date:2022-04-06 03:32:12 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 03:32:38 PM|Action:addAppointmentMTLA0000|MTLM963741|DENTAL| Response:A
+Date:2022-04-06 03:32:55 PM|Action:addAppointmentMTLA0000|MTLM852456|DENTAL| Response:A
+Date:2022-04-06 03:33:13 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:33:13 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:33:13 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 03:37:14 PM|Action:addAppointmentMTLA0000|MTLM060422|DENTAL| Response:A
+Date:2022-04-06 05:11:57 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-06 05:11:58 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-06 05:12:32 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 05:12:32 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 05:13:28 PM|Action:addAppointmentMTLA0000|MTLM963741|DENTAL| Response:A
+Date:2022-04-06 05:13:59 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 05:17:49 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 05:19:07 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 05:19:49 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:19:49 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:19:49 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:23:18 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:23:18 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:23:18 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:27:13 PM|Action:addAppointmentMTLA0000|MTLE852010|PHYSICIAN| Response:A
+Date:2022-04-06 05:28:31 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:28:31 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:28:31 PM|Action:List of Appointments| Response:success
+Date:2022-04-06 05:46:12 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 06:06:54 PM|Action:addAppointmentMTLA0000|MTLM231020|DENTAL| Response:A
+Date:2022-04-06 06:08:16 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 06:11:36 PM|Action:addAppointmentMTLA0000|MTLM123456|DENTAL| Response:A
+Date:2022-04-06 06:13:22 PM|Action:addAppointmentMTLA0000|MTLM852012|DENTAL| Response:A
+Date:2022-04-06 06:16:49 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 06:22:46 PM|Action:addAppointmentMTLA0000|MTLM852010|DENTAL| Response:A
+Date:2022-04-06 06:32:14 PM|Action:addAppointmentMTLA0000|MTLA121233|PHYSICIAN| Response:A
+Date:2022-04-06 06:48:00 PM|Action:addAppointmentMTLA0000|MTLA121212|DENTAL| Response:A
+Date:2022-04-06 07:01:02 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-06 07:03:19 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 12:26:27 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 12:52:55 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 12:57:21 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 01:08:43 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 01:17:43 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 01:22:36 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 01:28:59 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 01:41:53 PM|Action:addAppointmentMTLA0000|MTLA789454|DENTAL| Response:A
+Date:2022-04-09 01:42:34 PM|Action:Appointment removedMTLA789454| Response:A
+Date:2022-04-09 01:49:34 PM|Action:addAppointmentMTLA0000|MTLM2310222|DENTAL| Response:A
+Date:2022-04-09 01:51:00 PM|Action:Appointment removedMTLM2310222| Response:A
+Date:2022-04-09 01:57:38 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 01:58:11 PM|Action:Appointment removedMTLM231022| Response:A
+Date:2022-04-09 01:58:32 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 01:58:32 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 01:58:32 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:17:11 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 02:23:10 PM|Action:addAppointmentMTLA0000|MTLM231022.|DENTAL| Response:A
+Date:2022-04-09 02:26:54 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:26:54 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:26:54 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:28:09 PM|Action:addAppointmentMTLA0000|MTLA111111|PHYSICIAN| Response:A
+Date:2022-04-09 02:30:40 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 02:31:09 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:31:09 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:31:09 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:33:33 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 02:36:32 PM|Action:addAppointmentMTLA0000|MTLM231022|DENTAL| Response:A
+Date:2022-04-09 02:37:05 PM|Action:addAppointmentMTLA0000|MTLE241022|PHYSICIAN| Response:A
+Date:2022-04-09 02:48:43 PM|Action:addAppointmentMTLA0000|MTLA242424|DENTAL| Response:A
+Date:2022-04-09 02:49:19 PM|Action:addAppointmentMTLA0000|MTLA424242|PHYSICIAN| Response:A
+Date:2022-04-09 02:49:48 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:49:48 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:49:48 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:51:50 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:51:50 PM|Action:List of Appointments| Response:success
+Date:2022-04-09 02:51:50 PM|Action:List of Appointments| Response:success

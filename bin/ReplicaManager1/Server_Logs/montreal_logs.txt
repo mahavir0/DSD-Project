@@ -176,3 +176,159 @@
 2022-04-04 05:24:44 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE741052 SURGEON | Failed | There are no appointmnets for SURGEON
 2022-04-04 05:24:56 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE963741 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
 2022-04-04 05:25:20 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM232022--
+2022-04-04 06:13:28 PM Admin | Add appointment | MTLM232022-DENTAL-[5] | Success | Appointmnet added Successfully
+2022-04-04 06:14:32 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM232022 DENTAL | Success | Appointment booked Successfully
+2022-04-04 06:15:02 PM Patient MTLP8520 | Cancel an appointment | MTLP8520 MTLM232022 DENTAL | Success | the Appointment has been cancelled for the patient MTLP8520
+2022-04-04 06:15:02 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEM232022 PHYSICIAN | Failed | Appointment booked Successfully;Success
+2022-04-04 06:15:02 PM Patient MTLP8520 | Swap an appointment | MTLP8520 MTLM232022 DENTAL SHEM232022 PHYSICIAN | Failed | This operation cannot be perfomed by the patient MTLP8520 because he/she neither booked the appointment nor canceled it
+2022-04-04 06:15:43 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -Sherbrooke Hospital : -PHYSICIAN-SHEM232022
+2022-04-04 06:16:09 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -Sherbrooke Hospital : -PHYSICIAN-SHEM232022
+2022-04-06 03:16:44 PM Admin | Add appointment | MTLM232022-DENTAL-[5] | Failed | Appointment added Successfully
+2022-04-06 03:17:04 PM Admin | Add appointment | MTLM852012-DENTAL-[4] | Failed | Appointment added Successfully.
+2022-04-06 03:17:25 PM Admin | Add appointment | MTL963741-PHYSICIAN-[5] | Failed | Appointment added Successfully
+2022-04-06 03:18:02 PM Admin | Add appointment | MTLM963741-PHYSICIAN-[9] | Failed | Appointment added Successfully.
+2022-04-06 03:18:05 PM Admin | Add appointment | MTLM232022-DENTAL-[] | Failed | It already contains the appointment.
+2022-04-06 03:18:05 PM Admin | Add appointment | MTLM852012-DENTAL-[] | Failed | It already contains the appointment.
+2022-04-06 03:18:05 PM Admin | Add appointment | MTL963741-PHYSICIAN-[] | Failed | It already contains the appointment.
+2022-04-06 03:18:06 PM Admin | Add appointment | MTLM963741-PHYSICIAN-[] | Failed | It already contains the appointment.
+2022-04-06 03:18:21 PM Admin | List appointment availability | DENTAL | Success | MTLM852012 4, MTLM232022 5, , 
+2022-04-06 03:25:22 PM Admin | Add appointment | MTLM852410-DENTAL-[5] | Failed | Appointment added Successfully
+2022-04-06 03:25:38 PM Admin | Add appointment | MTLM987654-DENTAL-[8] | Failed | Appointment added Successfully.
+2022-04-06 03:25:58 PM Admin | Add appointment | MTLM965100-DENTAL-[1] | Failed | Appointment added Successfully.
+2022-04-06 03:27:12 PM Admin | List appointment availability | DENTAL | Success | MTLM852410 5, MTLM987654 8, MTLM965100 1, , 
+2022-04-06 03:30:40 PM Admin | Add appointment | MTLM852010-PHYSICIAN-[10] | Failed | Appointment added Successfully
+2022-04-06 03:32:11 PM Admin | Add appointment | MTLM852010-DENTAL-[10] | Failed | Appointment added Successfully
+2022-04-06 03:32:38 PM Admin | Add appointment | MTLM963741-DENTAL-[45] | Failed | Appointment added Successfully.
+2022-04-06 03:32:54 PM Admin | Add appointment | MTLM852456-DENTAL-[0] | Failed | Appointment added Successfully.
+2022-04-06 03:33:12 PM Admin | List appointment availability | DENTAL | Success | MTLM852010 10, MTLM852456 0, MTLM963741 45, , 
+2022-04-06 03:37:14 PM Admin | Add appointment | MTLM060422-DENTAL-[5] | Failed | Appointment added Successfully.
+2022-04-06 03:47:26 PM Admin | List appointment availability | DENTAL | Success | , 
+2022-04-06 05:08:01 PM Admin | Add appointment | MTLM202022-DETNAL-[3] | Success | Appointment added Successfully
+2022-04-06 05:11:58 PM Admin | Add appointment | MTLM231022-DENTAL-[3] | Success | Appointment added Successfully
+2022-04-06 05:12:33 PM Admin | Add appointment | MTLM852010-DENTAL-[3] | Success | Appointment added Successfully.
+2022-04-06 05:13:29 PM Admin | Add appointment | MTLM963741-DENTAL-[5] | Success | Appointment added Successfully.
+2022-04-06 05:14:00 PM Admin | Add appointment | MTLM852010-DENTAL-[] | Failed | It already contains the appointment.
+2022-04-06 05:17:49 PM Admin | Add appointment | MTLM852010-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 05:18:43 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM852010 DENTAL | Success | Appointment booked Successfully
+2022-04-06 05:19:07 PM Admin | Add appointment | MTLM852010-DENTAL-[] | Failed | It already contains the appointment.
+2022-04-06 05:19:50 PM Admin | List appointment availability | DENTAL | Success | MTLM852010 4, , 
+2022-04-06 05:20:45 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM852010--
+2022-04-06 05:21:31 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM852010--
+2022-04-06 05:23:18 PM Admin | List appointment availability | DENTAL | Success | MTLM852010 4, , 
+2022-04-06 05:24:35 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM741052 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-06 05:25:29 PM Patient MTLP7410 | Book an appointment | MTLP7410 MTLM946120 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-06 05:25:51 PM Patient MTLP9630 | Book an appointment | MTLP9630 MTLM784512 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-06 05:27:13 PM Admin | Add appointment | MTLE852010-PHYSICIAN-[9] | Success | Appointment added Successfully
+2022-04-06 05:28:31 PM Admin | List appointment availability | DENTAL | Success | MTLM852010 4, , 
+2022-04-06 05:32:11 PM Admin | Add appointment | MTL888888-PHYSICIAN-[12] | Success | Appointment added Successfully
+2022-04-06 05:34:31 PM Admin | Add appointment | MTLA101022-PHYSICIAN-[13] | Success | Appointment added Successfully
+2022-04-06 05:46:12 PM Admin | Add appointment | MTLM852010-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 05:48:19 PM Admin | Add appointment | MTLM852010-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 05:50:58 PM Admin | Add appointment | MTLM852010-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 06:13:22 PM Admin | Add appointment | MTLM852012-DENTAL-[3] | Success | Appointment added Successfully
+2022-04-06 06:16:49 PM Admin | Add appointment | MTLM852010-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 06:22:01 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -
+2022-04-06 06:22:46 PM Admin | Add appointment | MTLM852010-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 06:28:47 PM Admin | Add appointment | 0-0-[0] | Success | Appointment added Successfully
+2022-04-06 06:32:14 PM Admin | Add appointment | MTLA121233-PHYSICIAN-[12] | Success | Appointment added Successfully
+2022-04-06 06:32:46 PM Admin | List appointment availability | DENTAL | Success | , 
+2022-04-06 06:33:40 PM Patient MTLP1212 | Book an appointment | MTLP1212 MTLA121210 PHYSICIAN | Failed | Appointmnet is not available on this day
+2022-04-06 06:35:09 PM Patient MTLP1212 | Book an appointment | MTLP1212 MTLA111111 PHYSICIAN | Failed | Appointmnet is not available on this day
+2022-04-06 06:47:59 PM Admin | Add appointment | MTLA121212-DENTAL-[12] | Success | Appointment added Successfully
+2022-04-06 06:49:00 PM Patient MTLA1212 | Book an appointment | MTLA1212 MTLA121212 DENTAL | Success | Appointment booked Successfully
+2022-04-06 06:51:58 PM Patient MTLA1212 | Book an appointment | MTLA1212 MTLA666666 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-06 06:53:01 PM Patient MTLA1212 | Book an appointment | MTLA1212 MTLM111111 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-06 06:54:22 PM Admin | List appointment availability | DENTAL | Success | MTLA121212 11, , 
+2022-04-06 07:01:02 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 07:01:24 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Success | Appointment booked Successfully
+2022-04-06 07:03:19 PM Admin | Add appointment | MTLM231022-DENTAL-[10] | Success | Appointment added Successfully
+2022-04-06 07:03:45 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Success | Appointment booked Successfully
+2022-04-06 07:04:10 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE852010 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-06 07:04:35 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM741020 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-06 07:05:01 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM946120 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-06 07:05:17 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM231022--
+2022-04-06 07:35:19 PM Admin | Add appointment | MTLM232010-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-06 07:40:36 PM Admin | Add appointment | MTLM852010-PHYSICIAN-[5] | Success | Appointment added Successfully
+2022-04-07 11:24:57 AM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-07 11:25:21 AM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE852010 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-07 11:25:55 AM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE987654 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-07 11:26:19 AM Patient MTLP8520 | Book an appointment | MTLP8520 MTLA946130 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-07 11:30:41 AM Admin | Add appointment | MTLM987654-PHYSICIAN-[6] | Success | Appointment added Successfully
+2022-04-07 11:32:16 AM Admin | List appointment availability | DENTAL | Success | MTLM231022 5, , 
+2022-04-09 12:19:42 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 12:21:08 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM852010 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-09 12:21:44 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE946120 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-09 12:22:23 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE654321 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 12:24:16 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Success | Appointment booked Successfully
+2022-04-09 12:26:51 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 12:27:33 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Success | Appointment booked Successfully
+2022-04-09 12:28:57 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE852010 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 12:29:33 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM741085 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-09 12:30:03 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM963741 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 12:30:51 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE789654 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-09 12:31:09 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE963741 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 12:49:21 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 12:50:08 PM Admin | Add appointment | MTLE789456-DENTAL-[5] | Success | Appointment added Successfully.
+2022-04-09 12:51:29 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 12:52:57 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 12:53:52 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Success | Appointment booked Successfully
+2022-04-09 12:54:34 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE951620 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-09 12:55:05 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE741052 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 12:56:04 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLA963741 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 12:56:57 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM231022--
+2022-04-09 12:57:10 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM231022--
+2022-04-09 12:57:18 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM231022--
+2022-04-09 01:08:45 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 01:09:16 PM Admin | Remove appointment | MTLM231022-DENTAL | Success | The MTLM231022 has been removed from DENTAL appointment.
+2022-04-09 01:15:59 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 01:17:45 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 01:18:20 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -
+2022-04-09 01:22:39 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 01:23:08 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | -
+2022-04-09 01:23:59 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE897654 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 01:25:07 PM Patient MTLP8520 | Book an appointment | MTLP8520 SHEE852010 DENTAL | Failed | There are no appointmnets for DENTAL;Failed
+2022-04-09 01:25:42 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM963741 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 01:29:01 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 01:29:49 PM Admin | Remove appointment | MTLM231022-DENTAL | Success | The MTLM231022 has been removed from DENTAL appointment.
+2022-04-09 01:41:55 PM Admin | Add appointment | MTLA789454-DENTAL-[12] | Success | Appointment added Successfully
+2022-04-09 01:42:36 PM Admin | Remove appointment | MTLA789454-DENTAL | Success | The MTLA789454 has been removed from DENTAL appointment.
+2022-04-09 01:49:36 PM Admin | Add appointment | MTLM2310222-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 01:56:34 PM Admin | Add appointment | MTLM2310222-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 01:57:40 PM Admin | Add appointment | MTLM231022-DENTAL-[6] | Success | Appointment added Successfully
+2022-04-09 01:58:13 PM Admin | Remove appointment | MTLM231022-DENTAL | Success | The MTLM231022 has been removed from DENTAL appointment.
+2022-04-09 01:58:34 PM Admin | List appointment availability | DENTAL | Success | , 
+2022-04-09 02:04:03 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM852010 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 02:04:27 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLA963741 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-09 02:05:50 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLA963741 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 02:17:40 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 02:21:27 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 02:23:12 PM Admin | Add appointment | MTLM231022.-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 02:23:38 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM987654 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 02:24:07 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE741052 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 02:24:34 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE951620 PHYSICIAN | Failed | There are no appointmnets for PHYSICIAN
+2022-04-09 02:25:56 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 02:26:56 PM Admin | List appointment availability | DENTAL | Success | MTLM231022. 5, , 
+2022-04-09 02:27:33 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 02:28:11 PM Admin | Add appointment | MTLA111111-PHYSICIAN-[12] | Success | Appointment added Successfully
+2022-04-09 02:28:49 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLA111111 PHYSICIAN | Success | Appointment booked Successfully
+2022-04-09 02:29:38 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -PHYSICIAN-MTLA111111--
+2022-04-09 02:30:42 PM Admin | Add appointment | MTLM231022-DENTAL-[12] | Success | Appointment added Successfully
+2022-04-09 02:31:11 PM Admin | List appointment availability | DENTAL | Success | MTLM231022 12, , 
+2022-04-09 02:32:16 PM Admin | Add appointment | MTLE231022-PHYSICIAN-[5] | Success | Appointment added Successfully
+2022-04-09 02:33:35 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 02:34:08 PM Admin | List appointment availability | DENTAL | Success | MTLM231022 5, , 
+2022-04-09 02:36:34 PM Admin | Add appointment | MTLM231022-DENTAL-[5] | Success | Appointment added Successfully
+2022-04-09 02:37:07 PM Admin | Add appointment | MTLE241022-PHYSICIAN-[6] | Success | Appointment added Successfully
+2022-04-09 02:37:35 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLM231022 DENTAL | Success | Appointment booked Successfully
+2022-04-09 02:38:01 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM231022--
+2022-04-09 02:38:27 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLA852010 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 02:38:47 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE963741 PHYSICIAN | Failed | Appointmnet is not available on this day
+2022-04-09 02:39:17 PM Patient MTLP8520 | Book an appointment | MTLP8520 MTLE946120 SURGEON | Failed | There are no appointmnets for SURGEON
+2022-04-09 02:39:37 PM Patient MTLP8520 | Get appointments schedule | MTLP8520 | Success | Montreal Hospital : -DENTAL-MTLM231022--
+2022-04-09 02:48:45 PM Admin | Add appointment | MTLA242424-DENTAL-[12] | Success | Appointment added Successfully
+2022-04-09 02:49:21 PM Admin | Add appointment | MTLA424242-PHYSICIAN-[10] | Success | Appointment added Successfully
+2022-04-09 02:49:50 PM Admin | List appointment availability | DENTAL | Success | MTLA242424 12, , 
+2022-04-09 02:50:15 PM Patient MTLP1212 | Book an appointment | MTLP1212 MTLA111111 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 02:50:40 PM Patient MTLP1212 | Book an appointment | MTLP1212 MTLA888888 DENTAL | Failed | Appointmnet is not available on this day
+2022-04-09 02:51:09 PM Patient MTLP1212 | Book an appointment | MTLP1212 MTLA999999 PHYSICIAN | Failed | Appointmnet is not available on this day
+2022-04-09 02:51:52 PM Admin | List appointment availability | DENTAL | Success | MTLA242424 12, , 

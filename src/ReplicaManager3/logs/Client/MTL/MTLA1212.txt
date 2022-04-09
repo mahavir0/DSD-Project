@@ -74,3 +74,6 @@ Date:2022-04-03 03:18:16 PM|Action:getAppointmentSchedule| Response:true
 Date:2022-04-03 03:19:06 PM|Action:Appointment CancelledMTLA140222| Response:true
 Date:2022-04-03 03:19:07 PM|Action:Appointment BookedQUEE121212;Success| Response:true
 Date:2022-04-03 03:19:07 PM|Action:Appointment SwappedMTLA140222DENTALtoQUEE121212DENTAL;Success| Response:true
+Date:2022-04-06 06:49:01 PM|Action:Appointment BookedMTLA121212;Success| Response:true
+Date:2022-04-06 06:51:58 PM|Action:Appointment not BookedMTLA666666;Failed| Response:false
+Date:2022-04-09 01:53:11 PM|Action:getAppointmentSchedule| Response:true

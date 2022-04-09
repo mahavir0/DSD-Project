@@ -52,11 +52,21 @@ public class AppointmentManagement extends UnicastRemoteObject implements Appoin
 //         ServerClients = new ConcurrentHashMap<>();
 //    }
 //    
+    private static AppointmentManagement backupReplica;
     public AppointmentManagement(String ServerID, String ServerName) throws RemoteException 
     {
         super();
-        this.ServerID = ServerID;
-        this.ServerName = ServerName;
+        //=======================================
+        if(this.ServerID == null && this.ServerName == null) {
+        	this.ServerID = ServerID;
+        	this.ServerName = ServerName;
+        }else {
+        	backupReplica.ServerName = ServerName;
+        	backupReplica.ServerID = ServerID;
+        }
+        //=======================================
+//        this.ServerID = ServerID;
+//        this.ServerName = ServerName;
         System.out.println("In constructor "+ServerID+" "+ServerName);
         AllAppointments = new ConcurrentHashMap<>();
         Map<String, AppointmentModel> temp = new ConcurrentHashMap<String, AppointmentModel>();
@@ -70,6 +80,13 @@ public class AppointmentManagement extends UnicastRemoteObject implements Appoin
         testHashMap();
                 
     }
+    
+    @Override
+	public String startBackupReplica() throws RemoteException {
+		// TODO Auto-generated method stub
+    	backupReplica = new AppointmentManagement(ServerID, ServerName);
+		return "Replica has been changed with Backup Replica";
+	}
     
     @Override
     public void testHashMap() {
@@ -1606,6 +1623,9 @@ public class AppointmentManagement extends UnicastRemoteObject implements Appoin
         ServerClients.put(newPatient.getClientID(), newPatient);
         ClientAppointments.put(newPatient.getClientID(), new ConcurrentHashMap<>());
     }
+
+
+	
 
 	
 }

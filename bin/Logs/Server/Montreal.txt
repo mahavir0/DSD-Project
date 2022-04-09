@@ -1,0 +1,115 @@
+DATE: 2022-04-04 05:59:46 PM  Server is Up & Running
+DATE: 2022-04-04 05:59:46 PM  UDP Server has Started on port number9001
+DATE: 2022-04-04 06:01:16 PM  Server is Up & Running
+DATE: 2022-04-04 06:01:16 PM  UDP Server has Started on port number9001
+DATE: 2022-04-04 06:13:28 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM232022 AppointmentType: Dental BokingCapacity 5  | ServerResponse: Success: Appointment MTLM232022 added successfully
+DATE: 2022-04-04 06:14:32 PM ClientID: MTLP8520 | RequestType:  BookAppointment  | RequestParameters:  AppointmentID: MTLM232022 AppointmentType: Dental  | ServerResponse: Success: Appointment MTLM232022 Booked Successfully;Success
+DATE: 2022-04-04 06:15:02 PM ClientID: MTLP8520 | RequestType:  UDP request sent BookAppointment  | RequestParameters:  AppointmentID: SHEM232022 AppointmentType: Physician  | ServerResponse:  ... 
+DATE: 2022-04-04 06:15:02 PM ClientID: MTLP8520 | RequestType:  UDP reply receivedBookAppointment  | RequestParameters:  AppointmentID: SHEM232022 AppointmentType: Physician  | ServerResponse: Success: Appointment SHEM232022 Booked Successfully
+DATE: 2022-04-04 06:15:02 PM ClientID: MTLP8520 | RequestType:  BookAppointment  | RequestParameters:  AppointmentID: SHEM232022 AppointmentType: Physician  | ServerResponse: Success: Appointment SHEM232022 Booked Successfully
+DATE: 2022-04-04 06:15:02 PM ClientID: MTLP8520 | RequestType:  RMI CancelAppointment  | RequestParameters:  AppointmentID: MTLM232022 AppointmentType: Dental  | ServerResponse: Success: Appointment MTLM232022 Canceled for MTLP8520
+DATE: 2022-04-04 06:15:02 PM ClientID: MTLP8520 | RequestType:  SwapAppointment  | RequestParameters:  oldAppointmentID: MTLM232022 oldAppointmentType: Dental newAppointmentID: SHEM232022 newAppointmentType: Physician  | ServerResponse: Failed: on Both newAppointment SHEM232022 Booking reason: Success: Appointment SHEM232022 Booked Successfully and oldAppointment MTLM232022 Canceling reason: successful;Success;Failed
+DATE: 2022-04-04 06:15:43 PM ClientID: MTLP8520 | RequestType:  getAppointmentSchedule  | RequestParameters: null | ServerResponse: Physician:
+SHEM232022 || 
+-------------------------
+Dental:
+
+-------------------------
+
+DATE: 2022-04-04 06:16:09 PM ClientID: MTLP8520 | RequestType:  getAppointmentSchedule  | RequestParameters: null | ServerResponse: Physician:
+SHEM232022 || 
+-------------------------
+Dental:
+
+-------------------------
+
+DATE: 2022-04-06 05:11:30 PM  Server is Up & Running
+DATE: 2022-04-06 05:11:30 PM  UDP Server has Started on port number9001
+DATE: 2022-04-06 05:11:59 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM231022 AppointmentType: Dental BokingCapacity 3  | ServerResponse: Success: Appointment MTLM231022 added successfully
+DATE: 2022-04-06 05:12:33 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM852010 AppointmentType: Dental BokingCapacity 3  | ServerResponse: Success: Appointment MTLM852010 added successfully
+DATE: 2022-04-06 05:13:29 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM963741 AppointmentType: Dental BokingCapacity 5  | ServerResponse: Success: Appointment MTLM963741 added successfully
+DATE: 2022-04-06 05:14:00 PM ClientID: Admin | RequestType: AddAppointment | RequestParameters:  AppointmentID: MTLM852010 AppointmentType: Dental Capacity 5  | ServerResponse: Success: Appointment MTLM852010 Capacity increased to 5
+DATE: 2022-04-06 05:16:29 PM  Server is Up & Running
+DATE: 2022-04-06 05:16:29 PM  UDP Server has Started on port number9001
+DATE: 2022-04-06 05:17:50 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM852010 AppointmentType: Dental BokingCapacity 5  | ServerResponse: Success: Appointment MTLM852010 added successfully
+DATE: 2022-04-06 05:18:43 PM ClientID: MTLP8520 | RequestType:  BookAppointment  | RequestParameters:  AppointmentID: MTLM852010 AppointmentType: Dental  | ServerResponse: Success: Appointment MTLM852010 Booked Successfully;Success
+DATE: 2022-04-06 05:19:07 PM ClientID: Admin | RequestType: AddAppointment | RequestParameters:  AppointmentID: MTLM852010 AppointmentType: Dental Capacity 8  | ServerResponse: Success: Appointment MTLM852010 Capacity increased to 8
+DATE: 2022-04-06 05:19:50 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:19:50 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:19:50 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:19:50 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:19:50 PM ClientID: Admin | RequestType: ListAppointmentAvailability  | RequestParameters:  AppointmentType: Dental  | ServerResponse: Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] || 
+---------------------
+
+DATE: 2022-04-06 05:20:45 PM ClientID: MTLP8520 | RequestType:  getAppointmentSchedule  | RequestParameters: null | ServerResponse: Dental:
+MTLM852010 || 
+-------------------------
+
+DATE: 2022-04-06 05:21:31 PM ClientID: MTLP8520 | RequestType:  getAppointmentSchedule  | RequestParameters: null | ServerResponse: Dental:
+MTLM852010 || 
+-------------------------
+
+DATE: 2022-04-06 05:23:18 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:23:18 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:23:18 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:23:18 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:23:18 PM ClientID: Admin | RequestType: ListAppointmentAvailability  | RequestParameters:  AppointmentType: Dental  | ServerResponse: Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] || 
+---------------------
+
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  RMI addAppointment  | RequestParameters:  AppointmentID: MTLM852010 AppointmentType: Dental Capacity 5  | ServerResponse: Failed:Appointment Already Exists, Cannot Decrease Appointment Capacity
+DATE: 2022-04-06 05:25:54 PM ClientID: MTLP8520 | RequestType:  RMI BookAppointment  | RequestParameters:  AppointmentID: MTLM852010 AppointmentType: Dental  | ServerResponse: Failed: Appointment MTLM852010 Already Booked;Failed
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType: AddAppointment | RequestParameters:  AppointmentID: MTLM852010 AppointmentType: Dental Capacity 8  | ServerResponse: Success: Appointment MTLM852010 Capacity increased to 8
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType: ListAppointmentAvailability  | RequestParameters:  AppointmentType: Dental  | ServerResponse: Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] || 
+---------------------
+
+DATE: 2022-04-06 05:25:54 PM ClientID: MTLP8520 | RequestType:  getAppointmentSchedule  | RequestParameters: null | ServerResponse: Dental:
+MTLM852010 || 
+-------------------------
+
+DATE: 2022-04-06 05:25:54 PM ClientID: MTLP8520 | RequestType:  getAppointmentSchedule  | RequestParameters: null | ServerResponse: Dental:
+MTLM852010 || 
+-------------------------
+
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType: ListAppointmentAvailability  | RequestParameters:  AppointmentType: Dental  | ServerResponse: Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] || 
+---------------------
+
+DATE: 2022-04-06 05:27:13 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLE852010 AppointmentType: Physician BokingCapacity 9  | ServerResponse: Success: Appointment MTLE852010 added successfully
+DATE: 2022-04-06 05:28:31 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:28:31 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:28:31 PM ClientID: Admin | RequestType:  UDP request sent listAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse:  ... 
+DATE: 2022-04-06 05:28:31 PM ClientID: Admin | RequestType:  UDP reply receivedlistAppointmentAvailability  | RequestParameters:  AppointmentID: null AppointmentType: Dental  | ServerResponse: 
+DATE: 2022-04-06 05:28:31 PM ClientID: Admin | RequestType: ListAppointmentAvailability  | RequestParameters:  AppointmentType: Dental  | ServerResponse: Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] ||  (MTLE852010) in the Evening of 85/20/2010 Total[Remaining] Capacity: 9[9] || 
+---------------------
+
+DATE: 2022-04-06 07:34:28 PM  Server is Up & Running
+DATE: 2022-04-06 07:34:28 PM  UDP Server has Started on port number9001
+DATE: 2022-04-06 07:35:20 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM232010 AppointmentType: Dental BokingCapacity 5  | ServerResponse: Success: Appointment MTLM232010 added successfully
+DATE: 2022-04-06 07:40:07 PM  Server is Up & Running
+DATE: 2022-04-06 07:40:07 PM  UDP Server has Started on port number9001
+DATE: 2022-04-06 07:40:37 PM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM852010 AppointmentType: Physician BokingCapacity 5  | ServerResponse: Success: Appointment MTLM852010 added successfully
+DATE: 2022-04-07 11:16:17 AM  Server is Up & Running
+DATE: 2022-04-07 11:16:17 AM  UDP Server has Started on port number9001
+DATE: 2022-04-07 11:17:16 AM  Server is Up & Running
+DATE: 2022-04-07 11:17:16 AM  UDP Server has Started on port number9001
+DATE: 2022-04-07 11:17:54 AM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM852010 AppointmentType: Dental BokingCapacity 5  | ServerResponse: Success: Appointment MTLM852010 added successfully
+DATE: 2022-04-07 11:19:59 AM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM963741 AppointmentType: Dental BokingCapacity 3  | ServerResponse: Success: Appointment MTLM963741 added successfully
+DATE: 2022-04-07 11:20:43 AM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM987654 AppointmentType: Dental BokingCapacity 5  | ServerResponse: Success: Appointment MTLM987654 added successfully
+DATE: 2022-04-07 11:22:12 AM  Server is Up & Running
+DATE: 2022-04-07 11:22:12 AM  UDP Server has Started on port number9001
+DATE: 2022-04-07 11:23:53 AM  Server is Up & Running
+DATE: 2022-04-07 11:23:53 AM  UDP Server has Started on port number9001
+DATE: 2022-04-07 11:24:57 AM ClientID: Admin | RequestType: AddAppointment  | RequestParameters:  AppoitemntID: MTLM231022 AppointmentType: Dental BokingCapacity 5  | ServerResponse: Success: Appointment MTLM231022 added successfully
+DATE: 2022-04-07 11:26:25 AM ClientID: Admin | RequestType: AddAppointment | RequestParameters:  AppointmentID: MTLM231022 AppointmentType: Dental Capacity 5  | ServerResponse: Success: Appointment MTLM231022 Capacity increased to 5

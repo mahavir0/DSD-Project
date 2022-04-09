@@ -1,0 +1,36 @@
+DATE: 2022-04-04 05:59:46 PM  Server is Up & Running
+DATE: 2022-04-04 05:59:46 PM  UDP Server has Started on port number9002
+DATE: 2022-04-04 06:01:16 PM  Server is Up & Running
+DATE: 2022-04-04 06:01:16 PM  UDP Server has Started on port number9002
+DATE: 2022-04-06 05:11:30 PM  Server is Up & Running
+DATE: 2022-04-06 05:11:30 PM  UDP Server has Started on port number9002
+DATE: 2022-04-06 05:16:29 PM  Server is Up & Running
+DATE: 2022-04-06 05:16:29 PM  UDP Server has Started on port number9002
+DATE: 2022-04-06 05:19:50 PM ClientID: Admin | RequestType:  UDP request received listAppointmentAvailability  | RequestParameters:  appointmentType: null  | ServerResponse:  ...
+DATE: 2022-04-06 05:19:50 PM ClientID: Admin | RequestType:  UDP reply sent listAppointmentAvailability  | RequestParameters:  appointmentID: null appointmentType: Dental  | ServerResponse: ;
+DATE: 2022-04-06 05:23:18 PM ClientID: Admin | RequestType:  UDP request received listAppointmentAvailability  | RequestParameters:  appointmentType: null  | ServerResponse:  ...
+DATE: 2022-04-06 05:23:18 PM ClientID: Admin | RequestType:  UDP reply sent listAppointmentAvailability  | RequestParameters:  appointmentID: null appointmentType: Dental  | ServerResponse: ;
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP request received listAppointmentAvailability  | RequestParameters:  appointmentType: null  | ServerResponse:  ...
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP reply sent listAppointmentAvailability  | RequestParameters:  appointmentID: null appointmentType: Dental  | ServerResponse: ;
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP request received listAppointmentAvailability  | RequestParameters:  appointmentType: null  | ServerResponse:  ...
+DATE: 2022-04-06 05:25:54 PM ClientID: Admin | RequestType:  UDP reply sent listAppointmentAvailability  | RequestParameters:  appointmentID: null appointmentType: Dental  | ServerResponse: ;
+DATE: 2022-04-06 05:28:31 PM ClientID: Admin | RequestType:  UDP request received listAppointmentAvailability  | RequestParameters:  appointmentType: null  | ServerResponse:  ...
+DATE: 2022-04-06 05:28:31 PM ClientID: Admin | RequestType:  UDP reply sent listAppointmentAvailability  | RequestParameters:  appointmentID: null appointmentType: Dental  | ServerResponse: ;
+DATE: 2022-04-06 07:34:28 PM  Server is Up & Running
+DATE: 2022-04-06 07:34:28 PM  UDP Server has Started on port number9002
+DATE: 2022-04-06 07:40:07 PM  Server is Up & Running
+DATE: 2022-04-06 07:40:07 PM  UDP Server has Started on port number9002
+DATE: 2022-04-07 11:16:17 AM  Server is Up & Running
+DATE: 2022-04-07 11:16:17 AM  UDP Server has Started on port number9002
+DATE: 2022-04-07 11:17:16 AM  Server is Up & Running
+DATE: 2022-04-07 11:17:16 AM  UDP Server has Started on port number9002
+DATE: 2022-04-07 11:22:12 AM  Server is Up & Running
+DATE: 2022-04-07 11:22:12 AM  UDP Server has Started on port number9002
+DATE: 2022-04-07 11:23:53 AM  Server is Up & Running
+DATE: 2022-04-07 11:23:53 AM  UDP Server has Started on port number9002
+DATE: 2022-04-09 03:40:58 PM  Server is Up & Running
+DATE: 2022-04-09 03:40:58 PM  UDP Server has Started on port number9002
+DATE: 2022-04-09 03:44:55 PM  Server is Up & Running
+DATE: 2022-04-09 03:44:55 PM  UDP Server has Started on port number9002
+DATE: 2022-04-09 03:45:51 PM  Server is Up & Running
+DATE: 2022-04-09 03:45:51 PM  UDP Server has Started on port number9002

@@ -5,15 +5,18 @@ import java.net.DatagramSocket;
 import java.util.*;
 
 import ReplicaManager3.Implementation.Montreal_Class;
+import ReplicaManager3.Implementation.Quebec_Class;
 import ReplicaManager3.Implementation.Sherbrooke_Class;
 
 
 public class Sherbrooke{
+	public static Sherbrooke_Class monclass;
+	public static Sherbrooke_Class backupClass;
 	public static void main(String args[]) {
 		try {
 			
 			//creating servent and register it with orb
-			Sherbrooke_Class monclass = new Sherbrooke_Class();
+			monclass = new Sherbrooke_Class();
 
 			Runnable task = () -> {
 				receive(monclass);
@@ -137,7 +140,7 @@ public class Sherbrooke{
 					 result = mtlobj.addAppointment(parameters.get(0), parameters.get(1), parameters.get(2), cap);
 				 }else if(func.equals("removeAppointment")) {
 					 System.out.println("parameter 0 : " + parameters.get(0) + "parameter 1 " + parameters.get(1) + parameters.get(2) + parameters.get(3));
-					 result = mtlobj.removeAppointment(parameters.get(0),parameters.get(1),parameters.get(2),Integer.parseInt(parameters.get(3)));
+					 result = mtlobj.removeAppointment(parameters.get(0),parameters.get(1),parameters.get(2),0);
 				 }else if(func.equals("listAppointmentAvailability")) {
 					 result = mtlobj.listAppointmentAvailability(parameters.get(0),parameters.get(2));
 					 //result = String.join(",", ls).trim();
@@ -152,6 +155,8 @@ public class Sherbrooke{
 					 result = mtlobj.swapAppointment(parameters.get(0), parameters.get(1), parameters.get(2), parameters.get(4), parameters.get(5));
 				 }else if(func.equals("fault message")) {
 					 result = mtlobj.handleFault();
+					 backupClass = new Sherbrooke_Class();
+					 monclass = backupClass;
 				 }
 				 //System.out.println(result); //<----------------------------------------------------------------------------------------------testing
 				 result+="@";

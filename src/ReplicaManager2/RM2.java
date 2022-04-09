@@ -85,7 +85,7 @@ public class RM2 {
 		try {
 			InetAddress ip = InetAddress.getByName(Fault_Multicast_IPAdrress);
 			ms = new MulticastSocket(Fault_Multicast_Port);
-			ms.setNetworkInterface(NetworkInterface.getByName("en0"));
+			//ms.setNetworkInterface(NetworkInterface.getByName("en0"));
 			ms.joinGroup(ip);
 			byte[] faultmessage = new byte[10000];
 			System.out.println("[INFO] Fault Handler started .........");
@@ -98,6 +98,9 @@ public class RM2 {
 					continue;
 				if(temp[1].equals("RM2")) {
 					System.out.println("Handling the Fault in RM2 : " + FaultMessageString);
+					//SequencerMessage sm = new SequencerMessage(0, FaultMessageString);
+					requestServerForFaultTolerance();
+					//requestToServers(sm);
 					RemoveFault(FaultMessageString);
 				}
 			}
@@ -108,7 +111,23 @@ public class RM2 {
 		}
 	}
 	
-	
+	public static void requestServerForFaultTolerance() {
+		try {
+		Registry registry = LocateRegistry.getRegistry(Server_Montreal);
+        AppointmentManagementInterface obj = (AppointmentManagementInterface ) registry.lookup(AppointmentManagement_RegisterName);
+        System.out.println(obj.startBackupReplica()); 
+
+        Registry registry1 = LocateRegistry.getRegistry(Server_Sherbrooke);
+        AppointmentManagementInterface obj1 = (AppointmentManagementInterface ) registry1.lookup(AppointmentManagement_RegisterName);
+        System.out.println(obj1.startBackupReplica());
+        
+        Registry registry2 = LocateRegistry.getRegistry(Server_Quebec);
+        AppointmentManagementInterface obj2 = (AppointmentManagementInterface ) registry2.lookup(AppointmentManagement_RegisterName);
+        System.out.println(obj2.startBackupReplica());
+		}catch(Exception e) {
+			System.out.println("[ERROR] Exception in RequestServerForFaultTolerance"+e);
+		}
+	}
 	
 	public static void receiveFromSequencer() throws UnknownHostException {
 		//System.out.println("Here");
@@ -116,7 +135,7 @@ public class RM2 {
 		InetAddress ip = InetAddress.getByName(multicast_IPadress);
 		try {
 			ms = new MulticastSocket(multicast_Port);	
-			ms.setNetworkInterface(NetworkInterface.getByName("en0"));
+			//ms.setNetworkInterface(NetworkInterface.getByName("en0"));
 			ms.joinGroup(ip);
 			byte[] buf = new byte[1000];
 			//System.out.println("in try");
@@ -259,41 +278,21 @@ public class RM2 {
 				SequencerMessage sm = new SequencerMessage(0, "testHashMap;MTLA0000=#=#=#=#=#;");
 				SequencerMessage sm1 = new SequencerMessage(0, "testHashMap;QUEA0000=#=#=#=#=#;");
 				SequencerMessage sm2 = new SequencerMessage(0, "testHashMap;SHEA0000=#=#=#=#=#;");
-				System.out.println("[INFO] Wiping Data and Reperfoming the Operation !!!");
+				//System.out.println("[INFO] Wiping Data and Reperfoming the Operation !!!");
 				requestToServers(sm);
 				requestToServers(sm1);
 				requestToServers(sm2);
 			}catch(Exception e) {
 				System.out.println(e);
 			}finally {
-				System.out.println("[INFO] Data has been wiped out !");
+				//System.out.println("[INFO] Data has been wiped out !");
 			}
 			
 			Iterator<SequencerMessage> itr = pq.iterator();
 			while(itr.hasNext()) {
 				SequencerMessage sm = itr.next();
-				//DatagramSocket  ds=null;
 				try {
 					requestToServers(sm);
-//					ds = new DatagramSocket();
-//					int port = decideReplicaPort(sm.getrequestMessage());
-//					InetAddress ip = InetAddress.getLocalHost();
-//					byte buf[] = null;
-//					buf = sm.getrequestMessage().getBytes();
-//					DatagramPacket DpSend = new DatagramPacket(buf, buf.length, ip, port);
-//					ds.send(DpSend);
-//					System.out.println("[INFO] Message Sent to Replica : " + sm.getrequestMessage());
-//					
-//					Thread.sleep(50);
-//					
-//					byte[] received = new byte[10000];
-//					DatagramPacket DpReceive = new DatagramPacket(received, received.length);
-//					ds.receive(DpReceive);
-//					String result1 = new String(DpReceive.getData());
-//					System.out.println("[INFO] Message received : "+result1);
-//					String[] temp = result1.split("@");
-//					result1 = temp[0];
-//					System.out.println("[INFO] Message Received from Replica : " + sm.getrequestMessage());
 				}catch(Exception e) {
 					System.out.println(e);
 				}
@@ -324,32 +323,20 @@ public class RM2 {
 	 private static String requestToServers(SequencerMessage sm) throws Exception {
 	        
 		 	String[] temp = sm.getrequestMessage().split(";");
-		 	System.out.println("temp : "+temp);
 		 	String[] parts = temp[1].split("=");
-		 	System.out.println("parts : "+parts);
-		 	int sequenceId = sm.getsequenceId();
-		 	System.out.println("sequenceId : "+sequenceId);
-		 	String FrontIpAddress = FE_multicast_IPadress;      
-		 	System.out.println("FrontIpAddress : "+FrontIpAddress);
 		 	String Function = temp[0];
-		 	System.out.println("Function : "+Function);
 		 	String UserID = parts[0];
-		 	System.out.println("UserID : "+UserID);
 		 	String newAppointmentID = parts[4];
-		 	System.out.println("newAppointmentID : "+newAppointmentID);
 		 	String newAppointmentType = parts[5];
-		 	System.out.println("newAppointmentType : "+newAppointmentType);
 		 	String oldAppointmentID = parts[1];
-		 	System.out.println("oldAppointmentID : "+oldAppointmentID);
 		 	String oldAppointmentType = parts[2];
-		 	System.out.println("oldAppointmentType : "+oldAppointmentType);
 		 	int Capacity = 0;
 		 	if(parts[3].equals("#"))
 		 		Capacity = 0;
 		 	else	
 		 		Capacity = Integer.parseInt(parts[3]);
 		 	System.out.println("Capacity : "+Capacity); 
-		 int portNumber = serverPort(UserID.substring(0, 3));
+		    int portNumber = serverPort(UserID.substring(0, 3));
 		 	System.out.println("UserId : "+UserID);
 		 	
 		 	Registry registry = LocateRegistry.getRegistry(portNumber);
@@ -368,9 +355,6 @@ public class RM2 {
 	                String response = obj.ListAppointmentAvailability(oldAppointmentType);
 	                System.out.println(response);
 	                return response;
-	            } else if (Function.equalsIgnoreCase("listAppointmentAvailability")) {
-	            	obj.testHashMap();
-	            	System.out.println("[INFO] Data Wiped Out Completely..");
 	            }
 	        } else if (UserID.substring(3, 4).equalsIgnoreCase("P")) {
 	            if (Function.equalsIgnoreCase("bookAppointment")) {
@@ -390,7 +374,13 @@ public class RM2 {
 	                System.out.println(response);
 	                return response;
 	            }
-	        }
+	        } else if (Function.equalsIgnoreCase("fault message")) {
+            	//obj.testHashMap();
+            	String response = obj.startBackupReplica();
+            	System.out.println(response);
+            	System.out.println("[INFO] Replica has been changed Completely..");
+            	System.out.println(response);
+            }
 	        return "Null response from server" + UserID.substring(0, 3);
 	    }
 

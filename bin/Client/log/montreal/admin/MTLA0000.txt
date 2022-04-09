@@ -160,3 +160,138 @@ MTLM232022 ||
 2022-04-04 05:17:02 PM | Get Appointment Schedule | MTLP8520 | 
 2022-04-04 05:17:30 PM | Get Appointment Schedule | MTLP8520 | 
 2022-04-04 05:22:59 PM | Add Appointments | MTLA0000 MTLM232022 DENTAL 5 | Appointment added successfully->Success
+2022-04-04 06:13:31 PM | Add Appointments | MTLA0000 MTLM232022 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 03:16:47 PM | Add Appointments | MTLA0000 MTLM232022 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 03:17:07 PM | Add Appointments | MTLA0000 MTLM852012 DENTAL 4 | Appointment added successfully->Success
+2022-04-06 03:17:28 PM | Add Appointments | MTLA0000 MTL963741 PHYSICIAN 5 | 
+2022-04-06 03:18:05 PM | Add Appointments | MTLA0000 MTLM963741 PHYSICIAN 9 | Appointment added successfully->Success
+2022-04-06 03:18:24 PM | List Appointment Availibility | DENTAL | Montreal Server Dental:
+ (MTLM852012) in the Morning of 85/20/2012 Total[Remaining] Capacity: 4[4] ||  (MTLM232022) in the Morning of 23/20/2022 Total[Remaining] Capacity: 5[5] ||  (MTLM963741) in the Morning of 96/37/2041 Total[Remaining] Capacity: 9[9] || 
+---------------------
+->Nuetral
+2022-04-06 03:25:25 PM | Add Appointments | MTLA0000 MTLM852410 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 03:25:41 PM | Add Appointments | MTLA0000 MTLM987654 DENTAL 8 | Appointment added successfully->Success
+2022-04-06 03:26:01 PM | Add Appointments | MTLA0000 MTLM965100 DENTAL 1 | Appointment added successfully->Success
+2022-04-06 03:27:15 PM | List Appointment Availibility | DENTAL | Montreal Server Dental:
+ (MTLM852410) in the Morning of 85/24/2010 Total[Remaining] Capacity: 5[5] ||  (MTLM987654) in the Morning of 98/76/2054 Total[Remaining] Capacity: 8[8] ||  (MTLM965100) in the Morning of 96/51/2000 Total[Remaining] Capacity: 1[1] || 
+---------------------
+->Nuetral
+2022-04-06 03:32:14 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 10 | Appointment added successfully->Success
+2022-04-06 03:32:41 PM | Add Appointments | MTLA0000 MTLM963741 DENTAL 45 | Appointment added successfully->Success
+2022-04-06 03:32:57 PM | Add Appointments | MTLA0000 MTLM852456 DENTAL 0 | Appointment added successfully->Success
+2022-04-06 03:33:15 PM | List Appointment Availibility | DENTAL | Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 10[10] ||  (MTLM852456) in the Morning of 85/24/2056 Total[Remaining] Capacity: 0[0] ||  (MTLM963741) in the Morning of 96/37/2041 Total[Remaining] Capacity: 45[45] || 
+---------------------
+->Nuetral
+2022-04-06 03:47:29 PM | List Appointment Availibility | DENTAL | ,->Nuetral
+2022-04-06 05:08:04 PM | Add Appointments | MTLA0000 MTLM202022 DETNAL 3 | ->Nuetral
+2022-04-06 05:12:01 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 3 | Appointment added Successfully->Failed
+2022-04-06 05:12:36 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 3 | Appointment added Successfully->Failed
+2022-04-06 05:13:32 PM | Add Appointments | MTLA0000 MTLM963741 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 05:14:03 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 5 | It already contains the appointment.->Failed
+2022-04-06 05:17:52 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 05:18:46 PM | Book Appointment | MTLP8520 MTLM852010 DENTAL | Success: Appointment MTLM852010 Booked Successfully->Success
+2022-04-06 05:19:10 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 8 | Appointment updated successfully->Success
+2022-04-06 05:19:53 PM | List Appointment Availibility | DENTAL | Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] || 
+---------------------
+->Nuetral
+2022-04-06 05:20:48 PM | Get Appointment Schedule | MTLP8520 | Dental:
+MTLM852010 || 
+-------------------------
+->Nuetral
+2022-04-06 05:21:34 PM | Get Appointment Schedule | MTLP8520 | Dental:
+MTLM852010 || 
+-------------------------
+->Nuetral
+2022-04-06 05:23:21 PM | List Appointment Availibility | DENTAL | Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] || 
+---------------------
+->Nuetral
+2022-04-06 05:24:38 PM | Book Appointment | MTLP8520 MTLM741052 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-06 05:25:32 PM | Book Appointment | MTLP7410 MTLM946120 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-06 05:25:54 PM | Book Appointment | MTLP9630 MTLM784512 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-06 05:27:16 PM | Add Appointments | MTLA0000 MTLE852010 PHYSICIAN 9 | Appointment added successfully->Success
+2022-04-06 05:28:34 PM | List Appointment Availibility | DENTAL | Montreal Server Dental:
+ (MTLM852010) in the Morning of 85/20/2010 Total[Remaining] Capacity: 8[7] ||  (MTLE852010) in the Evening of 85/20/2010 Total[Remaining] Capacity: 9[9] || 
+---------------------
+->Nuetral
+2022-04-06 05:32:14 PM | Add Appointments | MTLA0000 MTL888888 PHYSICIAN 12 | Appointment added Successfully->Success
+2022-04-06 05:34:34 PM | Add Appointments | MTLA0000 MTLA101022 PHYSICIAN 13 | Appointment added Successfully->Success
+2022-04-06 05:46:15 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 5 | Appointment added Successfully->Success
+2022-04-06 05:48:22 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 5 | Appointment added Successfully->Success
+2022-04-06 05:51:01 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 5 | Appointment added Successfully->Success
+2022-04-06 06:22:49 PM | Add Appointments | MTLA0000 MTLM852010 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 06:28:50 PM | Add Appointments | MTLA0000 0 0 0 | ->Nuetral
+2022-04-06 06:32:17 PM | Add Appointments | MTLA0000 MTLA121233 PHYSICIAN 12 | Appointment added successfully->Success
+2022-04-06 06:32:49 PM | List Appointment Availibility | DENTAL | Montreal Server Dental:
+ (MTLA121233) in the Afternoon of 12/12/2033 Total[Remaining] Capacity: 12[12] || 
+---------------------
+->Nuetral
+2022-04-06 06:33:43 PM | Book Appointment | MTLP1212 MTLA121210 PHYSICIAN | ->Nuetral
+2022-04-06 06:35:12 PM | Book Appointment | MTLP1212 MTLA111111 PHYSICIAN | ->Nuetral
+2022-04-06 06:48:02 PM | Add Appointments | MTLA0000 MTLA121212 DENTAL 12 | Appointment added successfully->Success
+2022-04-06 06:49:03 PM | Book Appointment | MTLA1212 MTLA121212 DENTAL | Appointment booked Successfully->Success
+2022-04-06 06:52:01 PM | Book Appointment | MTLA1212 MTLA666666 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-06 06:53:04 PM | Book Appointment | MTLA1212 MTLM111111 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-06 06:54:25 PM | List Appointment Availibility | DENTAL | MTLA121212 11,,->Nuetral
+2022-04-06 07:01:07 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 07:01:29 PM | Book Appointment | MTLP8520 MTLM231022 DENTAL | Success: Appointment MTLM231022 Booked Successfully->Success
+2022-04-06 07:01:46 PM | Cancel Appointment | 0 0 | ->Nuetral
+2022-04-06 07:03:24 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 10 | Appointment added successfully->Success
+2022-04-06 07:35:24 PM | Add Appointments | MTLA0000 MTLM232010 DENTAL 5 | Appointment added successfully->Success
+2022-04-06 07:40:41 PM | Add Appointments | MTLA0000 MTLM852010 PHYSICIAN 5 | Appointment added successfully->Success
+2022-04-07 11:18:57 AM | Add Appointments | MTLA0000 MTLM852010 DENTAL 5 | Appointment added successfully->Success
+2022-04-07 11:20:04 AM | Add Appointments | MTLA0000 MTLM963741 DENTAL 3 | Appointment added successfully->Success
+2022-04-07 11:20:48 AM | Add Appointments | MTLA0000 MTLM987654 DENTAL 5 | Appointment added successfully->Success
+2022-04-07 11:23:09 AM | Add Appointments | MTLA0000 MTLM852010 DENTAL 6 | Opps! Server is too busy to handle your request!!!
+2022-04-07 11:25:02 AM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-07 11:25:26 AM | Book Appointment | MTLP8520 MTLE852010 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-07 11:30:45 AM | Add Appointments | MTLA0000 MTLM987654 PHYSICIAN 6 | Appointment added Successfully->Success
+2022-04-07 11:32:21 AM | List Appointment Availibility | DENTAL | MTLM231022 5,,->Nuetral
+2022-04-09 12:19:47 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 12:21:13 PM | Book Appointment | MTLP8520 MTLM852010 PHYSICIAN | There are no appointmnets for PHYSICIAN->Failed
+2022-04-09 12:26:35 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 12:49:26 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 12:50:13 PM | Add Appointments | MTLA0000 MTLE789456 DENTAL 5 | Appointment added Successfully.->Success
+2022-04-09 12:51:34 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 12:53:23 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 01:08:55 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 01:09:26 PM | Remove Appointments | MTLM231022 DENTAL | successful->Success
+2022-04-09 01:16:09 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 01:17:55 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 01:22:49 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 01:23:18 PM | Get Appointment Schedule | MTLP8520 | Appointment Schedule Empty For MTLP8520->Nuetral
+2022-04-09 01:29:11 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 01:29:59 PM | Remove Appointments | MTLM231022 DENTAL | successful->Success
+2022-04-09 01:42:05 PM | Add Appointments | MTLA0000 MTLA789454 DENTAL 12 | Appointment added Successfully->Success
+2022-04-09 01:42:46 PM | Remove Appointments | MTLA789454 DENTAL | successful->Success
+2022-04-09 01:49:46 PM | Add Appointments | MTLA0000 MTLM2310222 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 01:52:50 PM | Remove Appointments | MTLM2310222 DENTAL | Appointment removedMTLM2310222->Success
+2022-04-09 01:53:23 PM | Get Appointment Schedule | MTLA1212 | ->Nuetral
+2022-04-09 01:56:44 PM | Add Appointments | MTLA0000 MTLM2310222 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 01:57:50 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 6 | Appointment added Successfully->Success
+2022-04-09 01:58:23 PM | Remove Appointments | MTLM231022 DENTAL | The MTLM231022 has been removed from DENTAL appointment.->Success
+2022-04-09 01:58:44 PM | List Appointment Availibility | DENTAL | ,->Nuetral
+2022-04-09 02:17:23 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added successfully->Success
+2022-04-09 02:21:37 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 02:23:22 PM | Add Appointments | MTLA0000 MTLM231022. DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 02:27:06 PM | List Appointment Availibility | DENTAL | MTLM231022. 5,,->Nuetral
+2022-04-09 02:27:43 PM | Book Appointment | MTLP8520 MTLM231022 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-09 02:28:21 PM | Add Appointments | MTLA0000 MTLA111111 PHYSICIAN 12 | Appointment added Successfully->Success
+2022-04-09 02:28:59 PM | Book Appointment | MTLP8520 MTLA111111 PHYSICIAN | Appointment booked Successfully->Success
+2022-04-09 02:29:48 PM | Get Appointment Schedule | MTLP8520 | Montreal Hospital : ,PHYSICIAN,MTLA111111,,->Nuetral
+2022-04-09 02:30:52 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 12 | Appointment added Successfully->Success
+2022-04-09 02:31:21 PM | List Appointment Availibility | DENTAL | MTLM231022 12,,->Nuetral
+2022-04-09 02:32:26 PM | Add Appointments | MTLA0000 MTLE231022 PHYSICIAN 5 | Appointment added Successfully->Success
+2022-04-09 02:33:45 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 02:34:18 PM | List Appointment Availibility | DENTAL | MTLM231022 5,,->Nuetral
+2022-04-09 02:36:44 PM | Add Appointments | MTLA0000 MTLM231022 DENTAL 5 | Appointment added Successfully->Success
+2022-04-09 02:37:17 PM | Add Appointments | MTLA0000 MTLE241022 PHYSICIAN 6 | Appointment added Successfully->Success
+2022-04-09 02:48:55 PM | Add Appointments | MTLA0000 MTLA242424 DENTAL 12 | Appointment added Successfully->Success
+2022-04-09 02:49:31 PM | Add Appointments | MTLA0000 MTLA424242 PHYSICIAN 10 | Appointment added Successfully->Success
+2022-04-09 02:50:00 PM | List Appointment Availibility | DENTAL | MTLA242424 12,,->Nuetral
+2022-04-09 02:50:25 PM | Book Appointment | MTLP1212 MTLA111111 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-09 02:50:50 PM | Book Appointment | MTLP1212 MTLA888888 DENTAL | Appointmnet is not available on this day->Failed
+2022-04-09 02:51:19 PM | Book Appointment | MTLP1212 MTLA999999 PHYSICIAN | Appointmnet is not available on this day->Failed
+2022-04-09 02:52:02 PM | List Appointment Availibility | DENTAL | MTLA242424 12,,->Nuetral
